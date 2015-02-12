@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
 
   # restricing elements, which can be accessed
-  before_action :fetch_element, only: [ :show ]
+  before_action :fetch_element, only: [ :show, :index ]
 
   # function for listing all stories
   def index
