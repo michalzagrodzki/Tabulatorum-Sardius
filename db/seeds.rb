@@ -12,7 +12,7 @@ story_list = [
 
 #loop for putting story_list into db
 story_list.each do |name, story_part_1, link_to_image|
-  Story.create( name: name, story_part_1: story_part_1, link_to_image: link_to_image )
+  Story.create( name: name, story_part_1: story_part_1, link_image_1: link_to_image )
 end
 
 
