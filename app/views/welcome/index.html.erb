@@ -1,9 +1,11 @@
 <!-- This is template text, later will be changed -->
 <h1>First Message</h1>
 
-<!-- This is template loop, later will be changed -->
+<!-- This is template loop, later it will be changed -->
 <% @stories.each do |story| %>
+    <!-- Template text of story -->
     <p><%= story.name %></p>
+    <!-- Template link to story page -->
     <p><%=	link_to story.name, story  %> </p>
 <% end %>
 
