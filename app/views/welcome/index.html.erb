@@ -49,7 +49,7 @@
       <% @stories.each do |story| %>
       <!-- Story Thumbnail-->
       <div class='col-md-4'>
-        <%= link_to "<p class='text-center'>10.12.2014</p>".html_safe, story %> <!-- this elements needs to be corrected -->
+        <%= link_to(story) do %> <!-- this elements needs to be corrected -->
           <div class='thumbnail'>
             <img src="images/malta-story-thumbnail.jpg" alt='...'>
             <div class='caption'>
@@ -57,8 +57,9 @@
               <p class='text-center'>10.12.2014</p>
             </div>
           </div>
-        </a>
+        <% end %>
       </div>
+
       <!-- /Story Thumbnail-->
       <% end %>
 
