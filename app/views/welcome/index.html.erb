@@ -32,8 +32,8 @@
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
 
@@ -50,7 +50,7 @@
       <!-- Story Thumbnail-->
       <div class='col-md-4'>
         <% @stories.each do |story| %>
-        <a> <%= link_to story.name, story  %> </a> <!-- this elements needs to be corrected -->
+            <%= link_to "<p class='text-center'>10.12.2014</p>".html_safe, story %> <!-- this elements needs to be corrected -->
           <div class='thumbnail'>
             <img src="images/malta-story-thumbnail.jpg" alt='...'>
             <div class='caption'>
