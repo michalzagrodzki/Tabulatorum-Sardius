@@ -47,7 +47,7 @@
     <!-- Main Section - Images -->
     <div class='col-md-10'>
       <% @stories.each do |story| %>
-      <!-- Story Thumbnail-->
+      <!-- Story Thumbnail of <%= story.name %>-->
       <div class='col-md-4'>
         <%= link_to(story) do %> <!-- this elements needs to be corrected -->
           <div class='thumbnail'>
@@ -59,8 +59,7 @@
           </div>
         <% end %>
       </div>
-
-      <!-- /Story Thumbnail-->
+      <!-- /Story Thumbnail of <%= story.name %> -->
       <% end %>
 
     </div>
