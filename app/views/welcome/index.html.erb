@@ -59,7 +59,7 @@
               <!-- Title of story-->
               <h3 class='text-center'><%= story.name %></h3>
               <!-- Date of last update of story -->
-              <p class='text-center'>10.12.2014</p>
+              <p class='text-center'><%= story.updated_at.strftime("%e.%m.%Y") %></p>
             </div>
           </div>
         <% end %>
