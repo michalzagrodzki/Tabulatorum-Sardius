@@ -1,2 +1,81 @@
-<h1>AboutUs#index</h1>
-<p>Find me in app/views/about_us/index.html.erb</p>
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="ie8"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Title Specific Meta -->
+  <title>Milion Stories</title>
+  <meta name="description" content="Page about us.">
+  <meta name="author" content="Anna Huk and Michal Zagrodzki">
+
+  <!-- Mobile Specific Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Stylesheets
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" /> -->
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js></script>
+    <![endif]-->
+
+  <!-- Favicon and Apple Icons
+  <link rel="shortcut icon" href="images/icon/favicon.ico">
+  <link rel="apple-touch-icon" href="images/icon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/icon/apple-touch-icon-114x114.png"> -->
+
+  <!-- WHEN FONTS WILL BE LOADED, CHOOSE SVG AS FIRST ONE ! IT WILL RENDER PROPERLY IN CHROME -->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<!-- BEGINNING OF BODY -->
+
+<body>
+
+<!-- Main section - image, description, action buttons -->
+<div class='container'>
+  <div class='col-md-10 col-md-offset-1'>
+    <div class='thumbnail'>
+      <!-- Image -->
+      <%= image_tag('malta-about-us-photo.jpg', alt: 'Picture about us.') %>
+      <!-- /Image -->
+      
+      <div class='caption'>
+        <h2 class='text-center'>About Us</h2>
+
+        <!-- Description -->
+        <p class='col-md-10 col-md-offset-1 text-center'>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains. </p>
+        <!-- /Description -->
+
+        <!-- Action Buttons -->
+        <div class='row'>
+          <div class='col-md-5 col-md-offset-1'>
+            <button class='btn btn-default btn-block' role='button'>Contact with us</button>
+          </div>
+          <%= link_to(welcome_index_path) do %>
+              <div class='col-md-5'>
+                <button class='btn btn-default btn-block' role='button'>Back to main page</button>
+              </div>
+          <% end %>
+        </div>
+        <!-- /Action Buttons -->
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+<!-- END OF BODY -->
+
+</html>
