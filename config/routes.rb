@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'about_us/index'
+
   resources :stories do
     resources :tags
   end
