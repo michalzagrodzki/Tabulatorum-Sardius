@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'about_us/index'
-
+  # Link to pages of stories
   resources :stories do
     resources :tags
   end
 
+  # Link to main page
   get 'welcome/index'
+
+  # Link to about us page
+  get 'about_us/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
