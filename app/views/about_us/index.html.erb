@@ -41,39 +41,177 @@
 
 <body>
 
-<!-- Main section - image, description, action buttons -->
+
 <div class='container'>
-  <div class='col-md-10 col-md-offset-1'>
-    <div class='thumbnail'>
-      <!-- Image -->
-      <%= image_tag('malta-about-us-photo.jpg', alt: 'Picture about us.') %>
-      <!-- /Image -->
+  <div class="row">
 
-      <div class='caption'>
-        <h2 class='text-center'>About Us</h2>
+    <!-- Left column - about us section -->
+    <div class='col-md-10 '>
+        <div class='thumbnail'>
+          <!-- Image -->
+          <%= image_tag('malta-about-us-photo.jpg', alt: 'Picture about us.') %>
+          <!-- /Image -->
 
-        <!-- Description -->
-        <p class='col-md-10 col-md-offset-1 text-center'>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains. </p>
-        <!-- /Description -->
+          <div class='caption'>
+            <h2 class='text-center'>About Us</h2>
 
-        <!-- Action Buttons -->
-        <div class='row'>
-          <div class='col-md-5 col-md-offset-1'>
-            <button class='btn btn-default btn-block' role='button'>Contact with us</button>
-          </div>
-          <%= link_to(welcome_index_path) do %>
-              <div class='col-md-5'>
-                <button class='btn btn-default btn-block' role='button'>Back to main page</button>
+            <!-- Description -->
+            <p class='col-md-10 col-md-offset-1 text-center'>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains. </p>
+            <!-- /Description -->
+
+            <!-- Action Buttons -->
+            <div class='row'>
+              <div class='col-md-5 col-md-offset-1'>
+                <button class='btn btn-default btn-block' role='button'>Contact with us</button>
               </div>
-          <% end %>
-        </div>
-        <!-- /Action Buttons -->
+              <%= link_to(welcome_index_path) do %>
+                  <div class='col-md-5'>
+                    <button class='btn btn-default btn-block' role='button'>Back to main page</button>
+                  </div>
+              <% end %>
+            </div>
+            <!-- /Action Buttons -->
 
-      </div>
+          </div>
+        </div>
+
     </div>
+    <!-- /Left column - about us section -->
+
+    <!-- Right Column - Menu -->
+    <div class='col-md-2'>
+      <!-- Title -->
+      <%= link_to(welcome_index_path) do  %>
+          <div class='sidebar-module'>
+            <h2 class='text-center'>Million Stories</h2>
+          </div>
+      <% end %>
+      <!-- /Title -->
+
+      <!-- Search and Stories Module -->
+      <div class='sidebar-module'>
+        <ul class='list-unstyled'>
+          <li>
+            <a class='btn btn-default btn-block' href='#' role='button'>Search</a>
+          </li>
+          <li>
+            <a class='btn btn-default btn-block' href='#' role='button'>Stories</a>
+          </li>
+        </ul>
+      </div>
+      <hr>
+      <!-- /Search and Stories Module -->
+
+      <!-- Stories Tags -->
+      <div class='sidebar-module'>
+        <div class='row'>
+
+          <!-- 1st row -->
+          <div class='col-md-12'>
+            <div class='btn-group' role='group'>
+              <a class='btn btn-default btn-sm' href='#' role='button'>Hike</a>
+              <a class='btn btn-default btn-sm' href='#' role='button'>City</a>
+              <a class='btn btn-default btn-sm' href='#' role='button'>Museum</a>
+            </div>
+          </div>
+          <!-- /1st row -->
+
+          <!-- 2nd row -->
+          <div class='col-md-12'>
+            <div class='btn-group' role='group'>
+              <a class='btn btn-default btn-sm' href='#' role='button'>Trail</a>
+              <a class='btn btn-default btn-sm' href='#' role='button'>Eat</a>
+              <a class='btn btn-default btn-sm' href='#' role='button'>Relax</a>
+            </div>
+          </div>
+          <!-- /2nd row -->
+
+        </div>
+      </div>
+      <hr>
+      <!-- /Stories Tags -->
+
+      <!-- Map and counter module -->
+      <div class='sidebar-module'>
+        <ul class='list-unstyled'>
+          <li>
+            <a class='btn btn-default btn-block' href='#' role='button'>Map</a>
+          </li>
+          <li>
+            <a class='btn btn-default btn-block' href='#' role='button'>Counter</a>
+          </li>
+        </ul>
+      </div>
+      <hr>
+      <!-- /Map and counter module -->
+
+      <!-- Contact module -->
+      <div class='sidebar-module'>
+        <ul class='list-unstyled'>
+          <%= link_to(about_us_index_path) do %>
+              <li>
+                <button class='btn btn-default btn-block' role='button'>About</button>
+              </li>
+          <% end %>
+          <li>
+            <a class='btn btn-default btn-block' href='#' role='button'>Contact</a>
+          </li>
+        </ul>
+      </div>
+      <hr>
+      <!-- /Contact module -->
+
+      <!-- Social Media Links -->
+      <div class='sidebar-module'>
+        <div class='row'>
+
+          <!-- 1st row -->
+          <div class='col-md-4'>
+            <a class='btn btn-default' href='#' role='button'>1</a>
+          </div>
+          <div class='col-md-4'>
+            <a class='btn btn-default' href='#' role='button'>2</a>
+          </div>
+          <div class='col-md-4'>
+            <a class='btn btn-default' href='#' role='button'>3</a>
+          </div>
+
+          <!-- 2nd row -->
+          <div class='col-md-4'>
+            <a class='btn btn-default' href='#' role='button'>4</a>
+          </div>
+          <div class='col-md-4'>
+            <a class='btn btn-default' href='#' role='button'>5</a>
+          </div>
+          <div class='col-md-4'>
+            <a class='btn btn-default' href='#' role='button'>6</a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <!-- /Social Media Links -->
+
+      <!-- Copyright module -->
+      <div class='sidebar-module'>
+        <div class='col-md-12'>
+          <div>
+            <p class='text-center'>Copyright</p>
+            <p class='text-center'>Anna Huk</p>
+            <p class='text-center'>and</p>
+            <p class='text-center'>Michal Zagrodzki</p>
+          </div>
+        </div>
+      </div>
+      <!-- /Copyright module -->
+
+    </div>
+    <!-- /ight Column - Menu -->
 
   </div>
+  <!-- /row-->
+
 </div>
+<!-- /container-->
 
 </body>
 <!-- END OF BODY -->
