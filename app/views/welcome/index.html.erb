@@ -40,11 +40,11 @@
 <!-- BEGINNING OF BODY -->
 
 <body>
-<!-- Left column -->
+
 <div class='container'>
   <div class='row'>
 
-    <!-- Main Section - Images -->
+    <!-- Left Column - Images -->
     <div class='col-md-10'>
       <!-- Story loop -->
       <% @stories.each do |story| %>
@@ -74,8 +74,9 @@
       <!-- /Button for next stories -->
 
     </div>
+    <!-- /Left Column - Images -->
 
-  <!-- Side Section - Menu -->
+  <!-- Right Column - Menu -->
   <div class='col-md-2'>
     <!-- Title -->
     <%= link_to(welcome_index_path) do  %>
@@ -202,7 +203,7 @@
     <!-- /Copyright module -->
 
   </div>
-  <!-- /Side Section - Menu -->
+  <!-- /Right Column - Menu -->
 
   </div>
   <!-- /row-->
@@ -211,6 +212,8 @@
 <!-- /container-->
 
 </body>
+<!-- END OF BODY -->
+
 </html>
 
 
