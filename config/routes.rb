@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resources :tags
   end
 
+  # Link to contact page
+  match '/contacts', to 'contacts#new', via: 'get'
+  resources "contacts", only: [:new, :create]
+
   # Link to main page
   get 'welcome/index'
 
