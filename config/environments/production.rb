@@ -76,4 +76,28 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Setting host for sending emails
+  config.action_mailer.default_url_options = { :host => 'mysite.com' }
+
+  # If error occurs, uncomment next line:
+  # Rails.application.routes.default_url_options[:host] = 'mysite.com'
+
+  # Delivering email by Action Mailer
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => 'utf-8'
+
+  # Settings of mail account for sending email
+  config.action_mailer.smtp_settings = {
+      address:                'smtp.gmail.com',
+      port:                   587,
+      domain:                 ENV['GMAIL_DOMAIN'],
+      authentication:         'plain',
+      enable_starttls_auto:   true,
+      user_name:              ENV['GMAIL_USERNAME'],
+      password:               ENV['GMAIL_PASSWORD'],
+  }
+
 end
