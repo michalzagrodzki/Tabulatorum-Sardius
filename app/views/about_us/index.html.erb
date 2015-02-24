@@ -61,9 +61,11 @@
 
             <!-- Action Buttons -->
             <div class='row'>
-              <div class='col-md-5 col-md-offset-1'>
-                <button class='btn btn-default btn-block' role='button'>Contact with us</button>
-              </div>
+              <%= link_to(contact_url) do %>
+                  <div class='col-md-5 col-md-offset-1'>
+                    <button class='btn btn-default btn-block' role='button'>Contact with us</button>
+                  </div>
+              <% end %>
               <%= link_to(welcome_index_path) do %>
                   <div class='col-md-5'>
                     <button class='btn btn-default btn-block' role='button'>Back to main page</button>

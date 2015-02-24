@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   # Link to contact page
-  match '/contacts', to: 'contacts#new', via: 'get', :as => :contact
+  match '/contact_us', to: 'contacts#new', via: 'get', :as => :contact
   resources "contacts", only: [:new, :create]
 
   # Link to main page
