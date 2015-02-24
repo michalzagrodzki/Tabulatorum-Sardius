@@ -34,3 +34,6 @@ bower.json
 
 # ignore .idea folder of Rubymine
 .idea/*
+
+# Ignore application yml - contains ENV data
+/config/application.yml
