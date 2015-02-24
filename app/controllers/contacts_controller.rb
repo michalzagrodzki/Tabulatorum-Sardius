@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
       flash.now[:error] = nil
       flash.now[:notice] = 'Thank you for contacting with us.'
     else
-      flash.nowp[:error] = 'Cannot send message, try again.'
+      flash.now[:error] = 'Cannot send message, try again.'
       render :new
     end
 
