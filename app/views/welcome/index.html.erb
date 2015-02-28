@@ -142,9 +142,11 @@
     <!-- Map and counter module -->
     <div class='sidebar-module'>
       <ul class='list-unstyled'>
+        <%= link_to(map_path) do %>
         <li>
-          <a class='btn btn-default btn-block' href='#' role='button'>Map</a>
+          <button class='btn btn-default btn-block' role='button'>Map</button>
         </li>
+        <% end %>
         <li>
           <a class='btn btn-default btn-block disabled' href='#' role='button'>Counter</a>
         </li>
