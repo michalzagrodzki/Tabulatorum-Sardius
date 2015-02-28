@@ -34,6 +34,9 @@ gem 'simple_form', '>= 3.1.0'
 # Use Figaro for storing sensitive data
 gem 'figaro'
 
+# Used to show google maps
+gem 'gmaps4rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
