@@ -31,6 +31,9 @@ gem 'mail_form', '>= 1.5.0'
 # Use Simple_form for simplyfing forms.
 gem 'simple_form', '>= 3.1.0'
 
+# Use Figaro for storing sensitive data
+gem 'figaro'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
