@@ -2,15 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// Bootstrap Css Map Fix
-#map-container #map-canvas img {
-  max-width: none;
-}
-// Bootstrap Css Map Fix
-#map-container #map-canvas label {
-  width: auto; display:inline;
-}
-
 // style for Google Maps Marker
 .marker_container {
   border: 1px solid #cfcfcf;
@@ -19,3 +10,14 @@
   color: #1d1d1d;
   padding: 5px;
 }
+
+// temporarly disabled
+/* // Bootstrap Css Map Fix
+#map-container #map-canvas img {
+  max-width: none;
+}
+// Bootstrap Css Map Fix
+#map-container #map-canvas label {
+  width: auto; display:inline;
+} */
+
