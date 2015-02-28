@@ -15,7 +15,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
   rich_marker_options: ->
     marker = document.createElement("div")
     # setting up CSS class - 'marker_container'
-    marker.setAttribute 'class', 'marker_container'
+    marker.setAttribute('class', 'marker_container')
     marker.innerHTML = @args.title
     { content: marker }
 
