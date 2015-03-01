@@ -136,9 +136,11 @@
       <!-- Map and counter module -->
       <div class='sidebar-module'>
         <ul class='list-unstyled'>
-          <li>
-            <a class='btn btn-default btn-block' href='#' role='button'>Map</a>
-          </li>
+          <%= link_to(map_path) do %>
+              <li>
+                <button class='btn btn-default btn-block' role='button'>Map</button>
+              </li>
+          <% end %>
           <li>
             <a class='btn btn-default btn-block' href='#' role='button'>Counter</a>
           </li>
@@ -152,12 +154,14 @@
         <ul class='list-unstyled'>
           <%= link_to(about_us_index_path) do %>
               <li>
-                <button class='btn btn-default btn-block' role='button'>About</button>
+                <button class='btn btn-default btn-block active' role='button'>About</button>
               </li>
           <% end %>
-          <li>
-            <a class='btn btn-default btn-block' href='#' role='button'>Contact</a>
-          </li>
+          <%= link_to(contact_url) do %>
+              <li>
+                <button class='btn btn-default btn-block' role='button'>Contact</button>
+              </li>
+          <% end %>
         </ul>
       </div>
       <hr>
