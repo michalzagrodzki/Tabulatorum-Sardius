@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
 
-  # function that lists all stories
+  # function for showing all stories
   def index
     @stories = Story.all
   end
