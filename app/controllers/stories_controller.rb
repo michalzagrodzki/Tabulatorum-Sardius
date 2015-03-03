@@ -5,8 +5,6 @@ class StoriesController < ApplicationController
 
   # function for listing all stories and showing search results
   def index
-    # lists all stories
-    @stories = Story.all
 
     # function search of stories - when find matches something - show it, otherwise - show all
     if params[:search]
