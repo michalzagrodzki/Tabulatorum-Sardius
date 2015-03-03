@@ -3,9 +3,18 @@ class StoriesController < ApplicationController
   # restricing elements, which can be accessed
   before_action :fetch_element, only: [ :show, :index ]
 
-  # function for listing all stories
+  # function for listing all stories and showing search results
   def index
+    # lists all stories
     @stories = Story.all
+
+    # function search of stories - when find matches something - show it, otherwise - show all
+    if params[:search]
+      @stories = Story.search(params[:search]).order('updated_at desc')
+    else
+      @stories = Story.order('updated_at desc')
+    end
+
   end
 
   # function for showing specific story
