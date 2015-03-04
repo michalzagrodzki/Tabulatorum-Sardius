@@ -6,38 +6,7 @@
   <div class="row">
 
     <!-- Left column - about us section -->
-    <div class='col-md-10 '>
-        <div class='thumbnail'>
-          <!-- Image -->
-          <%= image_tag('malta-about-us-photo.jpg', alt: 'Picture about us.') %>
-          <!-- /Image -->
-
-          <div class='caption'>
-            <h2 class='text-center'>About Us</h2>
-
-            <!-- Description -->
-            <p class='col-md-10 col-md-offset-1 text-center'>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains. </p>
-            <!-- /Description -->
-
-            <!-- Action Buttons -->
-            <div class='row'>
-              <%= link_to(contact_url) do %>
-                  <div class='col-md-5 col-md-offset-1'>
-                    <button class='btn btn-default btn-block' role='button'>Contact with us</button>
-                  </div>
-              <% end %>
-              <%= link_to(welcome_index_path) do %>
-                  <div class='col-md-5'>
-                    <button class='btn btn-default btn-block' role='button'>Back to main page</button>
-                  </div>
-              <% end %>
-            </div>
-            <!-- /Action Buttons -->
-
-          </div>
-        </div>
-
-    </div>
+        <%= render 'leftmenu_aboutus'  %>
     <!-- /Left column - about us section -->
 
     <!-- Right Column - Menu -->
