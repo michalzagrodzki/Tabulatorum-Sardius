@@ -16,7 +16,7 @@
 <div class='container'>
   <div class="row">
 
-    <!-- Left column - about us section -->
+    <!-- Left column - maps section -->
     <div class='col-md-10 '>
       <div class='thumbnail'>
 
@@ -27,151 +27,21 @@
 
     </div>
 
-    <!-- /Left column - about us section -->
+    <!-- /Left column - maps section -->
 
     <!-- Right Column - Menu -->
-    <div class='col-md-2'>
-      <!-- Title -->
-      <%= link_to(welcome_index_path) do  %>
-          <div class='sidebar-module'>
-            <h2 class='text-center'>Million Stories</h2>
-          </div>
-      <% end %>
-      <!-- /Title -->
-
-      <!-- Search and Stories Module -->
-      <div class='sidebar-module'>
-        <ul class='list-unstyled'>
-          <li>
-            <a class='btn btn-default btn-block' href='#' role='button'>Search</a>
-          </li>
-          <li>
-            <a class='btn btn-default btn-block' href='#' role='button'>Stories</a>
-          </li>
-        </ul>
-      </div>
-      <hr>
-      <!-- /Search and Stories Module -->
-
-      <!-- Stories Tags -->
-      <div class='sidebar-module'>
-        <div class='row'>
-
-          <!-- 1st row -->
-          <div class='col-md-12'>
-            <div class='btn-group' role='group'>
-              <a class='btn btn-default btn-sm' href='#' role='button'>Hike</a>
-              <a class='btn btn-default btn-sm' href='#' role='button'>City</a>
-              <a class='btn btn-default btn-sm' href='#' role='button'>Museum</a>
-            </div>
-          </div>
-          <!-- /1st row -->
-
-          <!-- 2nd row -->
-          <div class='col-md-12'>
-            <div class='btn-group' role='group'>
-              <a class='btn btn-default btn-sm' href='#' role='button'>Trail</a>
-              <a class='btn btn-default btn-sm' href='#' role='button'>Eat</a>
-              <a class='btn btn-default btn-sm' href='#' role='button'>Relax</a>
-            </div>
-          </div>
-          <!-- /2nd row -->
-
-        </div>
-      </div>
-      <hr>
-      <!-- /Stories Tags -->
-
-      <!-- Map and counter module -->
-      <div class='sidebar-module'>
-        <ul class='list-unstyled'>
-          <li>
-            <button class='btn btn-default btn-block active' role='button'>Map</button>
-          </li>
-          <li>
-            <a class='btn btn-default btn-block' href='#' role='button'>Counter</a>
-          </li>
-        </ul>
-      </div>
-      <hr>
-      <!-- /Map and counter module -->
-
-      <!-- Contact module -->
-      <div class='sidebar-module'>
-        <ul class='list-unstyled'>
-          <%= link_to(about_us_index_path) do %>
-              <li>
-                <button class='btn btn-default btn-block' role='button'>About</button>
-              </li>
-          <% end %>
-          <%= link_to(contact_url) do %>
-              <li>
-                <button class='btn btn-default btn-block' role='button'>Contact</button>
-              </li>
-          <% end %>
-        </ul>
-      </div>
-      <hr>
-      <!-- /Contact module -->
-
-      <!-- Social Media Links -->
-      <div class='sidebar-module'>
-        <div class='row'>
-
-          <!-- 1st row -->
-          <div class='col-md-4'>
-            <a class='btn btn-default' href='#' role='button'>1</a>
-          </div>
-          <div class='col-md-4'>
-            <a class='btn btn-default' href='#' role='button'>2</a>
-          </div>
-          <div class='col-md-4'>
-            <a class='btn btn-default' href='#' role='button'>3</a>
-          </div>
-
-          <!-- 2nd row -->
-          <div class='col-md-4'>
-            <a class='btn btn-default' href='#' role='button'>4</a>
-          </div>
-          <div class='col-md-4'>
-            <a class='btn btn-default' href='#' role='button'>5</a>
-          </div>
-          <div class='col-md-4'>
-            <a class='btn btn-default' href='#' role='button'>6</a>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <!-- /Social Media Links -->
-
-      <!-- Copyright module -->
-      <div class='sidebar-module'>
-        <div class='col-md-12'>
-          <div>
-            <p class='text-center'>Copyright</p>
-            <p class='text-center'>Anna Huk</p>
-            <p class='text-center'>and</p>
-            <p class='text-center'>Michal Zagrodzki</p>
-          </div>
-        </div>
-      </div>
-      <!-- /Copyright module -->
-
-      </div>
-      <!-- /Right Column - Menu -->
+        <%= render 'shared/rightmenu'  %>
+    <!-- /Right Column - Menu -->
   </div>
   <!-- /row-->
 
 </div>
 <!-- /container-->
 
-</body>
-<!-- END OF BODY -->
-
-<!-- Loading data to Google maps from controller, through 'buildMap', to coffeescript file -->
-<script type="text/javascript">
-    // variable buildMap - stored in stories.coffee
-    buildMap(<%=raw @hash.to_json %>);
-</script>
-
-</html>
+<% content_for :footer_maps do %>
+    <!-- Loading data to Google maps from controller, through 'buildMap', to coffeescript file -->
+    <script type="text/javascript">
+        // variable buildMap - stored in stories.coffee
+        buildMap(<%=raw @hash.to_json %>);
+    </script>
+<% end %>
