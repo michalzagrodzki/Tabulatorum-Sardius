@@ -39,6 +39,7 @@
   <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+  <!-- Loads libraries which are required for Google Maps. -->
   <%= yield :head_maps %>
 
 </head>
@@ -51,5 +52,8 @@
 
 </body>
 <!-- END OF BODY -->
+
+<!-- Loads coffee script, which passes values from model to controller to Google Maps -->
+<%= yield :footer_maps %>
 
 </html>
