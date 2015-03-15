@@ -43,9 +43,9 @@
     <p class='text-center text-lowercase'><small>10.10.2014</small></p>
 
     <!-- Story - text part 1 -->
-    <% for i in 1..1 do %>
+    <% for n in 1..2 do %>
         <div>
-          <%= @story.story_part_1 %>
+          <%= "#{@story.story_part_1} + #{n}" %>
         </div>
 
         <!-- Pictures for story -->
