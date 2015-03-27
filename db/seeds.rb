@@ -27,9 +27,9 @@
 
 Story.create( name: 'Malta',
               story_text: {
-                  :part_1 => 'this is first text',
-                  :part_2 => 'this is second text',
-                  :part_3 => 'this is third text'
+                  '1' => 'this is first text',
+                  '2' => 'this is second text',
+                  '3' => 'this is third text'
               },
               advice: 'This is advice text for Malta',
               link_image_1: '',

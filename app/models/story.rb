@@ -1,5 +1,8 @@
 class Story < ActiveRecord::Base
 
+  # Serialize column for showing values from hash
+  serialize :story_text
+
   # Association with tags
   has_many :tags
 
