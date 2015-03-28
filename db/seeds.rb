@@ -19,7 +19,7 @@
   # Story.create( name: name, story_part_1: story_part_1, story_part_2: story_part_2, story_part_3: story_part_3, advice_text: advice_text, link_image_1: link_to_image, latitude: lat, longitude: lng )
 # end
 
-# End of temporarely commented out list
+# End of temporarily commented out list
 
 ######
 
@@ -27,9 +27,9 @@
 
 Story.create( name: 'Malta',
               story_text: {
-                  '1' => 'this is first text',
-                  '2' => 'this is second text',
-                  '3' => 'this is third text'
+                  :part_1 => 'this is first text',
+                  :part_2 => 'this is second text',
+                  :part_3 => 'this is third text'
               },
               advice: 'This is advice text for Malta',
               link_image_1: '',
