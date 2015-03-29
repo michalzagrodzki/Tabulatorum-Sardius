@@ -27,9 +27,9 @@
 
 Story.create( name: 'Malta',
               story_text: {
-                  'part_1'=> 'this is first text',
+                  'part_1' => 'this is first text',
                   'part_2' => 'this is second text',
-                  'part_3'=> 'this is third text'
+                  'part_3' => 'this is third text'
               },
               advice: 'This is advice text for Malta',
               link_image_1: '',
@@ -38,7 +38,7 @@ Story.create( name: 'Malta',
 
 Story.create( name: 'Cinque Terre',
               story_text: {
-                  'part_1'=> 'this is first text',
+                  'part_1' => 'this is first text',
                   'part_2' => 'this is second text'
               },
               advice: 'This is advice text for Cinque Terre',
@@ -48,7 +48,7 @@ Story.create( name: 'Cinque Terre',
 
 Story.create( name: 'Wicklow Way',
               story_text: {
-                  'part_1'=> 'this is first text'
+                  'part_1' => 'this is first text'
               },
               advice: 'This is advice text for Wicklow Way',
               link_image_1: '',
