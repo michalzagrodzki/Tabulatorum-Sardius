@@ -43,12 +43,10 @@
     <p class='text-center text-lowercase'><small>10.10.2014</small></p>
 
     <!-- Story - text part 1 -->
-    <% for n in 1..@story.story_text.size do %>
-
-    <%# @story.each do |key, value| %>
+    <% @story.story_text.each do |key, value| %>
+        <!-- Story text -->
         <div>
-          <%#= value %>
-          <%= @story.story_text %>
+          <p><%= value %></p>
         </div>
 
         <!-- Pictures for story -->
