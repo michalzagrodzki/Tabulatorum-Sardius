@@ -3,6 +3,6 @@
 This is application which will show text, pictures and maps contained in posts. Additional functionalites for search, filter and map of posts
 
 Used language and dependecies:
-- Ruby 1.9.3
+- Ruby 2.1.5
 - Rails 4.2.0
 
