@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.0'
+gem 'rails', '4.1.10'
 
 # Gems related to programming in rails and ruby
 gem 'pg', '~> 0.18.0.pre20141117110243'
@@ -17,7 +17,7 @@ gem 'rubycritic', '~> 1.4.0'
 gem 'rails_best_practices', '~> 1.15.7'
 
 # Gems related to javascript
-gem 'jquery-rails', '~> 4.0.3'
+gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'uglifier', '>= 1.3.0'
@@ -55,7 +55,7 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin ]
 
-# Heroku related gem
+# Ruby version, required for Heroku install
 ruby "2.1.5"
