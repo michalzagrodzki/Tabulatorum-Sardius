@@ -5,7 +5,7 @@
     <!-- milion stories logo -->
     <p class='text-center text-lowercase'><small>milion stories</small></p>
     <!-- title image -->
-    <%= image_tag('malta-title-image.jpg', class: 'img-responsive', alt: 'Title image') %>
+    <%= image_tag(@story.header_image, class: 'img-responsive', alt: 'Title image') %>
     <!-- lead title -->
     <h1 class='text-center text-uppercase'><%= @story.name %></h1>
 
