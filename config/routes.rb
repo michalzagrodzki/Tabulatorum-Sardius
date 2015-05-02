@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'pictures/index'
+
+  get 'pictures/show'
+
   # Link to pages of stories
   resources :stories do
     resources :pictures
