@@ -4,7 +4,7 @@ class Picture < ActiveRecord::Base
   belongs_to :story
 
   # Check presence of title and link
-  validates :title, presence: true, uniqueness: true, length: { minimum: 3 }
-  validates :link, presence: true, uniqueness: true, length: { minimum: 3 }
+  validates :title, presence: true, length: { minimum: 3 }
+  validates :link, presence: true, length: { minimum: 3 }
 
 end
