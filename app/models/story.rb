@@ -6,7 +6,7 @@ class Story < ActiveRecord::Base
   # Association with tags
   has_many :tags
 
-  # Assocationa with pictures
+  # Assocations with pictures
   has_many :pictures
 
   # Check presence of title and minimum length of text
