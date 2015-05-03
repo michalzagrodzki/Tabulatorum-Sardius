@@ -1,0 +1,11 @@
+.col-md-10
+  - stories.each do |story|
+    .col-md-4
+      -# Link to specific story
+      =link_to story do
+        -# Head image of story
+        .thumbnail= image_tag(story.main_page_image, alt: 'Thumbnail image')
+          .caption
+            -# Title of story
+            %h3.text-center= story.name
+            %p.text-center= story.updated_at.strftime("%e.%m.%Y")
