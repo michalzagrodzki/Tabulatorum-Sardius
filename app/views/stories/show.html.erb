@@ -5,9 +5,9 @@
     <!-- milion stories logo -->
     <p class='text-center text-lowercase'><small>milion stories</small></p>
     <!-- title image -->
-    <%= image_tag(@story.header_image, class: 'img-responsive', alt: 'Title image') %>
+    <%= image_tag(story.header_image, class: 'img-responsive', alt: 'Title image') %>
     <!-- lead title -->
-    <h1 class='text-center text-uppercase'><%= @story.name %></h1>
+    <h1 class='text-center text-uppercase'><%= story.name %></h1>
 
     <!-- navigation buttons for article -->
     <div class='col-md-8 col-md-offset-2'>
@@ -40,10 +40,10 @@
     <!-- name of section - Story -->
     <h1 class='text-center text-uppercase' id="story">story</h1>
     <!-- date -->
-    <p class='text-center text-lowercase'><small><%= @story.created_at %></small></p>
+    <p class='text-center text-lowercase'><small><%= story.created_at %></small></p>
 
     <!-- Story - text part 1 -->
-    <% @story.story_text.each do |key, value| %>
+    <% story.story_text.each do |key, value| %>
         <!-- Story text -->
         <div>
           <p><%= value %></p>
@@ -56,10 +56,13 @@
                 <%= image_tag("malta-article-photo-0#{j}.jpg",  class: 'img-responsive', alt: 'Title image') %>
               </div>
           <% end %>
+
         </div>
 
     <% end %>
-
+    <% story.pictures.each do |pic| %>
+        <p><%= pic.title %></p>
+    <% end %>
     <!-- Social media items -->
         <%= render 'socialmedia_icons' %>
     <!-- /Social media items -->
@@ -88,7 +91,7 @@
     <!-- name of section - Map -->
     <h1 class='text-center text-uppercase' id="map">map</h1>
     <!-- date -->
-    <p class='text-center text-lowercase'><small><%= @story.created_at %></small></p>
+    <p class='text-center text-lowercase'><small><%= story.created_at %></small></p>
 
     <div class='col-md-12'>
       <img src='images/malta-map.jpg' class='img-responsive' alt='title image'>
@@ -102,11 +105,11 @@
     <!-- name of section - Advice -->
     <h1 class='text-center text-uppercase' id="advice">advice</h1>
     <!-- date -->
-    <p class='text-center text-lowercase'><small><%= @story.updated_at %></small></p>
+    <p class='text-center text-lowercase'><small><%= story.updated_at %></small></p>
 
     <!-- Advice - text -->
     <div>
-      <p><%= @story.advice %></p>
+      <p><%= story.advice %></p>
     </div>
 
     <!-- Pictures for story -->
