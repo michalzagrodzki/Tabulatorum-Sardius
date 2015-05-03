@@ -35,8 +35,8 @@ Story.create( name: 'Malta',
                   'part_3' => part_3_story
               },
               advice: advice_text,
-              main_page_image: 'link_to_main_page_image',
-              header_image: 'link_to_head_image',
+              main_page_image: link_to_main_page_image,
+              header_image: link_to_head_image,
               latitude: 35.882056,
               longitude: 14.447462 )
 
@@ -46,8 +46,8 @@ Story.create( name: 'Cinque Terre',
                   'part_2' => part_2_story
               },
               advice: advice_text,
-              main_page_image: 'link_to_main_page_image',
-              header_image: 'link_to_head_image',
+              main_page_image: link_to_main_page_image,
+              header_image: link_to_head_image,
               latitude: 44.127062,
               longitude: 9.707102 )
 
@@ -56,8 +56,8 @@ Story.create( name: 'Wicklow Way',
                   'part_1' => part_1_story
               },
               advice: advice_text,
-              main_page_image: 'link_to_main_page_image',
-              header_image: 'link_to_head_image',
+              main_page_image: link_to_main_page_image,
+              header_image: link_to_head_image,
               latitude: 53.083510,
               longitude: -6.256211 )
 
@@ -70,28 +70,6 @@ Story.create( name: 'Wicklow Way',
 link_to_regular_image = 'http://s6.postimg.org/72puhmrup/story_normal_image.jpg'
 
 # Malta Images
-
-# Main Page Image
-
-Picture.create(
-    title: 'Front Page Image',
-    description: 'Spectacular view.',
-    link: link_to_main_page_image,
-    latitude: 35.897322,
-    longitude: 14.508297,
-    story_id: 1
-)
-
-# Header Image
-
-Picture.create(
-    title: 'Head image',
-    description: 'Spectacular view.',
-    link: link_to_head_image,
-    latitude: 35.897322,
-    longitude: 14.508297,
-    story_id: 1
-)
 
 # Regular Images
 
