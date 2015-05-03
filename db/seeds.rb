@@ -56,8 +56,8 @@ Story.create( name: 'Wicklow Way',
                   'part_1' => part_1_story
               },
               advice: advice_text,
-              main_page_image: link_to_main_page_image,
-              header_image: link_to_head_image,
+              main_page_image: 'link_to_main_page_image',
+              header_image: 'link_to_head_image',
               latitude: 53.083510,
               longitude: -6.256211 )
 
@@ -67,92 +67,118 @@ Story.create( name: 'Wicklow Way',
 
 #####
 
-link_to_regular_image = 'http://s6.postimg.org/72puhmrup/story_normal_image.jpg'
+link_to_regular_image_01 = 'http://s6.postimg.org/72puhmrup/story_normal_image.jpg'
+link_to_regular_image_02 = 'http://s6.postimg.org/72puhmrup/story_normal_image.jpg'
+link_to_regular_image_03 = 'http://s6.postimg.org/72puhmrup/story_normal_image.jpg'
+link_to_regular_image_04 = 'http://s6.postimg.org/72puhmrup/story_normal_image.jpg'
+link_to_regular_image_05 = 'http://s6.postimg.org/72puhmrup/story_normal_image.jpg'
+link_to_regular_image_06 = 'http://s6.postimg.org/72puhmrup/story_normal_image.jpg'
+link_to_regular_image_07 = 'http://s6.postimg.org/72puhmrup/story_normal_image.jpg'
+link_to_regular_image_08 = 'http://s6.postimg.org/72puhmrup/story_normal_image.jpg'
+link_to_regular_image_09 = 'http://s6.postimg.org/72puhmrup/story_normal_image.jpg'
 
 # Malta Images
 
 # Regular Images
 
-Picture.create(
-    title: 'Regular image',
+picture_01 = Picture.create(
+    title: 'Regular image 01',
     description: 'Spectacular view.',
-    link: link_to_regular_image,
+    link: link_to_regular_image_01,
     latitude: 35.897622,
     longitude: 14.538297,
     story_id: 1
 )
 
-Picture.create(
-    title: 'Regular image',
+picture_01.save!
+
+picture_02 = Picture.create(
+    title: 'Regular image 02',
     description: 'Spectacular view.',
-    link: link_to_regular_image,
+    link: link_to_regular_image_02,
     latitude: 35.897222,
     longitude: 14.505297,
     story_id: 1
 )
 
-Picture.create(
-    title: 'Regular image',
+picture_02.save!
+
+picture_03 = Picture.create(
+    title: 'Regular image 03',
     description: 'Spectacular view.',
-    link: link_to_regular_image,
+    link: link_to_regular_image_03,
     latitude: 35.894322,
     longitude: 14.508397,
     story_id: 1
 )
 
-Picture.create(
-    title: 'Regular image',
+picture_03.save!
+
+picture_04 = Picture.create(
+    title: 'Regular image 04',
     description: 'Spectacular view.',
-    link: link_to_regular_image,
+    link: link_to_regular_image_04,
     latitude: 35.892322,
     longitude: 14.501297,
     story_id: 1
 )
 
-Picture.create(
-    title: 'Regular image',
+picture_04.save!
+
+picture_05 = Picture.create(
+    title: 'Regular image 05',
     description: 'Spectacular view.',
-    link: link_to_regular_image,
+    link: link_to_regular_image_05,
     latitude: 35.899322,
     longitude: 14.505297,
     story_id: 1
 )
 
-Picture.create(
-    title: 'Regular image',
+picture_05.save!
+
+picture_06 = Picture.create(
+    title: 'Regular image 06',
     description: 'Spectacular view.',
-    link: link_to_regular_image,
+    link: link_to_regular_image_06,
     latitude: 35.891422,
     longitude: 14.503297,
     story_id: 1
 )
 
-Picture.create(
-    title: 'Regular image',
+picture_06.save!
+
+picture_07 = Picture.create(
+    title: 'Regular image 07',
     description: 'Spectacular view.',
-    link: link_to_regular_image,
+    link: link_to_regular_image_07,
     latitude: 35.895422,
     longitude: 14.507597,
     story_id: 1
 )
 
-Picture.create(
-    title: 'Regular image',
+picture_07.save!
+
+picture_08 = Picture.create(
+    title: 'Regular image 08',
     description: 'Spectacular view.',
-    link: link_to_regular_image,
+    link: link_to_regular_image_08,
     latitude: 35.899222,
     longitude: 14.501897,
     story_id: 1
 )
 
-Picture.create(
-    title: 'Regular image',
+picture_08.save!
+
+picture_09 = Picture.create(
+    title: 'Regular image 09',
     description: 'Spectacular view.',
-    link: link_to_regular_image,
+    link: link_to_regular_image_09,
     latitude: 35.892122,
     longitude: 14.501697,
     story_id: 1
 )
+
+picture_09.save!
 
 
 #
