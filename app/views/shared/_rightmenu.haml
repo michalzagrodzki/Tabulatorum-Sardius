@@ -15,3 +15,36 @@
   .sidebar-module{"data-no-turbolink" => "true"}
     %button= link_to 'Map', map_path, { :role => 'button', class: 'btn btn-default btn-block' }
   %hr/
+
+  -# About and Contact Module
+  .sidebar-module
+    %ul.list-unstyled
+      = link_to(about_us_index_path) do
+        %li
+          %button.btn.btn-default.btn-block {:role => 'button'} About
+      = link_to(contact_url) do
+        %li
+          %button.btn.btn-default.btn-block {:role => 'button'} Contact
+
+  -# Social links buttons
+  .col-md-4
+    %a.btn.btn-default.disabled{:href => '#', :role => 'button'} 1
+  .col-md-4
+    %a.btn.btn-default.disabled{:href => '#', :role => 'button'} 2
+  .col-md-4
+    %a.btn.btn-default.disabled{:href => '#', :role => 'button'} 3
+  .col-md-4
+    %a.btn.btn-default.disabled{:href => '#', :role => 'button'} 4
+  .col-md-4
+    %a.btn.btn-default.disabled{:href => '#', :role => 'button'} 5
+  .col-md-4
+    %a.btn.btn-default.disabled{:href => '#', :role => 'button'} 6
+
+  -# Copyrights
+  .sidebar-module
+    .col-md-12
+      %div
+        %p.text-center Copyright
+        %p.text-center Anna Huk
+        %p.text-center and
+        %p.text-center Michal Zagrodzki
