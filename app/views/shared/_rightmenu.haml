@@ -1,6 +1,6 @@
 .col-md-2
   -# Title
-  = link_to welcome_index_path do
+  = link_to welcome_index_path
     .sidebar-module
       %h2.text-center Million Stories
 
@@ -9,8 +9,8 @@
     = form_tag(stories_path, :method => 'get', class: 'input-group', id: 'search-form') do |f|
       = f.text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search story'
       .input-group-btn
-        = f.submit class: 'btn btn-default'
-          %i.glyphicon.glyphicon-globe
+      = f.submit class: 'btn btn-default'
+        %i.glyphicon.glyphicon-globe
 
   .sidebar-module{"data-no-turbolink" => "true"}
     %button= link_to 'Map', map_path, { :role => 'button', class: 'btn btn-default btn-block' }
@@ -18,17 +18,14 @@
 
   -# About and Contact Module
   .sidebar-module
-    %ul.list-unstyled
-      = link_to(about_us_index_path) do
-        %li
-          %button.btn.btn-default.btn-block {:role => 'button'} About
-      = link_to(contact_url) do
-        %li
-          %button.btn.btn-default.btn-block {:role => 'button'} Contact
+    = link_to(about_us_index_path)
+      %button.btn.btn-default.btn-block {role: 'button'} About
+    = link_to(contact_url)
+      %button.btn.btn-default.btn-block {role: 'button'} Contact
 
   -# Social links buttons
   .col-md-4
-    %a.btn.btn-default.disabled{:href => '#', :role => 'button'} 1
+    %a.btn.btn-default.disabled{ :role => 'button'} 1
   .col-md-4
     %a.btn.btn-default.disabled{:href => '#', :role => 'button'} 2
   .col-md-4

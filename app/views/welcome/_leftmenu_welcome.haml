@@ -5,7 +5,7 @@
       =link_to story do
         -# Head image of story
         .thumbnail= image_tag(story.main_page_image, alt: 'Thumbnail image')
-          .caption
-            -# Title of story
-            %h3.text-center= story.name
-            %p.text-center= story.updated_at.strftime("%e.%m.%Y")
+        .caption
+          -# Title of story
+          %h3.text-center= story.name
+          %p.text-center= story.updated_at.strftime("%e.%m.%Y")
