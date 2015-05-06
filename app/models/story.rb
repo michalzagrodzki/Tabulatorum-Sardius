@@ -6,6 +6,9 @@ class Story < ActiveRecord::Base
   # Association with tags
   has_many :tags
 
+  # Assocations with pictures
+  has_many :pictures
+
   # Check presence of title and minimum length of text
   validates :name, presence: true, uniqueness: true, length: { minimum: 3 }
 

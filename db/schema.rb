@@ -11,26 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327140532) do
+ActiveRecord::Schema.define(version: 20150503122610) do
 
-  create_table "stories", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "pictures", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "link"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "story_id"
+  end
+
+  create_table "stories", force: true do |t|
     t.string   "name"
-    t.string   "link_image_1"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.decimal  "latitude"
     t.decimal  "longitude"
     t.text     "advice"
     t.text     "story_text"
+    t.string   "main_page_image"
+    t.string   "header_image"
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "tags", force: true do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "story_id"
   end
 
-  add_index "tags", ["story_id"], name: "index_tags_on_story_id"
+  add_index "tags", ["story_id"], name: "index_tags_on_story_id", using: :btree
 
 end

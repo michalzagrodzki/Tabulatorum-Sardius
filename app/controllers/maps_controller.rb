@@ -3,10 +3,12 @@ class MapsController < ApplicationController
   #fetch only index
   before_action :fetch_elements, only: [ :index ]
 
+  expose(:stories)
+  expose(:hash)
   def index
-    @stories = Story.all
+    stories = Story.all
     # variables passed to Google Maps
-    @hash = Gmaps4rails.build_markers(@stories) do |story, marker|
+    @hash = Gmaps4rails.build_markers(stories) do |story, marker|
       marker.lat story.latitude
       marker.lng story.longitude
       marker.infowindow story.name
@@ -22,6 +24,7 @@ class MapsController < ApplicationController
   private
 
   def fetch_elements
-    @story = Story.all
+    story = Story.all
   end
+
 end

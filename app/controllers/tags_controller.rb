@@ -3,14 +3,15 @@ class TagsController < ApplicationController
   # restricting elementes which will be fetched:
   before_action :fetch_element, only: [:show, :index]
 
+  expose(:tags)
+  expose(:tag)
+
   # function for listing all tags
   def index
-    @tags = Tag.all
   end
 
   # function for listing specific tag by it's param
   def show
-    @tag = Tag.find(params[:id])
   end
 
   # for this time, other functions - new, update, delete - are not defined
@@ -34,7 +35,7 @@ class TagsController < ApplicationController
   private
 
   def fetch_element
-    @tags = Tag.all
+    tags = Tag.all
   end
 
 end
