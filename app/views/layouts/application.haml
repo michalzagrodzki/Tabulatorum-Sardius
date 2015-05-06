@@ -10,12 +10,12 @@
 
     -# Title Specific Meta
     %title Milion Stories
-    %meta{name: 'description', content: yield :head_title }
+    %meta{name: 'description', content: :head_title }
     %meta{content: 'Anna Huk and Michal Zagrodzki', name: 'author'}
 
     -# Mobile Specific Meta
     %meta{content: 'width=device-width, initial-scale=1, maximum-scale=1', name: 'viewport'}
-.col
+
     -# Stylesheets
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
