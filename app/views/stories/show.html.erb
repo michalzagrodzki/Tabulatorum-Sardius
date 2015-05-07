@@ -60,9 +60,7 @@
         </div>
 
     <% end %>
-    <% story.pictures.each do |pic| %>
-        <p><%= pic.title %></p>
-    <% end %>
+    
     <!-- Social media items -->
         <%= render 'socialmedia_icons' %>
     <!-- /Social media items -->
@@ -75,9 +73,9 @@
     <p class='text-center text-lowercase'><small>12.10.2014</small></p>
 
     <div class='row'>
-      <% for i in 1..9 do %>
+      <% story.pictures.each do |picture| %>
           <div class='col-md-4'>
-            <%= image_tag('malta-photoblog-01.jpg', class: 'img-responsive img-thumbnail', alt:"#{i}") %>
+            <%= link_in_image(picture.link, pictures_show_url, {class: 'img-responsive img-thumbnail', alt:""}) %>
           </div>
       <% end %>
     </div>
