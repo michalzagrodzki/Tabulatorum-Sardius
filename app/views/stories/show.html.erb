@@ -60,7 +60,7 @@
         </div>
 
     <% end %>
-    
+
     <!-- Social media items -->
         <%= render 'socialmedia_icons' %>
     <!-- /Social media items -->
@@ -75,7 +75,7 @@
     <div class='row'>
       <% story.pictures.each do |picture| %>
           <div class='col-md-4'>
-            <%= link_in_image(picture.link, pictures_show_url, {class: 'img-responsive img-thumbnail', alt:""}) %>
+            <%= link_in_image(picture.link, story_pictures_path(story), {class: 'img-responsive img-thumbnail', alt:""}) %>
           </div>
       <% end %>
     </div>
