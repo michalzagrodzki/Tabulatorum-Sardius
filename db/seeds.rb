@@ -85,6 +85,7 @@ picture_01 = Picture.create(
     title: 'Regular image 01',
     description: 'Spectacular view.',
     link: link_to_regular_image_01,
+    location: 'Sliema, Malta',
     latitude: 35.897622,
     longitude: 14.538297,
     story_id: 1
@@ -96,6 +97,7 @@ picture_02 = Picture.create(
     title: 'Regular image 02',
     description: 'Spectacular view.',
     link: link_to_regular_image_02,
+    location: 'Sliema, Malta',
     latitude: 35.897222,
     longitude: 14.505297,
     story_id: 1
@@ -107,6 +109,7 @@ picture_03 = Picture.create(
     title: 'Regular image 03',
     description: 'Spectacular view.',
     link: link_to_regular_image_03,
+    location: 'Sliema, Malta',
     latitude: 35.894322,
     longitude: 14.508397,
     story_id: 1
@@ -118,6 +121,7 @@ picture_04 = Picture.create(
     title: 'Regular image 04',
     description: 'Spectacular view.',
     link: link_to_regular_image_04,
+    location: 'Sliema, Malta',
     latitude: 35.892322,
     longitude: 14.501297,
     story_id: 1
@@ -129,6 +133,7 @@ picture_05 = Picture.create(
     title: 'Regular image 05',
     description: 'Spectacular view.',
     link: link_to_regular_image_05,
+    location: 'Sliema, Malta',
     latitude: 35.899322,
     longitude: 14.505297,
     story_id: 1
@@ -140,6 +145,7 @@ picture_06 = Picture.create(
     title: 'Regular image 06',
     description: 'Spectacular view.',
     link: link_to_regular_image_06,
+    location: 'Sliema, Malta',
     latitude: 35.891422,
     longitude: 14.503297,
     story_id: 1
@@ -151,6 +157,7 @@ picture_07 = Picture.create(
     title: 'Regular image 07',
     description: 'Spectacular view.',
     link: link_to_regular_image_07,
+    location: 'Sliema, Malta',
     latitude: 35.895422,
     longitude: 14.507597,
     story_id: 1
@@ -162,6 +169,7 @@ picture_08 = Picture.create(
     title: 'Regular image 08',
     description: 'Spectacular view.',
     link: link_to_regular_image_08,
+    location: 'Sliema, Malta',
     latitude: 35.899222,
     longitude: 14.501897,
     story_id: 1
@@ -173,6 +181,7 @@ picture_09 = Picture.create(
     title: 'Regular image 09',
     description: 'Spectacular view.',
     link: link_to_regular_image_09,
+    location: 'Sliema, Malta',
     latitude: 35.892122,
     longitude: 14.501697,
     story_id: 1
