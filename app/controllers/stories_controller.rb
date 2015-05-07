@@ -26,6 +26,24 @@ class StoriesController < ApplicationController
 
   # function for showing specific story
   def show
+
+    # Function for GoogleMaps - showing pictures related to single story
+    @single_story = Story.find(params[:id])
+    # variables passed to Google Maps
+    @hash = Gmaps4rails.build_markers(@single_story.pictures) do |picture, marker|
+      marker.lat picture.latitude
+      marker.lng picture.longitude
+      marker.infowindow picture.link
+
+      # Specify information shown in expanded infowindow
+      marker.json({
+                      # name of story for marker/infowindow
+                      title: picture.title,
+                      # value for showing in infowindow
+                      lat: picture.latitude
+                  })
+    end
+
   end
 
   # for this time, other functions - new, update, delete - are not defined
