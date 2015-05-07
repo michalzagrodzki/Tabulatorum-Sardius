@@ -1,7 +1,6 @@
-%h1 Pictures#index
-%p Find me in app/views/pictures/index.html.haml
-
 .row
   - story.pictures.each do |picture|
     .col-md-4
       %div= image_tag(picture.link)
+      %p= picture.title
+      %p= picture.description
