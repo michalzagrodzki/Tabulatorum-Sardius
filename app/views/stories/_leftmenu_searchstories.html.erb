@@ -1,0 +1,23 @@
+<div class='col-md-10'>
+  <!-- Story loop -->
+  <% stories_search.each do |story| %>
+      <!-- Story Thumbnail of <%= story.name %>-->
+      <div class='col-md-4'>
+        <!-- Link to story-->
+        <%= link_to(story) do %>
+            <div class='thumbnail'>
+              <!-- Image of story -->
+              <%= image_tag(story.main_page_image, alt: 'Thumbnail image') %>
+              <div class='caption'>
+                <!-- Title of story-->
+                <h3 class='text-center'><%= story.name %></h3>
+                <!-- Date of last update of story -->
+                <p class='text-center'><%= story.updated_at.strftime("%e.%m.%Y") %></p>
+              </div>
+            </div>
+        <% end %>
+      </div>
+      <!-- /Story Thumbnail of <%= story.name %> -->
+  <% end %>
+
+</div>
