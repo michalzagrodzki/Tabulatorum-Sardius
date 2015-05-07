@@ -56,8 +56,8 @@ Story.create( name: 'Wicklow Way',
                   'part_1' => part_1_story
               },
               advice: advice_text,
-              main_page_image: 'link_to_main_page_image',
-              header_image: 'link_to_head_image',
+              main_page_image: link_to_main_page_image,
+              header_image: link_to_head_image,
               latitude: 53.083510,
               longitude: -6.256211 )
 
