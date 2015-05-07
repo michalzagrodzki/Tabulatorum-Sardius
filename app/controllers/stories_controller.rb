@@ -2,7 +2,6 @@ class StoriesController < ApplicationController
 
   # restricing elements, which can be accessed
   before_action :fetch_story, only: [ :show, :index ]
-  before_action :fetch_picture, only: [ :index, :show ]
 
   # decent_exposure
   expose(:stories)
@@ -51,10 +50,6 @@ class StoriesController < ApplicationController
 
   def fetch_story
     stories = Story.all
-  end
-
-  def fetch_picture
-    pictures = Picture.all
   end
 
 end
