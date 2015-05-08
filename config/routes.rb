@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'chapters/index'
+
   get 'pictures/index'
 
   get 'pictures/show'
@@ -8,6 +10,11 @@ Rails.application.routes.draw do
   resources :stories do
     resources :pictures
     resources :tags
+    resources :chapters
+  end
+
+  resources :chapters do
+    resources :pictures
   end
 
   # Link to contact page

@@ -6,6 +6,7 @@ class StoriesController < ApplicationController
   # decent_exposure
   expose(:stories)
   expose(:story)
+  expose_decorated(:chapters, ancestor: :story)
   expose_decorated(:pictures, ancestor: :story)
 
   ### Inspect this later

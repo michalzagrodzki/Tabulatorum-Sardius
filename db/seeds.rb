@@ -63,6 +63,26 @@ Story.create( name: 'Wicklow Way',
 
 #####
 
+## Chapters
+
+#####
+
+# Malta Chapters
+
+Chapter.create(
+    text: part_1_story,
+    story_id: 1 )
+
+Chapter.create(
+    text: part_2_story,
+    story_id: 1 )
+
+Chapter.create(
+    text: part_3_story,
+    story_id: 1 )
+
+#####
+
 ## Pictures
 
 #####
@@ -88,7 +108,8 @@ picture_01 = Picture.create(
     location: 'Sliema, Malta',
     latitude: 35.897622,
     longitude: 14.538297,
-    story_id: 1
+    story_id: 1,
+    chapter_id: 1
 )
 
 picture_01.save!
@@ -100,7 +121,8 @@ picture_02 = Picture.create(
     location: 'Sliema, Malta',
     latitude: 35.897222,
     longitude: 14.505297,
-    story_id: 1
+    story_id: 1,
+    chapter_id: 1
 )
 
 picture_02.save!
@@ -112,7 +134,8 @@ picture_03 = Picture.create(
     location: 'Sliema, Malta',
     latitude: 35.894322,
     longitude: 14.508397,
-    story_id: 1
+    story_id: 1,
+    chapter_id: 1
 )
 
 picture_03.save!
@@ -124,7 +147,8 @@ picture_04 = Picture.create(
     location: 'Sliema, Malta',
     latitude: 35.892322,
     longitude: 14.501297,
-    story_id: 1
+    story_id: 1,
+    chapter_id: 2
 )
 
 picture_04.save!
@@ -136,7 +160,8 @@ picture_05 = Picture.create(
     location: 'Sliema, Malta',
     latitude: 35.899322,
     longitude: 14.505297,
-    story_id: 1
+    story_id: 1,
+    chapter_id: 2
 )
 
 picture_05.save!
@@ -148,7 +173,8 @@ picture_06 = Picture.create(
     location: 'Sliema, Malta',
     latitude: 35.891422,
     longitude: 14.503297,
-    story_id: 1
+    story_id: 1,
+    chapter_id: 2
 )
 
 picture_06.save!
@@ -160,7 +186,8 @@ picture_07 = Picture.create(
     location: 'Sliema, Malta',
     latitude: 35.895422,
     longitude: 14.507597,
-    story_id: 1
+    story_id: 1,
+    chapter_id: 3
 )
 
 picture_07.save!
@@ -172,7 +199,8 @@ picture_08 = Picture.create(
     location: 'Sliema, Malta',
     latitude: 35.899222,
     longitude: 14.501897,
-    story_id: 1
+    story_id: 1,
+    chapter_id: 3
 )
 
 picture_08.save!
@@ -184,7 +212,8 @@ picture_09 = Picture.create(
     location: 'Sliema, Malta',
     latitude: 35.892122,
     longitude: 14.501697,
-    story_id: 1
+    story_id: 1,
+    chapter_id: 3
 )
 
 picture_09.save!

@@ -56,23 +56,20 @@
       <p class='text-center text-lowercase'><small><%= story.created_at %></small></p>
 
       <!-- Story - text part 1 -->
-      <% story.story_text.each do |key, value| %>
+      <% story.chapters.each do |chapter| %>
           <!-- Story text -->
           <div>
-            <p><%= value %></p>
+            <p><%= chapter.text %></p>
           </div>
 
           <!-- Pictures for story -->
-          <div class='row'>
-            <% increment = 0 %>
-            <% story.pictures.limit(3).offset(increment).each do |picture| %>
-                <div class='col-md-4'>
-                  <%= image_tag(picture.link,  class: 'img-responsive', alt: 'Title image') %>
-                </div>
-            <% end %>
-            <% increment += 3 %>
-          </div>
-
+        <div class='row'>
+          <% chapter.pictures.each do |picture| %>
+            <div class='col-md-4'>
+              <%= image_tag(picture.link,  class: 'img-responsive', alt: 'Title image') %>
+            </div>
+          <% end %>
+        </div>
       <% end %>
 
       <!-- Social media items -->
