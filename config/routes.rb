@@ -1,14 +1,7 @@
 Rails.application.routes.draw do
 
+  # Configuration for Devise
   devise_for :users
-
-  get 'advices/index'
-
-  get 'chapters/index'
-
-  get 'pictures/index'
-
-  get 'pictures/show'
 
   # Link to pages of stories
   resources :stories do
