@@ -9,6 +9,7 @@ gem 'decent_exposure', '~> 2.3.2'
 gem 'decent_decoration', '~> 0.0.6'
 gem 'quiet_assets', '~> 1.1.0'
 gem 'better_errors', '~> 2.1.1'
+gem 'devise', '~> 3.4.1'
 
 # Gems related to optimizing code
 gem 'rack-mini-profiler'
