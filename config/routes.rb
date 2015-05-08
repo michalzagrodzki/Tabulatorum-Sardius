@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'advices/index'
+
   get 'chapters/index'
 
   get 'pictures/index'
@@ -11,9 +13,14 @@ Rails.application.routes.draw do
     resources :pictures
     resources :tags
     resources :chapters
+    resources :advices
   end
 
   resources :chapters do
+    resources :pictures
+  end
+
+  resources :advices do
     resources :pictures
   end
 

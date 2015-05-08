@@ -71,6 +71,18 @@ Chapter.create(
 
 #####
 
+## Advice
+
+#####
+
+# Malta Chapters
+
+Advice.create(
+    text: advice_text,
+    story_id: 1 )
+
+#####
+
 ## Pictures
 
 #####
@@ -97,7 +109,8 @@ picture_01 = Picture.create(
     latitude: 35.897622,
     longitude: 14.538297,
     story_id: 1,
-    chapter_id: 1
+    chapter_id: 1,
+    advice_id: 1
 )
 
 picture_01.save!
@@ -110,7 +123,8 @@ picture_02 = Picture.create(
     latitude: 35.897222,
     longitude: 14.505297,
     story_id: 1,
-    chapter_id: 1
+    chapter_id: 1,
+    advice_id: 1
 )
 
 picture_02.save!
@@ -123,7 +137,8 @@ picture_03 = Picture.create(
     latitude: 35.894322,
     longitude: 14.508397,
     story_id: 1,
-    chapter_id: 1
+    chapter_id: 1,
+    advice_id: 1
 )
 
 picture_03.save!

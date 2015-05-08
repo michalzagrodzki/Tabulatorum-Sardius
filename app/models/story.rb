@@ -12,6 +12,9 @@ class Story < ActiveRecord::Base
   # Assocations with chapters
   has_many :chapters
 
+  # Assocations with advices
+  has_many :advices
+
   # Check presence of title and minimum length of text
   validates :name, presence: true, uniqueness: true, length: { minimum: 3 }
 

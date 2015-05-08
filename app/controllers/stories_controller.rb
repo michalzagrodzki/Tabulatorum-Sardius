@@ -8,6 +8,7 @@ class StoriesController < ApplicationController
   expose(:story)
   expose_decorated(:chapters, ancestor: :story)
   expose_decorated(:pictures, ancestor: :story)
+  expose_decorated(:advices, ancestor: :story)
 
   ### Inspect this later
   expose(:stories_search) {Story.search(params[:search]).order('updated_at desc') }
