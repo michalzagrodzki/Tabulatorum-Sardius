@@ -29,11 +29,6 @@ link_to_head_image = 'http://s6.postimg.org/hs84nmt1d/story_header_image.jpg'
 #####
 
 Story.create( name: 'Malta',
-              story_text: {
-                  'part_1' => part_1_story,
-                  'part_2' => part_2_story,
-                  'part_3' => part_3_story
-              },
               advice: advice_text,
               main_page_image: link_to_main_page_image,
               header_image: link_to_head_image,
@@ -41,10 +36,6 @@ Story.create( name: 'Malta',
               longitude: 14.447462 )
 
 Story.create( name: 'Cinque Terre',
-              story_text: {
-                  'part_1' => part_1_story,
-                  'part_2' => part_2_story
-              },
               advice: advice_text,
               main_page_image: link_to_main_page_image,
               header_image: link_to_head_image,
@@ -52,9 +43,6 @@ Story.create( name: 'Cinque Terre',
               longitude: 9.707102 )
 
 Story.create( name: 'Wicklow Way',
-              story_text: {
-                  'part_1' => part_1_story
-              },
               advice: advice_text,
               main_page_image: link_to_main_page_image,
               header_image: link_to_head_image,
