@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
   get 'advices/index'
 
   get 'chapters/index'
