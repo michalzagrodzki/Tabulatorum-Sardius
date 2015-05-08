@@ -1,5 +1,8 @@
 class WelcomeController < ApplicationController
 
+  # set rights for guest and user
+  before_action :authenticate_user!, except: [ :index ]
+
   expose(:stories)
 
   # function for showing all stories

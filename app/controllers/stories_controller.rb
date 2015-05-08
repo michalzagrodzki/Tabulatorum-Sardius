@@ -1,5 +1,8 @@
 class StoriesController < ApplicationController
 
+  # set rights for guest and user
+  before_action :authenticate_user!, except: [ :index, :show ]
+
   # restricing elements, which can be accessed
   before_action :fetch_story, only: [ :show, :index ]
 

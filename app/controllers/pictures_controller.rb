@@ -1,5 +1,8 @@
 class PicturesController < ApplicationController
 
+  # set rights for guest and user
+  before_action :authenticate_user!, except: [ :index ]
+
   expose(:pictures)
   expose(:picture)
   expose(:story)

@@ -1,5 +1,8 @@
 class MapsController < ApplicationController
 
+  # set rights for guest and user
+  before_action :authenticate_user!, except: [ :index ]
+
   #fetch only index
   before_action :fetch_elements, only: [ :index ]
 

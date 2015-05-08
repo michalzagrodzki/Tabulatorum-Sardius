@@ -1,5 +1,8 @@
 class TagsController < ApplicationController
 
+  # set rights for guest and user
+  before_action :authenticate_user!, except: [ :index, :show ]
+
   # restricting elementes which will be fetched:
   before_action :fetch_element, only: [:show, :index]
 
