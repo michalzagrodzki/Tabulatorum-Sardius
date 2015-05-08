@@ -29,21 +29,18 @@ link_to_head_image = 'http://s6.postimg.org/hs84nmt1d/story_header_image.jpg'
 #####
 
 Story.create( name: 'Malta',
-              advice: advice_text,
               main_page_image: link_to_main_page_image,
               header_image: link_to_head_image,
               latitude: 35.882056,
               longitude: 14.447462 )
 
 Story.create( name: 'Cinque Terre',
-              advice: advice_text,
               main_page_image: link_to_main_page_image,
               header_image: link_to_head_image,
               latitude: 44.127062,
               longitude: 9.707102 )
 
 Story.create( name: 'Wicklow Way',
-              advice: advice_text,
               main_page_image: link_to_main_page_image,
               header_image: link_to_head_image,
               latitude: 53.083510,
