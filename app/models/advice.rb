@@ -7,7 +7,7 @@ class Advice < ActiveRecord::Base
   has_many :pictures, inverse_of: :advice
 
   # Allows to save into child models
-  accepts_nested_attributes_for :pictures, reject_if: reject_picture
+  accepts_nested_attributes_for :pictures, reject_if: :reject_picture
 
   # Check presence of text
   validates :text, presence: true, length: { minimum: 3 }

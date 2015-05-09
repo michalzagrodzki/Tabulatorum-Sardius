@@ -16,9 +16,9 @@ class Story < ActiveRecord::Base
   has_many :advices, inverse_of: :story
 
   # Allows to save into child models
-  accepts_nested_attributes_for :chapters, rejects_if: reject_chapter
-  accepts_nested_attributes_for :advices, reject_if: reject_advice
-  accepts_nested_attributes_for :pictures, reject_if: reject_picture
+  accepts_nested_attributes_for :chapters, reject_if: :reject_chapter
+  accepts_nested_attributes_for :advices, reject_if: :reject_advice
+  accepts_nested_attributes_for :pictures, reject_if: :reject_picture
 
   # Check presence of title and minimum length of text
   validates :name, presence: true, uniqueness: true, length: { minimum: 3 }
