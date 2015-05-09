@@ -74,9 +74,41 @@
         <p class='text-center'>Anna Huk</p>
         <p class='text-center'>and</p>
         <p class='text-center'>Michal Zagrodzki</p>
+        <% unless user_signed_in? %>
+            <%= link_to(new_user_session_path) do %>
+                <button class='btn btn-default btn-block' role='button'>Log In</button>
+            <% end %>
+        <% end %>
+
+        <% if user_signed_in? %>
+            <%= link_to(destroy_user_session_path, :method => :delete) do %>
+                <button class='btn btn-default btn-block' role='button'>Log Out</button>
+                <hr>
+            <% end %>
+        <% end %>
+
       </div>
     </div>
   </div>
   <!-- /Copyright module -->
+  <% if user_signed_in? %>
+
+      <div class='sidebar-module'>
+
+        <ul class='list-unstyled'>
+          <%= link_to(new_story_path) do %>
+              <li>
+                <button class='btn btn-default btn-block' role='button'>Create Story</button>
+              </li>
+          <% end %>
+          <br>
+          <%= link_to(new_picture_path) do %>
+              <li>
+                <button class='btn btn-default btn-block' role='button'>Upload Pictures</button>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
 
 </div>

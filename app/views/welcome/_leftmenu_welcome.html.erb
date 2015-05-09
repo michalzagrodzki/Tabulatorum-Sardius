@@ -14,6 +14,13 @@
                 <!-- Date of last update of story -->
                 <p class='text-center'><%= story.updated_at.strftime("%e.%m.%Y") %></p>
               </div>
+
+              <% if user_signed_in? %>
+                  <%= link_to(edit_story_path(story)) do %>
+                      <button class='btn btn-default btn-block' role='button'>Edit Story</button>
+                  <% end %>
+              <% end %>
+
             </div>
         <% end %>
       </div>
