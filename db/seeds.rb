@@ -226,6 +226,17 @@ picture_09 = Picture.create(
 
 picture_09.save!
 
+#####
+
+## Users
+
+#####
+
+User.create(
+    email: "ok@ok.ok",
+    password: 'heyhoheyho',
+    password_confirmation: 'heyhoheyho' )
+
 
 #
 # tag_list = [
