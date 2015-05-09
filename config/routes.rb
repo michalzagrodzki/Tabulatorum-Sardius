@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :pictures
   end
 
+  resources :pictures
+
   # Link to contact page
   match '/contact_us', to: 'contacts#new', via: 'get', :as => :contact
   resources "contacts", only: [:new, :create]
