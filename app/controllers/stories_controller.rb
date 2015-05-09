@@ -68,11 +68,17 @@ class StoriesController < ApplicationController
   def destroy
   end
 
-  # private method for fetching elements to show
+
   private
 
+  # private method for fetching elements to show
   def fetch_story
     stories = Story.all
+  end
+
+  # strong parameters for creating new story
+  def story_params
+    params.require(:story).permit(:name, :main_page_image, :header_image)
   end
 
 end
