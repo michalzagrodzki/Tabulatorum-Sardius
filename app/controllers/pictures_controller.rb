@@ -14,6 +14,12 @@ class PicturesController < ApplicationController
   def index
   end
 
+  def new
+  end
+
+  def create
+  end
+
   # private method for fetching elements to show
   private
 

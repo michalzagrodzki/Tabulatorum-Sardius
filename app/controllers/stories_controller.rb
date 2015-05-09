@@ -54,6 +54,7 @@ class StoriesController < ApplicationController
   # for this time, other functions - new, update, delete - are not defined
   # unused function
   def new
+    @story = Story.new
   end
 
   # unused function
