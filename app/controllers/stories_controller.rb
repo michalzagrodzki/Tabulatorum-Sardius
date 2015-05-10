@@ -38,6 +38,7 @@ class StoriesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@single_story.pictures) do |picture, marker|
       marker.lat picture.latitude
       marker.lng picture.longitude
+      # Specify information shown in marker
       marker.infowindow picture.link
 
       # Specify information shown in expanded infowindow
