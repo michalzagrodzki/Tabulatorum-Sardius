@@ -12,8 +12,10 @@
           <div class="col-md-offset-2">
             <div class="col-md-6">
               <%= simple_form_for story do |f| %>
-                <%= f.input :name %>
-                <%= f.input :main_page_image %>
+                <%= f.input :name, label: 'Name of story please', hint: 'Field above must be filled.' %>
+                <%= f.input :main_page_image, placeholder: 'user@domain.com' %>
+                <%= f.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
+                <%= f.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
             </div>
             <div class="col-md-4">
               <div class="thumbnail">
@@ -56,7 +58,7 @@
         <div class="row">
           <div class="col-md-offset-2">
             <div class="col-md-6">
-              <%= f.fields_for story.chapters.build do |chapter_form| %>
+              <%= f.fields_for :chapters do |chapter_form| %>
                 <%= chapter_form.input :text, as: :text %>
               <% end %>
             </div>
@@ -79,7 +81,7 @@
       <div class="row">
         <div class="col-md-offset-2">
           <div class="col-md-6">
-            <%= f.fields_for story.advices.build do |advice_form| %>
+            <%= f.fields_for :advices do |advice_form| %>
               <%= advice_form.input :text, as: :text %>
             <% end %>
           </div>
@@ -102,8 +104,11 @@
     </div>
     <div class="col-md-offset-4">
       <div class='col-md-4'>
-        <%= f.button :submit %>
+        <%= f.button :submit, 'Create Story Now!', class: 'btn btn-block' %>
         <% end %>
+        <br>
+        <br>
+        <br>
       </div>
     </div>
 
