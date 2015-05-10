@@ -1,0 +1,27 @@
+<% if user_signed_in? %>
+  <div class="container">
+    <div class='col-md-12'>
+      <h1 class="text-center">Create Pictures</h1>
+      <%= link_to(_back_url) do %>
+        <button class='btn btn-default btn-block' role='button'>Go back</button>
+      <% end %>
+      <br>
+      <h3 class="text-center">Add Picture Section</h3>
+      <p class="text-center"> Here you add pictures, which will be stored in database</p>
+      <div class="col-md-6">
+        <%= simple_form_for picture do |f| %>
+          <%= f.input :title, label: 'Name of picture please', hint: 'Field above must be filled.' %>
+          <%= f.input :link, placeholder: 'user@domain.com', hint: 'Field above must be filled.' %>
+          <%= f.input :location, placeholder: 'user@domain.com' %>
+          <%= f.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
+          <%= f.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
+          <%= f.input :story_id, label: 'Assigned Story', placeholder: 'user@domain.com' %>
+          <%= f.input :chapter_id, label: 'Assigned Chapter - only for certain pictures', placeholder: 'user@domain.com' %>
+          <%= f.input :advice_id, label: 'Assigned Chapter - only for certain pictures', placeholder: 'user@domain.com' %>
+
+          <%= f.button :submit, 'Add Pictures!', class: 'btn btn-block' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
