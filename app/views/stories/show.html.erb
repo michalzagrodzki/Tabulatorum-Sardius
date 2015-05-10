@@ -53,7 +53,7 @@
     <div>
       <h1 class='text-center text-uppercase' id="story_section">story</h1>
       <!-- date -->
-      <p class='text-center text-lowercase'><small><%= story.created_at %></small></p>
+      <p class='text-center text-lowercase'><small><%= story.created_at.strftime("%e.%m.%Y") %></small></p>
 
       <!-- Story - Chapters -->
       <% story.chapters.each do |chapter| %>
@@ -82,7 +82,7 @@
     <div>
       <h1 class='text-center text-uppercase' id="pictures_section" >pictures</h1>
       <!-- date -->
-      <p class='text-center text-lowercase'><small>12.10.2014</small></p>
+      <p class='text-center text-lowercase'><small><%= story.updated_at.strftime("%e.%m.%Y") %></small></p>
 
       <div class='row'>
         <% story.pictures.each do |picture| %>
@@ -102,7 +102,7 @@
     <div data-no-turbolink>
       <h1 class='text-center text-uppercase' id="map_section">map</h1>
       <!-- date -->
-      <p class='text-center text-lowercase'><small><%= story.created_at %></small></p>
+      <p class='text-center text-lowercase'><small><%= story.updated_at.strftime("%e.%m.%Y") %></small></p>
 
       <%= render 'showstory_maps' %>
 
@@ -116,7 +116,7 @@
     <div>
       <h1 class='text-center text-uppercase' id="advice_section">advice</h1>
       <!-- date -->
-      <p class='text-center text-lowercase'><small><%= story.updated_at %></small></p>
+      <p class='text-center text-lowercase'><small><%= story.updated_at.strftime("%e.%m.%Y") %></small></p>
 
       <!-- Story - Advice -->
       <% story.advices.each do |advice| %>
