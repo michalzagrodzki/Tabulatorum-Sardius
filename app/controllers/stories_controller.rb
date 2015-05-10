@@ -4,7 +4,7 @@ class StoriesController < ApplicationController
   before_action :authenticate_user!, except: [ :index, :show ]
 
   # restricing elements, which can be accessed
-  before_action :fetch_story, only: [ :show, :index ]
+  before_action :fetch_story, only: [ :show, :index, :new, :create ]
 
   # decent_exposure
   expose(:stories)
@@ -52,10 +52,18 @@ class StoriesController < ApplicationController
 
   end
 
-  # for this time, other functions - new, update, delete - are not defined
-  # unused function
   def new
-    @story = Story.new
+    1.times { story.chapters.build }
+    1.times { story.advices.build }
+  end
+
+  def create
+    self.story = Story.new(story_params)
+      if story.save
+        redirect_to welcome_index_path, notice: 'Story added.'
+      else
+        render action: 'new'
+      end
   end
 
   # unused function
@@ -78,9 +86,12 @@ class StoriesController < ApplicationController
     stories = Story.all
   end
 
-  # strong parameters for creating new story
+  # strong parameters for creating new story with data for children - chapters, advices
   def story_params
-    params.require(:story).permit(:name, :main_page_image, :header_image)
+    params.require(:story).permit(
+        :id, :name, :main_page_image, :header_image, :latitude, :longitude,
+        chapters_attributes: [ :id, :text, :story_id, :_destroy ],
+        advices_attributes: [ :id, :text, :story_id, :_destroy ] )
   end
 
 end
