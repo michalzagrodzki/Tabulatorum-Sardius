@@ -92,8 +92,12 @@ class StoriesController < ApplicationController
   end
 
   def destroy
-    story.destroy
-    redirect_to root_path, notice: 'Story was successfully destroyed.'
+    if user_signed_in?
+      story.destroy
+      redirect_to root_path, notice: 'Story was successfully destroyed.'
+    else
+      redirect_to root_path
+    end
   end
 
 
