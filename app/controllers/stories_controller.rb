@@ -109,7 +109,8 @@ class StoriesController < ApplicationController
     params.require(:story).permit(
         :id, :name, :main_page_image, :header_image, :latitude, :longitude,
         chapters_attributes: [ :id, :text, :story_id, :_destroy ],
-        advices_attributes: [ :id, :text, :story_id, :_destroy ] )
+        advices_attributes: [ :id, :text, :story_id, :_destroy ],
+        picture_attributes: [ :id, :title, :description, :link, :location, :latitude, :longitude, :chapter_id, :advice_id ])
   end
 
 end
