@@ -71,12 +71,25 @@ class StoriesController < ApplicationController
       end
   end
 
-  # unused function
   def edit
+    if user_signed_in?
+      self.story = Story.find(params[:id])
+    else
+      redirect_to story
+    end
   end
 
   # unused function
   def update
+    if user_signed_in?
+      if story.update(story_params)
+        redirect_to story, notice: 'Story was successfully updated.'
+      else
+        render action: 'edit'
+      end
+    else
+      redirect_to root_path
+    end
   end
 
   # unused function
