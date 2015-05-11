@@ -24,9 +24,39 @@ class ChaptersController < ApplicationController
     end
   end
 
+  def edit
+    if user_signed_in?
+      self.chapter = Chapter.find(params[:id])
+    else
+      redirect_to story
+    end
+  end
+
+  def update
+    if user_signed_in?
+      if chapter.update(story_params)
+        redirect_to story, notice: 'Chapter was successfully updated.'
+      else
+        render action: 'edit'
+      end
+    else
+      redirect_to root_path
+    end
+  end
+
+  def destroy
+    if user_signed_in?
+      chapter.destroy
+      redirect_to story, notice: 'Chapter was successfully destroyed.'
+    else
+      redirect_to story
+    end
+  end
+
   private
+
   def chapter_params
     params.require(:chapter).permit(:id, :text,
-                                    pictures_attributes: [:id, :link ])
+                                    pictures_attributes: [:id, :link, :chapter_id, :story_id ] )
   end
 end
