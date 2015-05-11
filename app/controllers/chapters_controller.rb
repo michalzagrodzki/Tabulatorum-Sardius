@@ -20,12 +20,13 @@ class ChaptersController < ApplicationController
       story.chapters << chapter
       redirect_to story, notice: 'Chapter added.'
     else
-      render action: 'new'
+      redirect_to story
     end
   end
 
   private
   def chapter_params
-    params.require(:chapter).permit(:id, :text)
+    params.require(:chapter).permit(:id, :text,
+                                    pictures_attributes: [:id, :link ])
   end
 end
