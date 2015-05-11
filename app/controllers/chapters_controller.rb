@@ -2,6 +2,8 @@ class ChaptersController < ApplicationController
 
   expose(:chapter)
   expose(:story)
+  expose(:picture)
+  expose_decorated(:pictures, ancestor: :chapter)
 
   # set rights for guest and user
   before_action :authenticate_user!, except: [ :index ]
@@ -47,7 +49,7 @@ class ChaptersController < ApplicationController
   def destroy
     if user_signed_in?
       chapter.destroy
-      redirect_to story, notice: 'Chapter was successfully destroyed.'
+      redirect_to :back, notice: 'Chapter was successfully destroyed.'
     else
       redirect_to story
     end
