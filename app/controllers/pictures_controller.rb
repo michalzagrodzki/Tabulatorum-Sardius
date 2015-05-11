@@ -18,6 +18,12 @@ class PicturesController < ApplicationController
   end
 
   def create
+    self.picture = Picture.new(picture_params)
+    if picture.save
+      redirect_to welcome_index_path, notice: 'Pictures added.'
+    else
+      render action: 'new'
+    end
   end
 
   # private method for fetching elements to show
@@ -25,6 +31,13 @@ class PicturesController < ApplicationController
 
   def fetch_picture
     pictures = Picture.all
+  end
+
+  def picture_params
+    params.require(:picture).permit(:id, :title, :description,
+                                    :link, :story_id,
+                                    :chapter_id, :advice_id,
+                                    :latitude, :longitude )
   end
 
 end
