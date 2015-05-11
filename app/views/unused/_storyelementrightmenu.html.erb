@@ -31,3 +31,8 @@
   </div>
  </div>
 
+     <!-- Function for selecting picture for certain Chapter -->
+     <%= f.fields_for :pictures do |pic|%>
+       <%= pic.select(:chapter_id, @pictures_options) %>
+     <% end %>
+
