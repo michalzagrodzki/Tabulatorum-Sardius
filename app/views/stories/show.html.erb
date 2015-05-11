@@ -61,7 +61,6 @@
           <div>
             <p><%= chapter.text %></p>
           </div>
-
           <!-- Pictures for story -->
         <div class='row'>
           <% chapter.pictures.each do |picture| %>
@@ -70,7 +69,14 @@
             </div>
           <% end %>
         </div>
-      <% end %>
+    <% end %>
+      <% if user_signed_in? %>
+        <!-- Form for adding chapter -->
+        <%= simple_form_for [story, chapter] do |f| %>
+          <%= f.input :text, as: :text %>
+          <%= f.button :submit, 'Add Chapter', class: 'btn btn-block' %>
+        <% end %>
+    <% end %>
 
       <!-- Social media items -->
       <%= render 'socialmedia_icons' %>
