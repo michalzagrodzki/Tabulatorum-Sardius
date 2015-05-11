@@ -66,9 +66,32 @@
           <% chapter.pictures.each do |picture| %>
             <div class='col-md-4'>
               <%= image_tag(picture.link,  class: 'img-responsive', alt: 'Title image') %>
+              <% if user_signed_in? %>
+                <br>
+                <%= link_to(edit_picture_path(picture)) do %>
+                  <button class='btn btn-default btn-block' role='button'>Edit Picture</button>
+                <% end %>
+                <br>
+                <%= link_to(picture, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
+                  <button class='btn btn-default btn-block' role='button'>Delete Picture</button>
+                <% end %>
+                <hr/>
+              <% end %>
             </div>
           <% end %>
         </div>
+        <% if user_signed_in? %>
+          <br>
+          <%= link_to(edit_chapter_path(chapter)) do %>
+            <button class='btn btn-default btn-block' role='button'>Edit Chapter</button>
+          <% end %>
+          <br>
+          <%= link_to(chapter, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
+            <button class='btn btn-default btn-block' role='button'>Delete Chapter</button>
+          <% end %>
+          <hr/>
+          <br>
+        <% end %>
     <% end %>
 
       <% if user_signed_in? %>
