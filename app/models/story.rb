@@ -16,8 +16,8 @@ class Story < ActiveRecord::Base
   has_many :advices, inverse_of: :story
 
   # Allows to save into child models
-  accepts_nested_attributes_for :chapters, reject_if: lambda {|attributes| attributes['text'].blank?}
-  accepts_nested_attributes_for :advices, reject_if: lambda {|attributes| attributes['text'].blank?}
+  accepts_nested_attributes_for :chapters, reject_if: lambda {|attributes| attributes['text'].blank?}, allow_destroy: true
+  accepts_nested_attributes_for :advices, reject_if: lambda {|attributes| attributes['text'].blank?}, allow_destroy: true
   accepts_nested_attributes_for :pictures, reject_if: lambda {|attributes| attributes['link'].blank?}
 
   # Check presence of title and minimum length of text
