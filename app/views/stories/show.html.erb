@@ -70,12 +70,14 @@
           <% end %>
         </div>
     <% end %>
+
       <% if user_signed_in? %>
         <!-- Form for adding chapter -->
         <%= simple_form_for [story, chapter] do |f| %>
           <%= f.input :text, as: :text %>
           <%= f.button :submit, 'Add Chapter', class: 'btn btn-block' %>
         <% end %>
+
     <% end %>
 
       <!-- Social media items -->
