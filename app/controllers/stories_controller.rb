@@ -79,7 +79,6 @@ class StoriesController < ApplicationController
     end
   end
 
-  # unused function
   def update
     if user_signed_in?
       if story.update(story_params)
@@ -92,8 +91,9 @@ class StoriesController < ApplicationController
     end
   end
 
-  # unused function
   def destroy
+    story.destroy
+    redirect_to root_path, notice: 'Story was successfully destroyed.'
   end
 
 
