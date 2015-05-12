@@ -31,6 +31,7 @@ class ChaptersController < ApplicationController
 
       # Query list of pictures with story_id of certain story
       @pictures_options = story.pictures.map{|u| [ u.title, u.link ] }
+      
       self.chapter = Chapter.find(params[:id])
     else
       redirect_to story
