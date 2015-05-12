@@ -13,11 +13,16 @@
             <%= simple_form_for chapter do |f| %>
                 <div class="col-md-12">
               <%= f.input :text, label: 'Name of story please', hint: 'Field above must be filled.' %>
-
+                  <h3 class="text-center">Pictures Section</h3>
+                  <p class="text-center"> Here you choose which pictures from Story will be shown with this Chapter.</p>
                 <%= f.fields_for :pictures do |picture_form| %>
                     <div class="col-md-4">
+                      <div class="thumbnail">
                   <%= image_tag(picture_form.object.link) %>
+                        <div class="caption">
                   <%= picture_form.select(:chapter_id, @pictures_options) %>
+                        </div>
+                    </div>
                     </div>
                 <% end %>
 
