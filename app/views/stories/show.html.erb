@@ -96,9 +96,26 @@
 
       <% if user_signed_in? %>
         <!-- Form for adding chapter -->
+        <h3 class='text-center text-uppercase'>Add new Chapter</h3>
         <%= simple_form_for [story, chapter] do |f| %>
           <%= f.input :text, as: :text %>
-          <%= f.button :submit, 'Add Chapter', class: 'btn btn-block' %>
+          <div class="col-md-12">
+            <h3 class='text-center'>Add new pictures to Chapter</h3>
+            <div class="row">
+            <%= f.fields_for :pictures do |picture_form| %>
+
+                <div class="col-md-4">
+                <%= picture_form.input :title, label: 'Name of picture please', hint: 'Field above must be filled.' %>
+                <%= picture_form.input :link, placeholder: 'user@domain.com', hint: 'Field above must be filled.' %>
+                <%= picture_form.input :location, placeholder: 'user@domain.com' %>
+                <%= picture_form.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
+                <%= picture_form.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
+                </div>
+
+            <% end %>
+            </div>
+          </div>
+          <%= f.button :submit, 'Add Chapter with pictures', class: 'btn btn-block' %>
         <% end %>
 
     <% end %>

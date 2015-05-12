@@ -34,8 +34,7 @@ class StoriesController < ApplicationController
   # function for showing specific story
   def show
 
-    # Query list of pictures with story_id of certain story
-    @pictures_options = story.pictures.map{|u| [ u.title, u.link ] }
+    3.times { chapter.pictures.build }
 
     # Function for GoogleMaps - showing pictures related to single story
     @single_story = Story.find(params[:id])
