@@ -26,6 +26,26 @@ class PicturesController < ApplicationController
     end
   end
 
+  def edit
+    if user_signed_in?
+      self.picture = Picture.find(params[:id])
+    else
+      redirect_to story_path(picture.story_id)
+    end
+  end
+
+  def update
+    if user_signed_in?
+      if picture.update(picture_params)
+        redirect_to story_path(picture.story_id), notice: 'Picture was successfully updated.'
+      else
+        render action: 'edit'
+      end
+    else
+      redirect_to story_path(picture.story_id)
+    end
+  end
+
   def destroy
     if user_signed_in?
       picture.destroy
