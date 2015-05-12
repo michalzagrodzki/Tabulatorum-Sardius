@@ -34,7 +34,7 @@ class ChaptersController < ApplicationController
 
       self.chapter = Chapter.find(params[:id])
     else
-      redirect_to story
+      redirect_to story_path(chapter.story_id)
     end
   end
 
@@ -55,7 +55,7 @@ class ChaptersController < ApplicationController
       chapter.destroy
       redirect_to :back, notice: 'Chapter was successfully destroyed.'
     else
-      redirect_to story
+      redirect_to story_path(chapter.story_id)
     end
   end
 
