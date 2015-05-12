@@ -39,6 +39,30 @@
       </div>
     </div>
 
+    <% if user_signed_in? %>
+      <!-- admin buttons for story -->
+      <div class='col-md-8 col-md-offset-2'>
+        <br>
+        <div class='row'>
+          <div class='col-md-4'>
+            <%= link_to(edit_story_path(story)) do %>
+            <button class='btn btn-default btn-block' role='button'>Edit Story</button>
+            <% end %>
+          </div>
+          <div class='col-md-4'>
+            <%= link_to(edit_picture_path(story)) do %>
+            <button class='btn btn-default btn-block' role='button'>Manage Pictures of Story</button>
+            <% end %>
+          </div>
+          <div class='col-md-2 col-md-offset-2'>
+            <%= link_to(story, method: :delete, data: { confirm: 'Are you sure you want to delete it? All elements related to story will be deleted as well.' }) do %>
+            <button class='btn btn-default btn-block' role='button'>Delete Story</button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
   </div>
 
 </div>
