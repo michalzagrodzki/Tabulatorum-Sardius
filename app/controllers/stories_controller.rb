@@ -62,7 +62,7 @@ class StoriesController < ApplicationController
     1.times { story.chapters.build }
     1.times { story.advices.build }
     12.times { story.pictures.build }
-    
+
   end
 
   def create
