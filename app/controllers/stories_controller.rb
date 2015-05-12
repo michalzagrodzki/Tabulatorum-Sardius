@@ -57,8 +57,12 @@ class StoriesController < ApplicationController
   end
 
   def new
+
+    # number of forms for chapters, advices, pictures
     1.times { story.chapters.build }
     1.times { story.advices.build }
+    12.times { story.pictures.build }
+    
   end
 
   def create

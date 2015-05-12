@@ -100,7 +100,23 @@
 
     <div class='col-md-12'>
       <h3 class="text-center">Picture Section</h3>
-      <p class="text-center"> Here you chose which pictures will be shown in story</p>
+      <p class="text-center"> Here you add pictures linked to that Story</p>
+      <div class="row">
+      <%= f.fields_for :pictures do |picture_form| %>
+
+          <div class="col-md-4">
+            <%= picture_form.input :title, label: 'Name of picture please', hint: 'Field above must be filled.' %>
+            <%= picture_form.input :link, placeholder: 'user@domain.com', hint: 'Field above must be filled.' %>
+            <%= picture_form.input :location, placeholder: 'user@domain.com' %>
+            <%= picture_form.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
+            <%= picture_form.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
+            <br>
+            <hr/>
+            <br>
+          </div>
+
+      <% end %>
+      </div>
     </div>
     <div class="col-md-offset-3">
       <div class='col-md-8'>
