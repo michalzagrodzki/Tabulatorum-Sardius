@@ -1,27 +1,34 @@
 <% if user_signed_in? %>
   <div class="container">
     <div class='col-md-12'>
-      <h1 class="text-center">Edit Chapter</h1>
-      <%= link_to(_back_url) do %>
+      <h1 class="text-center">Edit <%= chapter.id %> Chapter of <%= story.name %></h1>
+      <%= link_to(story_path(story)) do %>
         <button class='btn btn-default btn-block' role='button'>Go back</button>
       <% end %>
       <br>
       <h3 class="text-center">Chapter Section</h3>
-      <p class="text-center"> Here you edit elements which are visible on Front Page</p>
+      <p class="text-center"> Here you edit elements which are part of single chapter.</p>
           <div class="col-md-12">
+            <div class="row">
             <%= simple_form_for chapter do |f| %>
+                <div class="col-md-12">
               <%= f.input :text, label: 'Name of story please', hint: 'Field above must be filled.' %>
 
                 <%= f.fields_for :pictures do |picture_form| %>
+                    <div class="col-md-4">
                   <%= image_tag(picture_form.object.link) %>
-                  <%= picture_form.input :link %>
+                  <%= picture_form.select(:chapter_id, @pictures_options) %>
+                    </div>
                 <% end %>
 
               <%= f.button :submit, 'Publish changes.', class: 'btn btn-block' %>
               <br>
               <br>
               <br>
+                </div>
             <% end %>
+
+            </div>
           </div>
 
     </div>
