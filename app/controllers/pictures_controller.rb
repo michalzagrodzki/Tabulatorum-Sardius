@@ -26,6 +26,15 @@ class PicturesController < ApplicationController
     end
   end
 
+  def destroy
+    if user_signed_in?
+      picture.destroy
+      redirect_to :back, notice: 'Picture was successfully destroyed.'
+    else
+      redirect_to story
+    end
+  end
+
   # private method for fetching elements to show
   private
 
