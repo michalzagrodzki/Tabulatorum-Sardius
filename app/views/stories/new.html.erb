@@ -105,14 +105,15 @@
       <%= f.fields_for :pictures do |picture_form| %>
 
           <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
             <%= picture_form.input :title, label: 'Name of picture please', hint: 'Field above must be filled.' %>
             <%= picture_form.input :link, placeholder: 'user@domain.com', hint: 'Field above must be filled.' %>
             <%= picture_form.input :location, placeholder: 'user@domain.com' %>
             <%= picture_form.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
             <%= picture_form.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
-            <br>
-            <hr/>
-            <br>
+              </div>
+            </div>
           </div>
 
       <% end %>
