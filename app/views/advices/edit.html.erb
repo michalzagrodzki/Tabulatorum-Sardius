@@ -1,0 +1,42 @@
+<% if user_signed_in? %>
+  <div class="container">
+    <div class='col-md-12'>
+      <h1 class="text-center">Edit Advice no. <%= advice.id %> of <%= story.name %></h1>
+      <%= link_to(story_path(story)) do %>
+        <button class='btn btn-default btn-block' role='button'>Go back</button>
+      <% end %>
+      <br>
+      <h3 class="text-center">Advice Section</h3>
+      <p class="text-center"> Here you edit elements which are part of single advice.</p>
+      <div class="col-md-12">
+        <div class="row">
+          <%= simple_form_for advice do |f| %>
+            <div class="col-md-12">
+              <%= f.input :text, label: 'Name of story please', hint: 'Field above must be filled.' %>
+              <h3 class="text-center">Pictures Section</h3>
+              <p class="text-center"> Here you choose which pictures from Story will be shown with this Advice.</p>
+              <%= f.fields_for :pictures do |picture_form| %>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <%= image_tag(picture_form.object.link) %>
+                    <div class="caption">
+                      <%= picture_form.select(:advice_id, @pictures_options) %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+
+              <%= f.button :submit, 'Publish changes.', class: 'btn btn-block' %>
+              <br>
+              <br>
+              <br>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<% end %>

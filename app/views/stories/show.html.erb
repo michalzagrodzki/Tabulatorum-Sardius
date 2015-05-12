@@ -202,9 +202,58 @@
             <% advice.pictures.each do |picture| %>
                 <div class='col-md-4'>
                   <%= image_tag(picture.link,  class: 'img-responsive', alt: 'Title image') %>
+                  <% if user_signed_in? %>
+                    <br>
+                    <%= link_to(edit_picture_path(picture)) do %>
+                      <button class='btn btn-default btn-block' role='button'>Edit Picture</button>
+                    <% end %>
+                    <br>
+                    <%= link_to(picture, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
+                      <button class='btn btn-default btn-block' role='button'>Delete Picture</button>
+                    <% end %>
+                    <hr/>
+                  <% end %>
                 </div>
             <% end %>
           </div>
+          <% if user_signed_in? %>
+            <br>
+            <%= link_to(edit_story_advice_path(story, advice)) do %>
+              <button class='btn btn-default btn-block' role='button'>Edit Advice</button>
+            <% end %>
+            <br>
+            <%= link_to(advice, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
+              <button class='btn btn-default btn-block' role='button'>Delete Advice</button>
+            <% end %>
+            <hr/>
+            <br>
+          <% end %>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <!-- Form for adding chapter -->
+        <h3 class='text-center text-uppercase'>Add new Advice</h3>
+        <%= simple_form_for [story, advice] do |f| %>
+          <%= f.input :text, as: :text %>
+          <div class="col-md-12">
+            <h3 class='text-center'>Add new pictures to Advice</h3>
+            <div class="row">
+              <%= f.fields_for :pictures do |picture_form| %>
+
+                <div class="col-md-4">
+                  <%= picture_form.input :title, label: 'Name of picture please', hint: 'Field above must be filled.' %>
+                  <%= picture_form.input :link, placeholder: 'user@domain.com', hint: 'Field above must be filled.' %>
+                  <%= picture_form.input :location, placeholder: 'user@domain.com' %>
+                  <%= picture_form.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
+                  <%= picture_form.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
+                </div>
+
+              <% end %>
+            </div>
+          </div>
+          <%= f.button :submit, 'Add Advice with pictures', class: 'btn btn-block' %>
+        <% end %>
+
       <% end %>
 
       <!-- Social media items -->

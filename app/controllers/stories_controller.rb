@@ -34,7 +34,9 @@ class StoriesController < ApplicationController
   # function for showing specific story
   def show
 
+    # number of forms for pictures within chapter or advice
     3.times { chapter.pictures.build }
+    3.times { advice.pictures.build }
 
     # Function for GoogleMaps - showing pictures related to single story
     @single_story = Story.find(params[:id])
