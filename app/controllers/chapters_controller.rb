@@ -31,7 +31,6 @@ class ChaptersController < ApplicationController
 
       # Query list of pictures with story_id of certain story
       @pictures_options = story.pictures.map{|u| [ u.title, u.link ] }
-
       self.chapter = Chapter.find(params[:id])
     else
       redirect_to story
@@ -40,8 +39,8 @@ class ChaptersController < ApplicationController
 
   def update
     if user_signed_in?
-      if chapter.update(story_params)
-        redirect_to story, notice: 'Chapter was successfully updated.'
+      if chapter.update(chapter_params)
+        redirect_to story_path(chapter.story_id), notice: 'Chapter was successfully updated.'
       else
         render action: 'edit'
       end
