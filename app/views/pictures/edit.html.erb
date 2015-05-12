@@ -10,22 +10,22 @@
       <p class="text-center"> Here you edit Picture</p>
       <div class="row">
 
-          <div class="col-md-10">
-            <div class="col-md-offset-2">
-              <div class="thumbnail">
-                <%= image_tag(picture.link) %>
+        <div class="col-md-10">
+          <div class="col-md-offset-2">
+            <div class="thumbnail">
+              <%= image_tag(picture.link) %>
 
-              <div class="caption"></div>
-              <%= simple_form_for picture do |f| %>
-                <%= f.input :title, label: 'Name of picture please', hint: 'Field above must be filled.' %>
-                <%= f.input :link, placeholder: 'user@domain.com', hint: 'Field above must be filled.' %>
-                <%= f.input :location, placeholder: 'user@domain.com' %>
-                <%= f.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
-                <%= f.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
-              </div>
-
+            <div class="caption"></div>
+            <%= simple_form_for picture do |f| %>
+              <%= f.input :title, label: 'Name of picture please', hint: 'Field above must be filled.' %>
+              <%= f.input :link, placeholder: 'user@domain.com', hint: 'Field above must be filled.' %>
+              <%= f.input :location, placeholder: 'user@domain.com' %>
+              <%= f.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
+              <%= f.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
             </div>
+
           </div>
+        </div>
       </div>
     </div>
 

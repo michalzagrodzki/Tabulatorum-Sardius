@@ -1,19 +1,17 @@
 <div class='col-md-2'>
   <!-- Title -->
   <%= link_to(welcome_index_path) do  %>
-      <div class='sidebar-module'>
-        <h2 class='text-center'>Million Stories</h2>
-      </div>
+    <div class='sidebar-module'>
+      <h2 class='text-center'>Million Stories</h2>
+    </div>
   <% end %>
   <!-- /Title -->
 
-
-
   <!-- Map module -->
   <div class='sidebar-module' data-no-turbolink>
-      <%= link_to(map_path) do %>
-        <button class='btn btn-default btn-block' role='button'>Map</button>
-      <% end %>
+    <%= link_to(map_path) do %>
+      <button class='btn btn-default btn-block' role='button'>Map</button>
+    <% end %>
   </div>
   <hr>
   <!-- /Map module -->
@@ -22,14 +20,14 @@
   <div class='sidebar-module'>
     <ul class='list-unstyled'>
       <%= link_to(about_us_index_path) do %>
-          <li>
-            <button class='btn btn-default btn-block' role='button'>About</button>
-          </li>
+        <li>
+          <button class='btn btn-default btn-block' role='button'>About</button>
+        </li>
       <% end %>
       <%= link_to(contact_url) do %>
-          <li>
-            <button class='btn btn-default btn-block' role='button'>Contact</button>
-          </li>
+        <li>
+          <button class='btn btn-default btn-block' role='button'>Contact</button>
+        </li>
       <% end %>
     </ul>
   </div>
@@ -75,16 +73,16 @@
         <p class='text-center'>and</p>
         <p class='text-center'>Michal Zagrodzki</p>
         <% unless user_signed_in? %>
-            <%= link_to(new_user_session_path) do %>
-                <button class='btn btn-default btn-block' role='button'>Log In</button>
-            <% end %>
+          <%= link_to(new_user_session_path) do %>
+            <button class='btn btn-default btn-block' role='button'>Log In</button>
+          <% end %>
         <% end %>
 
         <% if user_signed_in? %>
-            <%= link_to(destroy_user_session_path, :method => :delete) do %>
-                <button class='btn btn-default btn-block' role='button'>Log Out</button>
-                <hr>
-            <% end %>
+          <%= link_to(destroy_user_session_path, :method => :delete) do %>
+            <button class='btn btn-default btn-block' role='button'>Log Out</button>
+            <hr>
+          <% end %>
         <% end %>
 
       </div>
@@ -93,22 +91,23 @@
   <!-- /Copyright module -->
   <% if user_signed_in? %>
 
-      <div class='sidebar-module'>
+    <div class='sidebar-module'>
 
-        <ul class='list-unstyled'>
-          <%= link_to(new_story_path) do %>
-              <li>
-                <button class='btn btn-default btn-block' role='button'>Create Story</button>
-              </li>
-          <% end %>
-          <br>
-          <%= link_to(new_picture_path) do %>
-              <li>
-                <button class='btn btn-default btn-block' role='button'>Upload Pictures</button>
-              </li>
-          <% end %>
-        </ul>
-      </div>
+      <ul class='list-unstyled'>
+        <%= link_to(new_story_path) do %>
+          <li>
+            <button class='btn btn-default btn-block' role='button'>Create Story</button>
+          </li>
+        <% end %>
+        <br>
+        <%= link_to(new_picture_path) do %>
+          <li>
+            <button class='btn btn-default btn-block' role='button'>Upload Pictures</button>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
   <% end %>
 
 </div>
