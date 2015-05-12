@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <div class="container">
     <div class='col-md-12'>
-      <h1 class="text-center">Edit <%= chapter.id %> Chapter of <%= story.name %></h1>
+      <h1 class="text-center">Edit Chapter no. <%= chapter.id %> of <%= story.name %></h1>
       <%= link_to(story_path(story)) do %>
         <button class='btn btn-default btn-block' role='button'>Go back</button>
       <% end %>
