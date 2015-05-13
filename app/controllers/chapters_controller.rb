@@ -4,13 +4,13 @@ class ChaptersController < ApplicationController
   expose(:story)
   expose(:picture)
   expose_decorated(:pictures, ancestor: :chapter)
+  expose_decorated(:pictures, ancestor: :story)
 
   # set rights for guest and user
   before_action :authenticate_user!, except: [ :index ]
 
   def create
     self.chapter = Chapter.new(chapter_params)
-
     if chapter.save
       story.chapters << chapter
       redirect_to story, notice: 'Chapter added.'
@@ -56,6 +56,7 @@ class ChaptersController < ApplicationController
 
   def chapter_params
     params.require(:chapter).permit(:id, :text,
-                                    pictures_attributes: [:id, :link, :chapter_id, :story_id ] )
+                                    pictures_attributes: [ :id, :title, :description, :link, :location, :latitude, :longitude,
+                                                          :chapter_id, :story_id ] )
   end
 end

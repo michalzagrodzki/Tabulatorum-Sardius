@@ -126,7 +126,7 @@
           <div class="col-md-12">
             <h3 class='text-center'>Add new pictures to Chapter</h3>
             <div class="row">
-            <%= f.fields_for :pictures do |picture_form| %>
+            <%= f.simple_fields_for :pictures, { story_id: story.id } do |picture_form| %>
 
                 <div class="col-md-4">
                 <%= picture_form.input :title, label: 'Name of picture please', hint: 'Field above must be filled.' %>
