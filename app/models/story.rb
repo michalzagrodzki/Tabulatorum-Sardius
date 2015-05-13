@@ -21,7 +21,7 @@ class Story < ActiveRecord::Base
   accepts_nested_attributes_for :pictures, reject_if: lambda {|attributes| attributes['link'].blank?}
 
   # Check presence of title and minimum length of text
-  validates :name, presence: true, uniqueness: true, length: { minimum: 3 }
+  validates :name, presence: true, length: { minimum: 3 }
 
   # Returns story, which contains at least one word from query
   # Word 'search' is linked to Controller and View
