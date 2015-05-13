@@ -8,6 +8,7 @@
       <br>
       <h3 class="text-center">Pictures Section</h3>
       <p class="text-center"> Here you manage pictures which are part of a Story.</p>
+      <p class="text-center"> No. of Pictures: <%= story.pictures.size %>. </p>
       <div class="col-md-12">
         <div class="row">
           <%= simple_form_for story, { url: {:action => 'update_pictures'} } do |f| %>
