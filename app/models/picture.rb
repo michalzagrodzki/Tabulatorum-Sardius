@@ -1,7 +1,7 @@
 class Picture < ActiveRecord::Base
 
   # Association with stories
-  belongs_to :story
+  belongs_to :story, inverse_of: :picture
 
   # Association with stories
   belongs_to :chapter
