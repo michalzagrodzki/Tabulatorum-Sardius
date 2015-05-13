@@ -87,7 +87,29 @@ class StoriesController < ApplicationController
   def update
     if user_signed_in?
       if story.update(story_params)
-        redirect_to story, notice: 'Story was successfully updated.'
+        redirect_to root_path, notice: 'Story was successfully updated.'
+      else
+        render action: 'edit'
+      end
+    else
+      redirect_to root_path
+    end
+  end
+
+  # function for editing all pictures within one story
+  def edit_pictures
+    if user_signed_in?
+      self.story = Story.find(params[:id])
+    else
+      redirect_to story
+    end
+  end
+
+  # function for updating all pictures within one story
+  def update_pictures
+    if user_signed_in?
+      if story.update(picture_manage_params)
+        redirect_to story, notice: 'Pictures was successfully updated.'
       else
         render action: 'edit'
       end
@@ -119,7 +141,14 @@ class StoriesController < ApplicationController
         :id, :name, :main_page_image, :header_image, :latitude, :longitude,
         chapters_attributes: [ :id, :text, :story_id, :_destroy ],
         advices_attributes: [ :id, :text, :story_id, :_destroy ],
-        picture_attributes: [ :id, :title, :description, :link, :location, :latitude, :longitude,
+        pictures_attributes: [ :id, :title, :description, :link, :location, :latitude, :longitude,
+                              :chapter_id, :advice_id, :story_id ] )
+  end
+
+  # strong parameters for managing pictures withing one story
+  def picture_manage_params
+    params.require(:story).permit(
+        pictures_attributes: [ :id, :title, :description, :link, :location, :latitude, :longitude,
                               :chapter_id, :advice_id, :story_id ] )
   end
 
