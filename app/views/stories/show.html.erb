@@ -92,13 +92,18 @@
               <%= image_tag(picture.link,  class: 'img-responsive', alt: 'Title image') %>
               <% if user_signed_in? %>
                 <br>
-                <%= link_to(edit_picture_path(picture)) do %>
-                  <button class='btn btn-default btn-block' role='button'>Edit Picture</button>
-                <% end %>
-                <br>
-                <%= link_to(picture, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
-                  <button class='btn btn-default btn-block' role='button'>Delete Picture</button>
-                <% end %>
+                <div class="row">
+                  <div class="col-md-5 col-md-offset-1">
+                    <%= link_to(edit_picture_path(picture)) do %>
+                      <button class='btn btn-default btn-block' role='button'>Edit Picture</button>
+                    <% end %>
+                  </div>
+                  <div class="col-md-5 ">
+                    <%= link_to(picture, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
+                      <button class='btn btn-default btn-block' role='button'>Delete Picture</button>
+                    <% end %>
+                  </div>
+                </div>
                 <hr/>
               <% end %>
             </div>
@@ -106,13 +111,18 @@
         </div>
         <% if user_signed_in? %>
           <br>
-          <%= link_to(edit_story_chapter_path(story, chapter)) do %>
-            <button class='btn btn-default btn-block' role='button'>Edit Chapter</button>
-          <% end %>
-          <br>
-          <%= link_to(chapter, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
-            <button class='btn btn-default btn-block' role='button'>Delete Chapter</button>
-          <% end %>
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+              <%= link_to(edit_story_chapter_path(story, chapter)) do %>
+                <button class='btn btn-default btn-block' role='button'>Edit Chapter</button>
+              <% end %>
+            </div>
+            <div class="col-md-2 col-md-offset-2">
+              <%= link_to(chapter, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
+                <button class='btn btn-default btn-block' role='button'>Delete Chapter</button>
+              <% end %>
+            </div>
+          </div>
           <hr/>
           <br>
         <% end %>
@@ -120,29 +130,35 @@
 
       <% if user_signed_in? %>
         <!-- Form for adding chapter -->
-        <h3 class='text-center text-uppercase'>Add new Chapter</h3>
-        <%= simple_form_for [story, chapter] do |f| %>
-          <%= f.input :text, as: :text %>
-          <div class="col-md-12">
-            <h3 class='text-center'>Add new pictures to Chapter</h3>
-            <div class="row">
-            <%= f.simple_fields_for :pictures do |picture_form| %>
+        <div class="panel panel-default panel-info">
+          <div class="panel-heading"><h3 class='text-center text-uppercase'>Add new Chapter</h3></div>
+          <div class="panel-body">
+          <%= simple_form_for [story, chapter] do |f| %>
+            <%= f.input :text, as: :text %>
+            <div class="col-md-12">
+              <h3 class='text-center'>Add new pictures to Chapter</h3>
+              <div class="row">
+              <%= f.simple_fields_for :pictures do |picture_form| %>
 
-                <div class="col-md-4">
-                <%= picture_form.input :title, label: 'Name of picture please', hint: 'Field above must be filled.' %>
-                <%= picture_form.input :link, placeholder: 'user@domain.com', hint: 'Field above must be filled.' %>
-                <%= picture_form.input :location, placeholder: 'user@domain.com' %>
-                <%= picture_form.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
-                <%= picture_form.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
-                <%= picture_form.input :story_id, hint: 'Put number of story (visible in URL field).' %>
-                </div>
+                  <div class="col-md-4">
+                    <div class="panel panel-default panel-body">
+                    <%= picture_form.input :title, label: 'Title of picture', placeholder: 'View over city.', hint: 'Field above must be filled.' %>
+                    <%= picture_form.input :link, label: 'Link to picture on server', placeholder: 'www.example.com', hint: 'Field above must be filled.' %>
+                    <%= picture_form.input :story_id, label: 'Story, to which picture is linked', placeholder: '1', hint: 'Value is visible in URL field.' %>
+                    <%= picture_form.input :location, label: 'Name of place where picture was taken', placeholder: 'London, UK' %>
+                    <%= picture_form.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
+                    <%= picture_form.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
 
-            <% end %>
+                    </div>
+                  </div>
+
+              <% end %>
+              </div>
+            <%= f.button :submit, 'Add Chapter with pictures', class: 'btn btn-default btn-block btn-info' %>
             </div>
+          <% end %>
           </div>
-          <%= f.button :submit, 'Add Chapter with pictures', class: 'btn btn-block' %>
-        <% end %>
-
+        </div>
     <% end %>
 
       <!-- Social media items -->
@@ -205,13 +221,18 @@
                   <%= image_tag(picture.link,  class: 'img-responsive', alt: 'Title image') %>
                   <% if user_signed_in? %>
                     <br>
-                    <%= link_to(edit_picture_path(picture)) do %>
-                      <button class='btn btn-default btn-block' role='button'>Edit Picture</button>
-                    <% end %>
-                    <br>
-                    <%= link_to(picture, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
-                      <button class='btn btn-default btn-block' role='button'>Delete Picture</button>
-                    <% end %>
+                    <div class="row">
+                      <div class="col-md-5 col-md-offset-1">
+                        <%= link_to(edit_picture_path(picture)) do %>
+                          <button class='btn btn-default btn-block' role='button'>Edit Picture</button>
+                        <% end %>
+                      </div>
+                      <div class="col-md-5 ">
+                        <%= link_to(picture, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
+                          <button class='btn btn-default btn-block' role='button'>Delete Picture</button>
+                        <% end %>
+                      </div>
+                    </div>
                     <hr/>
                   <% end %>
                 </div>
@@ -219,43 +240,53 @@
           </div>
           <% if user_signed_in? %>
             <br>
-            <%= link_to(edit_story_advice_path(story, advice)) do %>
-              <button class='btn btn-default btn-block' role='button'>Edit Advice</button>
-            <% end %>
-            <br>
-            <%= link_to(advice, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
-              <button class='btn btn-default btn-block' role='button'>Delete Advice</button>
-            <% end %>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4">
+                <%= link_to(edit_story_advice_path(story, advice)) do %>
+                  <button class='btn btn-default btn-block' role='button'>Edit Advice</button>
+                <% end %>
+              </div>
+              <div class="col-md-2 col-md-offset-2">
+                <%= link_to(advice, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
+                  <button class='btn btn-default btn-block' role='button'>Delete Advice</button>
+                <% end %>
+              </div>
+            </div>
             <hr/>
             <br>
           <% end %>
       <% end %>
 
       <% if user_signed_in? %>
-        <!-- Form for adding chapter -->
-        <h3 class='text-center text-uppercase'>Add new Advice</h3>
-        <%= simple_form_for [story, advice] do |f| %>
-          <%= f.input :text, as: :text %>
-          <div class="col-md-12">
-            <h3 class='text-center'>Add new pictures to Advice</h3>
-            <div class="row">
-              <%= f.fields_for :pictures do |picture_form| %>
+        <!-- Form for adding advice -->
+        <div class="panel panel-default panel-info">
+          <div class="panel-heading"><h3 class='text-center text-uppercase'>Add new Advice</h3></div>
+          <div class="panel-body">
+          <%= simple_form_for [story, advice] do |f| %>
+            <%= f.input :text, as: :text %>
+            <div class="col-md-12">
+              <h3 class='text-center'>Add new pictures to Advice</h3>
+              <div class="row">
+                <%= f.fields_for :pictures do |picture_form| %>
 
-                <div class="col-md-4">
-                  <%= picture_form.input :title, label: 'Name of picture please', hint: 'Field above must be filled.' %>
-                  <%= picture_form.input :link, placeholder: 'user@domain.com', hint: 'Field above must be filled.' %>
-                  <%= picture_form.input :location, placeholder: 'user@domain.com' %>
-                  <%= picture_form.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
-                  <%= picture_form.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
-                  <%= picture_form.input :story_id, hint: 'Put number of story (visible in URL field).' %>
-                </div>
+                  <div class="col-md-4">
+                    <div class="panel panel-default panel-body">
+                      <%= picture_form.input :title, label: 'Title of picture', placeholder: 'View over city.', hint: 'Field above must be filled.' %>
+                      <%= picture_form.input :link, label: 'Link to picture on server', placeholder: 'www.example.com', hint: 'Field above must be filled.' %>
+                      <%= picture_form.input :story_id, label: 'Story, to which picture is linked', placeholder: '1', hint: 'Value is visible in URL field.' %>
+                      <%= picture_form.input :location, label: 'Name of place where picture was taken', placeholder: 'London, UK' %>
+                      <%= picture_form.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
+                      <%= picture_form.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
+                    </div>
+                  </div>
 
-              <% end %>
+                <% end %>
+              </div>
+            <%= f.button :submit, 'Add Advice with pictures', class: 'btn btn-default btn-block btn-info' %>
             </div>
+          <% end %>
           </div>
-          <%= f.button :submit, 'Add Advice with pictures', class: 'btn btn-block' %>
-        <% end %>
-
+        </div>
       <% end %>
 
       <!-- Social media items -->
