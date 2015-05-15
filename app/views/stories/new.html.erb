@@ -1,12 +1,25 @@
 <% if user_signed_in? %>
-  <div class="container">
+  <div class="container-fluid">
+    <br>
     <div class='col-md-12'>
-      <h1 class="text-center">Create Story</h1>
-      <%= link_to(root_path) do %>
-        <button class='btn btn-default btn-block' role='button'>Go back</button>
-      <% end %>
-      <br>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="text-center">Create Story</h1>
+          <div class="col-md-4 col-md-offset-4">
+            <%= link_to(root_path) do %>
+              <button class='btn btn-default btn-block' role='button'>Go back</button>
+            <% end %>
+          </div>
+          <br>
+          <br>
+          <p class="text-center"> Here you add outline for story. Add title, images for Front Page and for header of Story.</p>
+          <p class="text-center">Add first Chapter, first Advice and all Pictures you want to include into story.</p>
+        </div>
+        <div class="panel-body">
+        <br>
 
+    <div class="panel panel-default">
+      <div class="panel-body">
       <h3 class="text-center">Main Page Section</h3>
       <p class="text-center"> Here you add elements which will be visible on Front Page</p>
 
@@ -15,10 +28,12 @@
 
             <div class="col-md-6">
               <%= simple_form_for story do |f| %>
-                <%= f.input :name, label: 'Name of story please', hint: 'Field above must be filled.' %>
-                <%= f.input :main_page_image, placeholder: 'user@domain.com' %>
-                <%= f.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
-                <%= f.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
+                <%= f.input :name, label: 'Title of story', placeholder: 'Tokyo', hint: 'Field above must be filled.' %>
+                <%= f.input :main_page_image, label: 'Link to picture on server', placeholder: 'www.example.com', hint: 'Field above must be filled. This picture will be visible only on Front Page.' %>
+                <hr/>
+                <p>Position of story on google maps.</p>
+                <%= f.input :latitude, label: 'Latitude of story',  hint: 'Put only numbers and comas.', placeholder: '0,00' %>
+                <%= f.input :longitude, label: 'Longitude of story', hint: 'Put only numbers and comas.',placeholder: '0,00' %>
             </div>
 
             <div class="col-md-4">
@@ -30,20 +45,22 @@
                 </div>
               </div>
             </div>
-
           </div>
-
         </div>
+
+      </div>
     </div>
 
-    <div class='col-md-12'>
+    <div class="panel panel-default">
+      <div class="panel-body">
+      <div class="col-md-12">
       <h3 class="text-center">Story Page Section</h3>
       <p class="text-center"> Here you add elements which will be visible on Story Page</p>
         <div class="row">
           <div class="col-md-offset-2">
 
             <div class="col-md-6">
-              <%= f.input :header_image %>
+              <%= f.input :header_image, label: 'Header Image',  hint: 'Link to picture on server', placeholder: 'www.example.com' %>
             </div>
 
             <div class="col-md-4">
@@ -58,10 +75,14 @@
 
           </div>
         </div>
+      </div>
+      </div>
 
     </div>
 
-    <div class='col-md-12'>
+    <div class="panel panel-default">
+      <div class="panel-body">
+      <div class="col-md-12">
 
       <h3 class="text-center">Chapter Section</h3>
       <p class="text-center"> Here you add chapters to story</p>
@@ -71,7 +92,7 @@
 
             <div class="col-md-6">
               <%= f.fields_for :chapters do |chapter_form| %>
-                <%= chapter_form.input :text, as: :text %>
+                <%= chapter_form.input :text, as: :text, label: 'Text of the chapter.',  hint: 'Text for the first chapter of story.', placeholder: 'Long time ago...' %>
               <% end %>
             </div>
 
@@ -84,73 +105,80 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
+          </div>
+      </div>
     </div>
 
-    <div class='col-md-12'>
+    <div class="panel panel-default">
+      <div class="panel-body">
+      <div class="col-md-12">
 
-      <h3 class="text-center">Advice Section</h3>
-      <p class="text-center"> Here you add advice to story</p>
+        <h3 class="text-center">Advice Section</h3>
+        <p class="text-center"> Here you add advice to story</p>
 
-      <div class="row">
-        <div class="col-md-offset-2">
+        <div class="row">
+          <div class="col-md-offset-2">
 
-          <div class="col-md-6">
-            <%= f.fields_for :advices do |advice_form| %>
-              <%= advice_form.input :text, as: :text %>
-            <% end %>
-          </div>
+            <div class="col-md-6">
+              <%= f.fields_for :advices do |advice_form| %>
+                <%= advice_form.input :text, as: :text, label: 'Text of the advice.',  hint: 'Text for the first advice of story.', placeholder: 'Best advice is...' %>
+              <% end %>
+            </div>
 
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <%= image_tag('AdviceStory.png') %>
-              <div class="caption">
-                <h3 class="text-center"></h3>
-                <p></p>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <%= image_tag('AdviceStory.png') %>
+                <div class="caption">
+                  <h3 class="text-center"></h3>
+                  <p></p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      </div>
+    </div>
 
+    <div class="panel panel-default">
+      <div class="panel-body">
+      <div class="col-md-12">
+        <h3 class="text-center">Picture Section</h3>
+        <p class="text-center"> Here you add pictures linked to that Story</p>
+        <p class="text-center"> Picture must have Title, Link, Longitude and Latitude in order to be saved, and visible in Story. </p>
+        <p class="text-center"> Picture is visible only within added Story. </p>
+        <div class="row">
+          <%= f.fields_for :pictures do |picture_form| %>
+
+            <div class="col-md-4">
+
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <%= picture_form.input :title, label: 'Title of picture', placeholder: 'View over city.', hint: 'Field above must be filled.' %>
+                  <%= picture_form.input :link, label: 'Link to picture on server', placeholder: 'www.example.com', hint: 'Field above must be filled.' %>
+                  <%= picture_form.input :location, label: 'Name of place where picture was taken', placeholder: 'London, UK' %>
+                  <%= picture_form.input :latitude, hint: 'Put only numbers and comas.', placeholder: '0,00' %>
+                  <%= picture_form.input :longitude, hint: 'Put only numbers and comas.',placeholder: '0,00' %>
+                </div>
+              </div>
+
+            </div>
+
+          <% end %>
         </div>
       </div>
     </div>
 
-    <div class='col-md-12'>
-      <h3 class="text-center">Picture Section</h3>
-      <p class="text-center"> Here you add pictures linked to that Story</p>
-      <div class="row">
-        <%= f.fields_for :pictures do |picture_form| %>
-
-          <div class="col-md-4">
-
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <%= picture_form.input :title, label: 'Name of picture please', hint: 'Field above must be filled.' %>
-                <%= picture_form.input :link, placeholder: 'user@domain.com', hint: 'Field above must be filled.' %>
-                <%= picture_form.input :location, placeholder: 'user@domain.com' %>
-                <%= picture_form.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
-                <%= picture_form.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
-              </div>
-            </div>
-
-          </div>
-
-        <% end %>
-      </div>
-
     </div>
-    <div class="col-md-offset-3">
-      <div class='col-md-8'>
-        <%= f.button :submit, 'Create Story Now!', class: 'btn btn-block' %>
-        <% end %>
-        <br>
-        <br>
-        <br>
-      </div>
     </div>
-
+    <div class="panel-footer">
+      <%= f.button :submit, 'Create Story Now!', class: 'btn btn-lg btn-block' %>
+      <% end %>
+    </div>
+    </div>
+    </div>
   </div>
 
 <% end %>
