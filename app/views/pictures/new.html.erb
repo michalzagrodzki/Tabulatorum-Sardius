@@ -16,7 +16,7 @@
           <br>
           <h3 class="text-center">Add Picture Section</h3>
           <p class="text-center"> Here you add pictures, which will be shown within stories.</p>
-          <p class="text-center"> Picture must have Title, Link and Assigned Story in order to be saved, and visible in Story. </p>
+          <p class="text-center"> Picture must have Title, Link, Longitude, Latitude and Assigned Story in order to be saved, and visible in Story. </p>
         </div>
         <div class="panel-body">
       <div class="col-md-offset-1">
@@ -28,8 +28,8 @@
             <%= f.association :story, label: 'Assigned Story', hint: 'Select story from list.' %>
             <%= f.input :location, label: 'Name of place where picture was taken', placeholder: 'London, UK' %>
             <hr/>
-            <%= f.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
-            <%= f.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
+            <%= f.input :latitude, hint: 'Put only numbers and comas.', placeholder: '0,00' %>
+            <%= f.input :longitude, hint: 'Put only numbers and comas.',placeholder: '0,00' %>
             <hr/>
             <%= f.association :chapter, label: 'Assigned Chapter - only for certain pictures', hint: 'Select chapter from list.' %>
             <%= f.association :advice, label: 'Assigned Advice - only for certain pictures', hint: 'Select advice from list.' %>
