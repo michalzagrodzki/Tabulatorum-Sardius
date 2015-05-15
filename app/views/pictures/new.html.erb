@@ -1,32 +1,53 @@
 <% if user_signed_in? %>
-  <div class="container">
-    <div class='col-md-12'>
-      <h1 class="text-center">Create Pictures</h1>
-      <%= link_to(_back_url) do %>
-        <button class='btn btn-default btn-block' role='button'>Go back</button>
-      <% end %>
-      <br>
-      <h3 class="text-center">Add Picture Section</h3>
-      <p class="text-center"> Here you add pictures, which will be stored in database</p>
-      <div class="col-md-offset-3">
-        <div class="col-md-8">
+  <div class="container-fluid">
+    <br>
+    <div class="col-md-offset-2">
+    <div class='col-md-9'>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="text-center">Create Pictures</h1>
+          <div class="col-md-6 col-md-offset-3">
+          <%= link_to(root_path) do %>
+            <button class='btn btn-default btn-block' role='button'>Go back</button>
+          <% end %>
+
+          </div>
+          <br>
+          <br>
+          <h3 class="text-center">Add Picture Section</h3>
+          <p class="text-center"> Here you add pictures, which will be shown within stories.</p>
+          <p class="text-center"> Picture must have Title, Link and Assigned Story in order to be saved, and visible in Story. </p>
+        </div>
+        <div class="panel-body">
+      <div class="col-md-offset-1">
+        <div class="col-md-11">
+
           <%= simple_form_for( picture, html: {class: 'form-horizontal'} ) do |f| %>
-            <%= f.input :title, label: 'Name of picture please', hint: 'Field above must be filled.' %>
-            <%= f.input :link, placeholder: 'user@domain.com', hint: 'Field above must be filled.' %>
-            <%= f.input :location, placeholder: 'user@domain.com' %>
+            <%= f.input :title, label: 'Title of picture', placeholder: 'View over city.', hint: 'Field above must be filled.' %>
+            <%= f.input :link, label: 'Link to picture on server', placeholder: 'www.example.com', hint: 'Field above must be filled.' %>
+            <%= f.association :story, label: 'Assigned Story', hint: 'Select story from list.' %>
+            <%= f.input :location, label: 'Name of place where picture was taken', placeholder: 'London, UK' %>
+            <hr/>
             <%= f.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
             <%= f.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
-            <%= f.association :story, label: 'Assigned Story', placeholder: 'user@domain.com' %>
-            <%= f.association :chapter, label: 'Assigned Chapter - only for certain pictures', placeholder: 'user@domain.com' %>
-            <%= f.association :advice, label: 'Assigned Advice - only for certain pictures', placeholder: 'user@domain.com' %>
+            <hr/>
+            <%= f.association :chapter, label: 'Assigned Chapter - only for certain pictures', hint: 'Select chapter from list.' %>
+            <%= f.association :advice, label: 'Assigned Advice - only for certain pictures', hint: 'Select advice from list.' %>
+            </div>
+            </div>
+            </div>
+            <div class="panel-footer">
+            <%= f.button :submit, 'Add Picture.', class: 'btn btn-lg btn-block' %>
+            </div>
 
-            <%= f.button :submit, 'Add Pictures!', class: 'btn btn-block' %>
-            <br>
-            <br>
-            <br>
           <% end %>
-        </div>
-      </div>
+
+
     </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
   </div>
 <% end %>
