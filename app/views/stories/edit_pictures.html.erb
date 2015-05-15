@@ -1,48 +1,59 @@
 <% if user_signed_in? %>
-  <div class="container">
+  <div class="container-fluid">
+    <br>
     <div class='col-md-12'>
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
       <h1 class="text-center">Manage Pictures of <%= story.name %></h1>
+      <div class="col-md-6 col-md-offset-3">
       <%= link_to(story_path(story)) do %>
         <button class='btn btn-default btn-block' role='button'>Go back</button>
       <% end %>
+      </div>
       <br>
-      <h3 class="text-center">Pictures Section</h3>
+      <br>
+      <h3 class="text-center">Manage multiple Pictures Section</h3>
       <p class="text-center"> Here you manage pictures which are part of a Story.</p>
+      <p class="text-center"> Edit Title, Link, Longitude, Latitude, Assigned Chapter and Assigned Advice. </p>
       <p class="text-center"> No. of Pictures: <%= story.pictures.size %>. </p>
-      <div class="col-md-12">
+      </div>
+
+      <div class="panel-body">
         <div class="row">
           <%= simple_form_for story, { url: {:action => 'update_pictures'} } do |f| %>
             <div class="col-md-12">
               <%= f.simple_fields_for :pictures do |picture_form| %>
                 <div class="col-md-4">
-                  <div class="thumbnail">
-                    <%= image_tag(picture_form.object.link) %>
-                    <div class="caption">
+                <div class="thumbnail">
+                  <%= image_tag(picture_form.object.link) %>
+                <div class="caption">
 
-                      <%= picture_form.input :title, label: 'Name of picture please', hint: 'Field above must be filled.' %>
-                      <%= picture_form.input :link, placeholder: 'user@domain.com', hint: 'Field above must be filled.' %>
-                      <%= picture_form.input :location, placeholder: 'user@domain.com' %>
-                      <%= picture_form.association :chapter, label: 'Assigned Chapter - only for certain pictures', placeholder: 'user@domain.com' %>
-                      <%= picture_form.association :advice, label: 'Assigned Advice - only for certain pictures', placeholder: 'user@domain.com' %>
-                      <%= picture_form.input :latitude, hint: 'Put only numbers and comas.', placeholder: 'data for google maps' %>
-                      <%= picture_form.input :longitude, hint: 'Put only numbers and comas.',placeholder: 'data for google maps' %>
+                  <%= picture_form.input :title, label: 'Title of picture', placeholder: 'View over city.', hint: 'Field above must be filled.' %>
+                  <%= picture_form.input :link,  label: 'Link to picture on server', placeholder: 'www.example.com', hint: 'Field above must be filled.' %>
+                  <%= picture_form.input :location, label: 'Name of place where picture was taken', placeholder: 'London, UK' %>
+                  <hr/>
+                  <%= picture_form.input :latitude, hint: 'Put only numbers and comas.' %>
+                  <%= picture_form.input :longitude, hint: 'Put only numbers and comas.' %>
+                  <hr/>
+                  <%= picture_form.association :chapter, label: 'Assigned Chapter - only for certain pictures', hint: 'Select chapter from list.' %>
+                  <%= picture_form.association :advice, label: 'Assigned Advice - only for certain pictures', hint: 'Select chapter from list.' %>
 
-                    </div>
-                  </div>
+                </div>
+                </div>
                 </div>
               <% end %>
-
-              <%= f.button :submit, 'Publish changes.', class: 'btn btn-block' %>
-              <br>
-              <br>
-              <br>
             </div>
-          <% end %>
-
         </div>
       </div>
 
+      <div class="panel-footer">
+      <%= f.button :submit, 'Publish changes.', class: 'btn btn-lg btn-block' %>
+      </div>
+
+    <% end %>
     </div>
   </div>
+</div>
 
 <% end %>
