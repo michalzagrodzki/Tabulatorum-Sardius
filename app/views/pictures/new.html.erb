@@ -19,8 +19,8 @@
           <p class="text-center"> Picture must have Title, Link, Longitude, Latitude and Assigned Story in order to be saved, and visible in Story. </p>
         </div>
         <div class="panel-body">
-      <div class="col-md-offset-1">
-        <div class="col-md-11">
+          <div class="col-md-offset-1">
+          <div class="col-md-11">
 
           <%= simple_form_for( picture, html: {class: 'form-horizontal'} ) do |f| %>
             <%= f.input :title, label: 'Title of picture', placeholder: 'View over city.', hint: 'Field above must be filled.' %>
@@ -33,15 +33,15 @@
             <hr/>
             <%= f.association :chapter, label: 'Assigned Chapter - only for certain pictures', hint: 'Select chapter from list.' %>
             <%= f.association :advice, label: 'Assigned Advice - only for certain pictures', hint: 'Select advice from list.' %>
-            </div>
-            </div>
-            </div>
-            <div class="panel-footer">
-            <%= f.button :submit, 'Add Picture.', class: 'btn btn-lg btn-block' %>
-            </div>
+          </div>
+          </div>
+        </div>
 
-          <% end %>
+        <div class="panel-footer">
+        <%= f.button :submit, 'Add Picture.', class: 'btn btn-lg btn-block' %>
+        </div>
 
+        <% end %>
 
     </div>
     </div>
