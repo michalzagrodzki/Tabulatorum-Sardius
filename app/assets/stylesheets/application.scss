@@ -2,6 +2,11 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap/grid";
+
+/******************************************
+         Variables for Google Maps
+******************************************/
 
 // value controlling marker and infowindow of google maps
 // value moved from maps.scss
@@ -21,3 +26,487 @@
 #map-container #map-canvas label {
   width: auto; display:inline;
 }
+
+/******************************************
+             Fonts for project
+******************************************/
+
+// Mohave
+@font-face {
+  font-family: 'Mohave';
+  src:  asset_url('mohave.eot');
+  src:  asset_url('mohave.eot?#iefix') format('embedded-opentype'),
+  asset_url('mohave.svg#Mohave') format('svg'),
+  asset_url('mohave.woff') format('woff'),
+  asset_url('mohave.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/******************************************
+        Resets functions of Bootstrap
+******************************************/
+
+// Turns off underline of links.
+a {
+  text-decoration: none !important;
+}
+
+/******************************************
+             Mixins for project
+******************************************/
+
+// Fonts
+// Mohave
+$mohave-regular: Mohave, sans-serif;
+$mohave-bold: Mohave-Bold, sans-serif;
+$mohave-bold-italic: Mohave-Bold-Italic, sans-serif;
+
+// Colors
+
+$background-color: #dbd4ce;
+
+$head-font-color: #4c4b4a;
+$secondary-font-color: #a18e73;
+$footer-font-color: #40382e;
+$sign-up-font-color: #e7e3de;
+
+$button-color-big: #f6f2ec;
+$button-border-color: #2f2c29;
+
+// Transitions
+
+@mixin transition($duration) {
+  -webkit-transition: $duration;
+  -moz-transition: $duration;
+  -o-transition: $duration;
+  transition: $duration;
+}
+
+// Size of fonts
+
+$main-title-primary-font-size-desktop: 80px;
+$main-title-primary-font-size-mobile: 80px;
+
+$secondary-title-primary-font-size-desktop: 30px;
+$secondary-title-primary-font-size-mobile: 30px;
+
+$description-review-body-font-size-desktop: 17px;
+$description-review-body-font-size-mobile: 20px;
+
+$review-footer-font-size: 17px;
+
+
+
+/******************************************
+             HTML Section
+******************************************/
+
+body{
+  height: 100%;
+}
+
+.wrap{
+  min-height: 100%;
+}
+
+// Style related to background image and color
+.background {
+  position: relative;
+  background-color: $background-color;
+  width: 100%;
+  height: 100%;
+  //min-height: 600px;
+  display: block;
+  padding-bottom: 180px;
+
+  // Background image with gradient over it
+  background-image: image_url('Background.png'), linear-gradient(darken($background-color, 10%) 3%, $background-color 20%, darken($background-color, 15%) 80%);
+}
+
+/******************************************
+            Main Page Section
+******************************************/
+
+// Style related to fonts
+.head-font {
+  font-family: $mohave-bold;
+  color: $head-font-color;
+  font-weight: bold;
+  font-size: $main-title-primary-font-size-desktop;
+  line-height: 94%;
+  text-align: center;
+  margin-bottom: 40px;
+
+  text-shadow: 3px 3px 1px darken($background-color, 20%);
+}
+
+.second-head-font {
+  font-family: $mohave-regular;
+  color: $head-font-color;
+  font-weight: normal;
+  font-style: normal;
+  font-size: $secondary-title-primary-font-size-desktop;
+  margin-top: 20px;
+  margin-bottom: 40px;
+
+  text-shadow: 1px 1px 1px darken($background-color, 20%);
+}
+
+// Style related to buttons
+
+// Buttons with category items
+.category-button{
+  width: auto;
+  height: auto;
+  border-radius: 0px;
+  position: relative;
+  background-color: $button-color-big;
+  border: 3px solid $button-border-color;
+  border-right-width: 1px;
+  border-left-width: 1px;
+  margin: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  transition: (.2s);
+
+  z-index: 2;
+
+  box-shadow: 0px 5px 10px darken($background-color, 15%);
+
+  h4{
+    font-family: $mohave-bold;
+    font-size: 32px;
+    color: $head-font-color;
+  }
+
+  &:hover {
+    @extend .category-button;
+
+    text-decoration: none;
+    box-shadow: 0px 5px 15px darken($background-color, 25%);
+    z-index: 3;
+  }
+
+  &:active {
+    @extend .category-button;
+    text-decoration: none;
+  }
+
+}
+.category-button:before{
+  content: "";
+  position: absolute;
+  opacity: 0.4;
+  top: -6px;
+  left: -5px;
+  right: -5px;
+  bottom: -6px;
+  z-index: 0;
+  border-top: 1px solid $button-border-color;
+  border-bottom: 1px solid $button-border-color;
+}
+
+/******************************************
+          Right Hand Menu Section
+******************************************/
+
+// Title of category
+.category-title-font{
+  margin-top: 50px;
+  margin-bottom: 40px;
+
+  font-family: $mohave-bold;
+  font-size: 45px;
+  color: $head-font-color;
+
+  text-shadow: 1px 1px 1px darken($background-color, 20%);
+}
+
+// Product button in category list
+.product-button{
+  @extend .category-button;
+
+  // Description of product
+  p {
+    color: $head-font-color;
+    font-family: $open-sans-regular;
+  }
+
+  // Price of product
+  .italic{
+    font-style: italic;
+    color: lighten($head-font-color, 30%);
+    font-family: $open-sans-italic;
+  }
+}
+
+.custom-btn-back{
+  margin-top: 50px;
+  margin-bottom: 100px;
+  background-color: darken($background-color, 30% );
+  border-radius: 5px;
+  border: 1px solid darken($background-color, 50%);
+  position: relative;
+  z-index: 2;
+  @include transition(.3s);
+
+  a {
+    font-family: $mohave-regular;
+    text-align: center;
+    font-size: 24px;
+    color: $sign-up-font-color;
+  }
+
+  &:hover {
+    @extend .custom-btn-back;
+
+    background-color: darken($background-color, 40% );
+    border: 1px solid darken($background-color, 60% );
+
+  }
+
+  &:active {
+    @extend .custom-btn-back;
+
+    background-color: darken($background-color, 50% );
+    border: 1px solid darken($background-color, 70% );
+    box-shadow: inset 0px 7px 15px 0px rgba(0,0,0,0.2);
+  }
+
+}
+
+/******************************************
+            Story Show Section
+******************************************/
+
+// Title of product
+.product-title-font{
+  @extend .category-title-font;
+
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+// Background of Title and description area
+.product-title-area{
+  margin-top: 20px;
+  background-color: lighten($background-color, 3%);
+  display: block;
+  position: relative;
+
+  border-bottom: 3px solid $button-border-color;
+
+  box-shadow: 0px 5px 10px darken($background-color, 15%);
+
+  // price
+  h3{
+    color: lighten($head-font-color, 30%);
+    font-family: $open-sans-italic;
+    font-style: italic;
+  }
+
+}
+
+.product-title-area:before{
+  content: "";
+  position: absolute;
+  opacity: 0.4;
+  top: -6px;
+  left: -5px;
+  right: -5px;
+  bottom: -6px;
+  z-index: 1;
+  border-bottom: 1px solid $button-border-color;
+}
+
+// Description field
+.thumbnail{
+  padding: 0px;
+
+  background-color: $button-color-big;
+  border: 3px solid lighten($background-color, 11%);
+  border-radius: 0px;
+
+  // Product description font.
+  p{
+    color: $head-font-color;
+    margin: 10px;
+    font-size: $description-review-body-font-size-desktop;
+    font-family: $open-sans-regular;
+  }
+}
+
+// Separator line
+hr {
+  height: 1px;
+  background-color: lighten($button-border-color, 60%);
+  border: none;
+  display: block;
+}
+
+.custom-edit-category-button {
+  @extend .custom-primary-btn-login-signup;
+
+  // button area
+  $background-color-shared-link: darken($background-color, 25%);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: $background-color-shared-link;
+  border-color: desaturate($background-color-shared-link, 30%);
+  position: relative;
+  z-index: 2;
+
+  // text in button
+  a {
+    font-family: $mohave-regular;
+    font-size: 20px;
+    color: $head-font-color;
+  }
+
+  &:hover{
+    background-color: darken($background-color-shared-link, 5%);
+
+  }
+}
+
+/******************************************
+          Login / Signup Section
+******************************************/
+
+// Login head and buttons
+.login-signup-title-area{
+  @extend .product-title-area;
+  display: block;
+  position: relative;
+  z-index: 1;
+
+  margin-top: 50px;
+  margin-bottom: 150px;
+
+  border-top: 3px solid $button-border-color;
+  border-bottom: 3px solid $button-border-color;
+  box-shadow: 0px 8px 14px 0px rgba(0, 0, 0, 0.2);
+
+  // Login head text
+  h2{
+    @extend .category-title-font;
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.login-signup-title-area:after{
+  content: "";
+  position: absolute;
+  opacity: 0.4;
+  top: -6px;
+  left: -5px;
+  right: -5px;
+  bottom: -6px;
+  border-top: 1px solid $button-border-color;
+  border-bottom: 1px solid $button-border-color;
+
+  z-index: 0;
+}
+
+// Form fields
+.form-control{
+  background-color: $button-color-big;
+  border: 1px solid darken($background-color, 5%);
+  border-radius: 0px;
+  position: relative;
+  z-index: 2;
+  color: $head-font-color;
+  font-size: $description-review-body-font-size-desktop;
+  font-family: $open-sans-regular;
+
+  &:focus{
+    background-color: lighten($button-color-big, 20%);
+  }
+}
+
+// Remember me field
+.user_remember_me{
+  color: $head-font-color;
+  font-size: $description-review-body-font-size-desktop - 2;
+  font-family: $open-sans-bold;
+}
+
+// Login button
+.custom-primary-btn-login-signup{
+  @extend .custom-btn-back;
+
+  position: relative;
+  z-index: 2;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  font-family: $mohave-regular;
+  font-size: 22px;
+}
+
+// Shared links in devise
+.custom-secondary-btn-login-signup{
+  @extend .custom-primary-btn-login-signup;
+
+  // button area
+  $background-color-shared-link: darken($background-color, 14%);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: $background-color-shared-link;
+  border-color: desaturate($background-color-shared-link, 30%);
+  position: relative;
+  z-index: 2;
+
+  // text in button
+  a {
+    font-family: $mohave-regular;
+    font-size: 20px;
+    color: $head-font-color;
+  }
+
+  &:hover{
+    background-color: darken($background-color-shared-link, 5%);
+
+  }
+}
+
+/******************************************
+                Media Queries
+******************************************/
+
+/* Extra Small devices (mobiles, 320px and up) */
+@media (min-width: 320px) and (max-width: 767px) {
+
+  // Change distance between head titles in mobile views.
+  .head-font {
+    margin-bottom: 40px;
+  }
+
+  .second-head-font {
+    margin-top: 20px;
+    margin-bottom: 60px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main-logo-icon{
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1920px) {}
