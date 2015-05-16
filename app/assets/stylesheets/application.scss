@@ -230,14 +230,14 @@ body{
   // Description of product
   p {
     color: $head-font-color;
-    font-family: $open-sans-regular;
+
   }
 
   // Price of product
   .italic{
     font-style: italic;
     color: lighten($head-font-color, 30%);
-    font-family: $open-sans-italic;
+
   }
 }
 
@@ -302,8 +302,6 @@ body{
   // price
   h3{
     color: lighten($head-font-color, 30%);
-    font-family: $open-sans-italic;
-    font-style: italic;
   }
 
 }
@@ -333,7 +331,7 @@ body{
     color: $head-font-color;
     margin: 10px;
     font-size: $description-review-body-font-size-desktop;
-    font-family: $open-sans-regular;
+
   }
 }
 
@@ -420,7 +418,7 @@ hr {
   z-index: 2;
   color: $head-font-color;
   font-size: $description-review-body-font-size-desktop;
-  font-family: $open-sans-regular;
+
 
   &:focus{
     background-color: lighten($button-color-big, 20%);
@@ -431,7 +429,7 @@ hr {
 .user_remember_me{
   color: $head-font-color;
   font-size: $description-review-body-font-size-desktop - 2;
-  font-family: $open-sans-bold;
+
 }
 
 // Login button
