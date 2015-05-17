@@ -33,7 +33,7 @@
 
 // Mohave
 @font-face {
-  font-family: 'Mohave';
+  font-family: 'Open Sans';
   src:  asset_url('mohave.eot');
   src:  asset_url('mohave.eot?#iefix') format('embedded-opentype'),
   asset_url('mohave.svg#Mohave') format('svg'),
@@ -64,7 +64,7 @@ $mohave-bold-italic: Mohave-Bold-Italic, sans-serif;
 
 // Colors
 
-$background-color: #dbd4ce;
+$background-color: #db5e8b;
 
 $head-font-color: #4c4b4a;
 $secondary-font-color: #a18e73;
@@ -113,15 +113,9 @@ body{
 // Style related to background image and color
 .background {
   position: relative;
-  background-color: $background-color;
   width: 100%;
   height: 100%;
-  //min-height: 600px;
   display: block;
-  padding-bottom: 180px;
-
-  // Background image with gradient over it
-  background-image: image_url('Background.png'), linear-gradient(darken($background-color, 10%) 3%, $background-color 20%, darken($background-color, 15%) 80%);
 }
 
 /******************************************
@@ -207,6 +201,15 @@ body{
   border-bottom: 1px solid $button-border-color;
 }
 
+.main-page-title{
+  margin-top: -100px;
+}
+
+.main-page-story-header{
+  border-style: solid;
+  border-width: 2px;
+  border-color: #B00100;
+}
 /******************************************
           Right Hand Menu Section
 ******************************************/
@@ -241,40 +244,6 @@ body{
   }
 }
 
-.custom-btn-back{
-  margin-top: 50px;
-  margin-bottom: 100px;
-  background-color: darken($background-color, 30% );
-  border-radius: 5px;
-  border: 1px solid darken($background-color, 50%);
-  position: relative;
-  z-index: 2;
-  @include transition(.3s);
-
-  a {
-    font-family: $mohave-regular;
-    text-align: center;
-    font-size: 24px;
-    color: $sign-up-font-color;
-  }
-
-  &:hover {
-    @extend .custom-btn-back;
-
-    background-color: darken($background-color, 40% );
-    border: 1px solid darken($background-color, 60% );
-
-  }
-
-  &:active {
-    @extend .custom-btn-back;
-
-    background-color: darken($background-color, 50% );
-    border: 1px solid darken($background-color, 70% );
-    box-shadow: inset 0px 7px 15px 0px rgba(0,0,0,0.2);
-  }
-
-}
 
 /******************************************
             Story Show Section
@@ -343,30 +312,7 @@ hr {
   display: block;
 }
 
-.custom-edit-category-button {
-  @extend .custom-primary-btn-login-signup;
 
-  // button area
-  $background-color-shared-link: darken($background-color, 25%);
-  padding-top: 2px;
-  padding-bottom: 2px;
-  background-color: $background-color-shared-link;
-  border-color: desaturate($background-color-shared-link, 30%);
-  position: relative;
-  z-index: 2;
-
-  // text in button
-  a {
-    font-family: $mohave-regular;
-    font-size: 20px;
-    color: $head-font-color;
-  }
-
-  &:hover{
-    background-color: darken($background-color-shared-link, 5%);
-
-  }
-}
 
 /******************************************
           Login / Signup Section
@@ -432,46 +378,7 @@ hr {
 
 }
 
-// Login button
-.custom-primary-btn-login-signup{
-  @extend .custom-btn-back;
 
-  position: relative;
-  z-index: 2;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-
-  font-family: $mohave-regular;
-  font-size: 22px;
-}
-
-// Shared links in devise
-.custom-secondary-btn-login-signup{
-  @extend .custom-primary-btn-login-signup;
-
-  // button area
-  $background-color-shared-link: darken($background-color, 14%);
-  padding-top: 2px;
-  padding-bottom: 2px;
-  background-color: $background-color-shared-link;
-  border-color: desaturate($background-color-shared-link, 30%);
-  position: relative;
-  z-index: 2;
-
-  // text in button
-  a {
-    font-family: $mohave-regular;
-    font-size: 20px;
-    color: $head-font-color;
-  }
-
-  &:hover{
-    background-color: darken($background-color-shared-link, 5%);
-
-  }
-}
 
 /******************************************
                 Media Queries
