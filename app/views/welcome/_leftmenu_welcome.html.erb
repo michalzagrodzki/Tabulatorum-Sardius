@@ -1,18 +1,19 @@
-<div class='col-md-10'>
+<div class='col-md-10 main-page-background'>
   <!-- Story loop -->
   <% stories.each do |story| %>
     <!-- Story Thumbnail of <%= story.name %>-->
     <div class='col-md-4'>
       <!-- Link to story-->
       <%= link_to(story) do %>
-        <div class='thumbnail main-page-story-header'>
+        <div>
           <!-- Image of story -->
+          <div class= "thumbnail main-page-image">
           <%= image_tag(story.main_page_image, alt: 'Thumbnail image') %>
-
+          </div>
             <!-- Title of story-->
             <h3 class='text-center main-page-title'><%= story.name %></h3>
             <!-- Date of last update of story -->
-            <p class='text-center'><%= story.updated_at.strftime("%e.%m.%Y") %></p>
+            <p class='text-center main-page-date'><%= story.updated_at.strftime("%e.%m.%Y") %></p>
 
           <% if user_signed_in? %>
             <%= link_to(edit_story_path(story)) do %>
