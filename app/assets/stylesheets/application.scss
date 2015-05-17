@@ -31,16 +31,76 @@
              Fonts for project
 ******************************************/
 
-// Mohave
+// Open Sans Regular
 @font-face {
-  font-family: 'Open Sans';
-  src:  asset_url('mohave.eot');
-  src:  asset_url('mohave.eot?#iefix') format('embedded-opentype'),
-  asset_url('mohave.svg#Mohave') format('svg'),
-  asset_url('mohave.woff') format('woff'),
-  asset_url('mohave.ttf') format('truetype');
+  font-family: 'Open-Sans-Regular';
+  src:  asset_url('OpenSans-Regular.eot');
+  src:  asset_url('OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+  asset_url('OpenSans-Regular.svg#OpenSans-Regular') format('svg'),
+  asset_url('OpenSans-Regular.woff') format('woff'),
+  asset_url('OpenSans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+// Open Sans Bold
+@font-face {
+  font-family: 'Open-Sans-Bold';
+  src:  asset_url('OpenSans-Bold.eot');
+  src:  asset_url('OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+  asset_url('OpenSans-Bold.svg#OpenSans-Bold') format('svg'),
+  asset_url('OpenSans-Bold.woff') format('woff'),
+  asset_url('OpenSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+// Open Sans Bold Italic
+@font-face {
+  font-family: 'Open-Sans-Italic';
+  src:  asset_url('OpenSans-Italic.eot');
+  src:  asset_url('OpenSans-Italic.eot?#iefix') format('embedded-opentype'),
+  asset_url('OpenSans-Italic.svg#OpenSans-Italic') format('svg'),
+  asset_url('OpenSans-Italic.woff') format('woff'),
+  asset_url('OpenSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+// Playfair Bold
+@font-face {
+  font-family: 'Playfair-Bold';
+  src:  asset_url('PlayfairDisplaySC-Bold.eot');
+  src:  asset_url('PlayfairDisplaySC-Bold.eot?#iefix') format('embedded-opentype'),
+  asset_url('PlayfairDisplaySC-Bold.svg#PlayfairDisplaySC-Bold') format('svg'),
+  asset_url('PlayfairDisplaySC-Bold.woff') format('woff'),
+  asset_url('PlayfairDisplaySC-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+// Playfair Black
+@font-face {
+  font-family: 'Playfair-Black';
+  src:  asset_url('PlayfairDisplaySC-Black.eot');
+  src:  asset_url('PlayfairDisplaySC-Black.eot?#iefix') format('embedded-opentype'),
+  asset_url('PlayfairDisplaySC-Black.svg#PlayfairDisplaySC-Black') format('svg'),
+  asset_url('PlayfairDisplaySC-Black.woff') format('woff'),
+  asset_url('PlayfairDisplaySC-Black.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+// Lobster Bold Italic
+@font-face {
+  font-family: 'Lobster-Bold-Italic';
+  src:  asset_url('LobsterTwo-BoldItalic.eot');
+  src:  asset_url('LobsterTwo-BoldItalic.eot?#iefix') format('embedded-opentype'),
+  asset_url('LobsterTwo-BoldItalic.svg#LobsterTwo-BoldItalic') format('svg'),
+  asset_url('LobsterTwo-BoldItalic.woff') format('woff'),
+  asset_url('LobsterTwo-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
 }
 
 /******************************************
@@ -57,16 +117,23 @@ a {
 ******************************************/
 
 // Fonts
-// Mohave
-$mohave-regular: Mohave, sans-serif;
-$mohave-bold: Mohave-Bold, sans-serif;
-$mohave-bold-italic: Mohave-Bold-Italic, sans-serif;
+// Open Sans
+$open-sans-regular: Open-Sans-Regular, sans-serif;
+$open-sans-bold: Open-Sans-Bold, sans-serif;
+$open-sans-italic: Open-Sans-Italic, sans-serif;
+
+// Playfair
+$playfair-bold: Playfair-Bold, serif;
+$playfair-black: Playfair-Black, serif;
+
+// Lobster
+$lobster-bold-italic: Lobster-Bold-Italic, script;
 
 // Colors
 
 $background-color: #db5e8b;
 
-$head-font-color: #4c4b4a;
+$head-font-color: #b0b0b0;
 $secondary-font-color: #a18e73;
 $footer-font-color: #40382e;
 $sign-up-font-color: #e7e3de;
@@ -85,18 +152,11 @@ $button-border-color: #2f2c29;
 
 // Size of fonts
 
-$main-title-primary-font-size-desktop: 80px;
-$main-title-primary-font-size-mobile: 80px;
+$main-page-title-desktop: 56px;
+$main-page-title-mobile: 56px;
 
-$secondary-title-primary-font-size-desktop: 30px;
-$secondary-title-primary-font-size-mobile: 30px;
-
-$description-review-body-font-size-desktop: 17px;
-$description-review-body-font-size-mobile: 20px;
-
-$review-footer-font-size: 17px;
-
-
+$main-page-date-desktop: $main-page-title-desktop*0.2;
+$main-page-date-mobile: $main-page-title-mobile*0.2;
 
 /******************************************
              HTML Section
@@ -104,17 +164,7 @@ $review-footer-font-size: 17px;
 
 body{
   height: 100%;
-}
-
-.wrap{
-  min-height: 100%;
-}
-
-// Style related to background image and color
-.background {
-  position: relative;
   width: 100%;
-  height: 100%;
   display: block;
 }
 
@@ -122,12 +172,13 @@ body{
             Main Page Section
 ******************************************/
 
+
 // Style related to fonts
 .head-font {
-  font-family: $mohave-bold;
+  font-family: $playfair-bold;
   color: $head-font-color;
   font-weight: bold;
-  font-size: $main-title-primary-font-size-desktop;
+  font-size: $main-page-title-desktop;
   line-height: 94%;
   text-align: center;
   margin-bottom: 40px;
@@ -135,113 +186,51 @@ body{
   text-shadow: 3px 3px 1px darken($background-color, 20%);
 }
 
-.second-head-font {
-  font-family: $mohave-regular;
-  color: $head-font-color;
-  font-weight: normal;
-  font-style: normal;
-  font-size: $secondary-title-primary-font-size-desktop;
-  margin-top: 20px;
-  margin-bottom: 40px;
-
-  text-shadow: 1px 1px 1px darken($background-color, 20%);
-}
-
-// Style related to buttons
-
-// Buttons with category items
-.category-button{
-  width: auto;
+// Background of Main Page
+.main-page-background{
+  background-color: #e7e7e7;
+  padding-top: 20px;
+  padding-bottom: 280px;
   height: auto;
+}
+
+// Properties of Story Image Tab in Main Page
+.main-page-image{
+  padding: 0px;
+  border: 3px solid white;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.15);
   border-radius: 0px;
-  position: relative;
-  background-color: $button-color-big;
-  border: 3px solid $button-border-color;
-  border-right-width: 1px;
-  border-left-width: 1px;
-  margin: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  transition: (.2s);
-
-  z-index: 2;
-
-  box-shadow: 0px 5px 10px darken($background-color, 15%);
-
-  h4{
-    font-family: $mohave-bold;
-    font-size: 32px;
-    color: $head-font-color;
-  }
-
-  &:hover {
-    @extend .category-button;
-
-    text-decoration: none;
-    box-shadow: 0px 5px 15px darken($background-color, 25%);
-    z-index: 3;
-  }
-
-  &:active {
-    @extend .category-button;
-    text-decoration: none;
-  }
-
-}
-.category-button:before{
-  content: "";
-  position: absolute;
-  opacity: 0.4;
-  top: -6px;
-  left: -5px;
-  right: -5px;
-  bottom: -6px;
-  z-index: 0;
-  border-top: 1px solid $button-border-color;
-  border-bottom: 1px solid $button-border-color;
 }
 
+// Properties of title on Main Page
 .main-page-title{
-  margin-top: -100px;
+  margin-top: -150px;
+  font-family: $playfair-black;
+  font-size: $main-page-title-desktop;
+  color: $head-font-color;
+  line-height: 85%;
+  opacity: 0.8;
 }
 
-.main-page-story-header{
-  border-style: solid;
-  border-width: 2px;
-  border-color: #B00100;
+// Properties of date on Main Page
+.main-page-date{
+  margin-top: -10px;
+  margin-bottom: 50px;
+  font-family: $open-sans-regular;
+  font-size: $main-page-date-desktop;
+  color: $head-font-color;
+  opacity: 0.8;
 }
+
 /******************************************
           Right Hand Menu Section
 ******************************************/
 
-// Title of category
-.category-title-font{
-  margin-top: 50px;
-  margin-bottom: 40px;
 
-  font-family: $mohave-bold;
-  font-size: 45px;
-  color: $head-font-color;
-
-  text-shadow: 1px 1px 1px darken($background-color, 20%);
+.right-hand-menu{
 }
 
-// Product button in category list
-.product-button{
-  @extend .category-button;
-
-  // Description of product
-  p {
-    color: $head-font-color;
-
-  }
-
-  // Price of product
-  .italic{
-    font-style: italic;
-    color: lighten($head-font-color, 30%);
-
-  }
+.bottom-element{
 }
 
 
@@ -249,134 +238,11 @@ body{
             Story Show Section
 ******************************************/
 
-// Title of product
-.product-title-font{
-  @extend .category-title-font;
-
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-// Background of Title and description area
-.product-title-area{
-  margin-top: 20px;
-  background-color: lighten($background-color, 3%);
-  display: block;
-  position: relative;
-
-  border-bottom: 3px solid $button-border-color;
-
-  box-shadow: 0px 5px 10px darken($background-color, 15%);
-
-  // price
-  h3{
-    color: lighten($head-font-color, 30%);
-  }
-
-}
-
-.product-title-area:before{
-  content: "";
-  position: absolute;
-  opacity: 0.4;
-  top: -6px;
-  left: -5px;
-  right: -5px;
-  bottom: -6px;
-  z-index: 1;
-  border-bottom: 1px solid $button-border-color;
-}
-
-// Description field
-.thumbnail{
-  padding: 0px;
-
-  background-color: $button-color-big;
-  border: 3px solid lighten($background-color, 11%);
-  border-radius: 0px;
-
-  // Product description font.
-  p{
-    color: $head-font-color;
-    margin: 10px;
-    font-size: $description-review-body-font-size-desktop;
-
-  }
-}
-
-// Separator line
-hr {
-  height: 1px;
-  background-color: lighten($button-border-color, 60%);
-  border: none;
-  display: block;
-}
-
 
 
 /******************************************
           Login / Signup Section
 ******************************************/
-
-// Login head and buttons
-.login-signup-title-area{
-  @extend .product-title-area;
-  display: block;
-  position: relative;
-  z-index: 1;
-
-  margin-top: 50px;
-  margin-bottom: 150px;
-
-  border-top: 3px solid $button-border-color;
-  border-bottom: 3px solid $button-border-color;
-  box-shadow: 0px 8px 14px 0px rgba(0, 0, 0, 0.2);
-
-  // Login head text
-  h2{
-    @extend .category-title-font;
-
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-}
-
-.login-signup-title-area:after{
-  content: "";
-  position: absolute;
-  opacity: 0.4;
-  top: -6px;
-  left: -5px;
-  right: -5px;
-  bottom: -6px;
-  border-top: 1px solid $button-border-color;
-  border-bottom: 1px solid $button-border-color;
-
-  z-index: 0;
-}
-
-// Form fields
-.form-control{
-  background-color: $button-color-big;
-  border: 1px solid darken($background-color, 5%);
-  border-radius: 0px;
-  position: relative;
-  z-index: 2;
-  color: $head-font-color;
-  font-size: $description-review-body-font-size-desktop;
-
-
-  &:focus{
-    background-color: lighten($button-color-big, 20%);
-  }
-}
-
-// Remember me field
-.user_remember_me{
-  color: $head-font-color;
-  font-size: $description-review-body-font-size-desktop - 2;
-
-}
 
 
 
