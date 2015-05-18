@@ -103,6 +103,22 @@
   font-style: italic;
 }
 
+// Socialico
+@font-face {
+  font-family: 'Socialico';
+  src:  asset_url('Socialico.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Socialico Plus
+@font-face {
+  font-family: 'Socialico-Plus';
+  src:  asset_url('Socialico-Plus.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /******************************************
         Resets functions of Bootstrap
 ******************************************/
@@ -129,11 +145,23 @@ $playfair-black: Playfair-Black, serif;
 // Lobster
 $lobster-bold-italic: Lobster-Bold-Italic, script;
 
+// Socialico
+$socialico: Socialico, sans-serif;
+$socialico-plus: Socialico-Plus, sans-serif;
+
 // Colors
 
-$background-color: #db5e8b;
+$background-color: #e7e7e7;
 
-$head-font-color: #b0b0b0;
+// main page
+$main-page-title-font-color: #b0b0b0;
+
+// right menu
+$right-menu-title-font-color: #3d3d3d;
+$right-menu-button-font-color: #656565;
+$right-menu-button-active-font-color: #dbdbdb;
+
+
 $secondary-font-color: #a18e73;
 $footer-font-color: #40382e;
 $sign-up-font-color: #e7e3de;
@@ -168,27 +196,22 @@ body{
   display: block;
 }
 
+// Separator line
+hr {
+  height: 1px;
+  background-color: darken($background-color, 20%);
+  border: none;
+  display: block;
+}
+
 /******************************************
             Main Page Section
 ******************************************/
 
 
-// Style related to fonts
-.head-font {
-  font-family: $playfair-bold;
-  color: $head-font-color;
-  font-weight: bold;
-  font-size: $main-page-title-desktop;
-  line-height: 94%;
-  text-align: center;
-  margin-bottom: 40px;
-
-  text-shadow: 3px 3px 1px darken($background-color, 20%);
-}
-
 // Background of Main Page
 .main-page-background{
-  background-color: #e7e7e7;
+  background-color: $background-color;
   padding-top: 20px;
   padding-bottom: 280px;
   height: auto;
@@ -204,10 +227,10 @@ body{
 
 // Properties of title on Main Page
 .main-page-title{
-  margin-top: -150px;
+  margin-top: -120px;
   font-family: $playfair-black;
   font-size: $main-page-title-desktop;
-  color: $head-font-color;
+  color: $main-page-title-font-color;
   line-height: 85%;
   opacity: 0.8;
 }
@@ -215,22 +238,172 @@ body{
 // Properties of date on Main Page
 .main-page-date{
   margin-top: -10px;
-  margin-bottom: 50px;
+  margin-bottom: 11px;
   font-family: $open-sans-regular;
   font-size: $main-page-date-desktop;
-  color: $head-font-color;
+  color: $main-page-title-font-color;
   opacity: 0.8;
+}
+
+.load-more-stories-button{
+  $color: darken($main-page-title-font-color, 15%);
+  font-family: $open-sans-regular;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 0px;
+  color: $color;
+  border-color: $color;
+  @include transition(.5s);
+
+  &:hover {
+    @extend .load-more-stories-button;
+    $color: darken($background-color, 80%);
+    text-decoration: none;
+    border: 1px solid $color;
+    color: $color;
+  }
 }
 
 /******************************************
           Right Hand Menu Section
 ******************************************/
 
-
-.right-hand-menu{
+// Background of right menu
+.right-menu{
+  background-color: darken($background-color, 5%);
 }
 
+// Title of right menu
+.right-menu-title{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: $lobster-bold-italic;
+  color: $right-menu-title-font-color;
+  font-style: italic;
+  font-size: $main-page-title-desktop;
+  line-height: 85%;
+  text-align: center;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35);
+}
+
+// Buttons of right menu
+.right-menu-button{
+  background-color: inherit;
+  font-family: $open-sans-regular;
+  color: $right-menu-button-font-color;
+  border: none;
+  border-radius: 0px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  @include transition(.5s);
+
+  &:hover {
+    @extend .right-menu-button;
+
+    text-decoration: none;
+    box-shadow: 0px 3px 10px darken($background-color, 25%);
+  }
+
+  &:active {
+    @extend .right-menu-button;
+    text-decoration: none;
+    border-color: none;
+  }
+
+}
+
+// Social media icons in right menu
+.right-menu-social-icons{
+  border: 2px solid lighten($right-menu-button-font-color, 25%);
+  background-color: inherit;
+  border-radius: 1px;
+  margin-bottom: 5px;
+  min-width: 34px;
+  font-family: $socialico;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 100%;
+  padding: 0px 4px;
+  color: lighten($right-menu-button-font-color, 25%);
+  @include transition(.5s);
+}
+
+// colors on hover of social medias
+// facebook
+
+.facebook-hover{
+  &:hover {
+    $color: #3a5999;
+    @extend .right-menu-social-icons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+//twitter
+.twitter-hover{
+  &:hover {
+    $color: #3aa9de;
+    @extend .right-menu-social-icons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+//instagram
+.instagram-hover{
+  &:hover {
+    $color: #3e729a;
+    @extend .right-menu-social-icons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+//tumblr
+.tumblr-hover{
+  &:hover {
+    $color: #2c4762;
+    @extend .right-menu-social-icons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+//pinterest
+.pinterest-hover{
+  &:hover {
+    $color: #e41e11;
+    @extend .right-menu-social-icons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+//vimeo
+.vimeo-hover{
+  &:hover {
+    $color: #44bbff;
+    @extend .right-menu-social-icons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+
+// Text on bottom of right menu
 .bottom-element{
+  margin-top: 220px;
+  p{
+    font-family: $open-sans-italic;
+    font-style: italic;
+  }
 }
 
 
