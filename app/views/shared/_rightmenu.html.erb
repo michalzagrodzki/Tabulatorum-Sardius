@@ -1,19 +1,20 @@
-<div class='col-md-2 right-hand-menu'>
+<div class='col-md-2 right-menu'>
   <!-- Title -->
   <%= link_to(welcome_index_path) do  %>
     <div class='sidebar-module'>
-      <h2 class='text-center'>Million Stories</h2>
+      <h2 class='text-center right-menu-title'>Million Stories</h2>
     </div>
   <% end %>
+  <br/>
   <!-- /Title -->
 
   <!-- Map module -->
   <div class='sidebar-module' data-no-turbolink>
     <%= link_to(map_path) do %>
-      <button class='btn btn-default btn-block' role='button'>Map</button>
+      <button class='btn btn-default btn-block right-menu-button' role='button'>MAP</button>
     <% end %>
   </div>
-  <hr>
+
   <!-- /Map module -->
 
   <!-- Contact module -->
@@ -21,16 +22,17 @@
     <ul class='list-unstyled'>
       <%= link_to(about_us_index_path) do %>
         <li>
-          <button class='btn btn-default btn-block' role='button'>About</button>
+          <button class='btn btn-default btn-block right-menu-button' role='button'>ABOUT</button>
         </li>
       <% end %>
       <%= link_to(contact_url) do %>
         <li>
-          <button class='btn btn-default btn-block' role='button'>Contact</button>
+          <button class='btn btn-default btn-block right-menu-button' role='button'>CONTACT</button>
         </li>
       <% end %>
     </ul>
   </div>
+  <br/>
   <hr>
   <!-- /Contact module -->
 
@@ -39,27 +41,34 @@
     <div class='row'>
 
       <!-- 1st row -->
-      <div class='col-md-4'>
-        <a class='btn btn-default disabled' href='#' role='button'>1</a>
+      <div class='col-md-2'>
       </div>
-      <div class='col-md-4'>
-        <a class='btn btn-default disabled' href='#' role='button'>2</a>
+      <div class='col-md-2 '>
+        <a class='btn btn-default right-menu-social-icons facebook-hover' href='#' role='button'>F</a>
       </div>
-      <div class='col-md-4'>
-        <a class='btn btn-default disabled' href='#' role='button'>3</a>
+      <div class='col-md-2'>
+        <a class='btn btn-default right-menu-social-icons twitter-hover' href='#' role='button'>L</a>
+      </div>
+      <div class='col-md-2'>
+        <a class='btn btn-default right-menu-social-icons instagram-hover' href='#' role='button'>I</a>
       </div>
 
+    </div>
+    <div class='row'>
       <!-- 2nd row -->
-      <div class='col-md-4'>
-        <a class='btn btn-default disabled' href='#' role='button'>4</a>
+      <div class='col-md-2'>
       </div>
-      <div class='col-md-4'>
-        <a class='btn btn-default disabled' href='#' role='button'>5</a>
+      <div class='col-md-2'>
+        <a class='btn btn-default right-menu-social-icons tumblr-hover' href='#' role='button'>O</a>
       </div>
-      <div class='col-md-4'>
-        <a class='btn btn-default disabled' href='#' role='button'>6</a>
+      <div class='col-md-2'>
+        <a class='btn btn-default right-menu-social-icons pinterest-hover' href='#' role='button'>P</a>
+      </div>
+      <div class='col-md-2'>
+        <a class='btn btn-default right-menu-social-icons vimeo-hover' href='#' role='button'>V</a>
       </div>
     </div>
+
   </div>
   <hr>
   <!-- /Social Media Links -->
