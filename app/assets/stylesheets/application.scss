@@ -70,11 +70,11 @@
 // Playfair Bold
 @font-face {
   font-family: 'Playfair-Bold';
-  src:  asset_url('PlayfairDisplaySC-Bold.eot');
-  src:  asset_url('PlayfairDisplaySC-Bold.eot?#iefix') format('embedded-opentype'),
-  asset_url('PlayfairDisplaySC-Bold.svg#PlayfairDisplaySC-Bold') format('svg'),
-  asset_url('PlayfairDisplaySC-Bold.woff') format('woff'),
-  asset_url('PlayfairDisplaySC-Bold.ttf') format('truetype');
+  src:  asset_url('PlayfairDisplay-Bold.eot');
+  src:  asset_url('PlayfairDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+  asset_url('PlayfairDisplay-Bold.svg#PlayfairDisplay-Bold') format('svg'),
+  asset_url('PlayfairDisplay-Bold.woff') format('woff'),
+  asset_url('PlayfairDisplay-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
@@ -82,11 +82,11 @@
 // Playfair Black
 @font-face {
   font-family: 'Playfair-Black';
-  src:  asset_url('PlayfairDisplaySC-Black.eot');
-  src:  asset_url('PlayfairDisplaySC-Black.eot?#iefix') format('embedded-opentype'),
-  asset_url('PlayfairDisplaySC-Black.svg#PlayfairDisplaySC-Black') format('svg'),
-  asset_url('PlayfairDisplaySC-Black.woff') format('woff'),
-  asset_url('PlayfairDisplaySC-Black.ttf') format('truetype');
+  src:  asset_url('PlayfairDisplay-Black.eot');
+  src:  asset_url('PlayfairDisplay-Black.eot?#iefix') format('embedded-opentype'),
+  asset_url('PlayfairDisplay-Black.svg#PlayfairDisplay-Black') format('svg'),
+  asset_url('PlayfairDisplay-Black.woff') format('woff'),
+  asset_url('PlayfairDisplay-Black.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
