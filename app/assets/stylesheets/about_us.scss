@@ -1,3 +1,15 @@
-// Place all the styles related to the about_us controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/******************************************
+               About Us Section
+******************************************/
+
+.story-aboutus-background{
+  background-color: $background-color;
+  padding-bottom: 60px;
+}
+
+.story-aboutus-properties{
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  border: 3px solid lighten($background-color, 25%);
+  border-radius: 0;
+}
