@@ -1,3 +1,25 @@
-// Place all the styles related to the stories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/******************************************
+               Maps Section
+******************************************/
+
+.story-maps-background{
+  background-color: $background-color;
+  padding-bottom: 60px;
+}
+
+.story-maps-properties{
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  border: 3px solid lighten($background-color, 25%);
+  border-radius: 0;
+  width: auto;
+  height: 855px
+}
+
+.story-google-maps{
+  top: -20px;
+  display: block;
+  width: 100%;
+  height: 850px;
+  overflow: hidden;
+}
