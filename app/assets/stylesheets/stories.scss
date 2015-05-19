@@ -34,17 +34,19 @@
   opacity: 0.8;
 }
 
+// title of story in header
 .story-show-header-title{
   position: absolute;
   text-align: center;
   width: 100%;
   bottom: 140px;
   font-family: $playfair-bold;
-  font-size: 85px;
+  font-size: $story-show-title-desktop;
   color: $main-page-title-font-color;
   opacity: 0.8;
 }
 
+// general values for buttons in header
 .story-show-header-button-row{
   position: absolute;
   bottom: 70px;
@@ -52,6 +54,7 @@
   margin-right: auto;
 }
 
+// style for single button in header
 .story-show-header-button{
   background-color: transparent;
   border-radius: 0;
@@ -65,5 +68,129 @@
     background-color: $main-page-title-font-color;
     opacity: 0.95;
     color: lighten($main-page-title-font-color, 40%);
+  }
+}
+
+// background of story
+.story-show-background{
+  background-color: $background-color;
+}
+
+// title of section
+.story-show-section-title{
+  margin-top: 105px;
+  margin-bottom: 0;
+  font-family: $playfair-bold;
+  color: $story-show-section-title-font-color;
+  font-size: $story-show-section-title-desktop;
+  line-height: 80%;
+
+}
+
+// date in section header
+.story-show-section-date{
+  font-family: $playfair-bold;
+  font-style: oblique;
+  color: $story-show-section-title-font-color;
+  font-size: 20px;
+  margin-bottom: 55px;
+}
+
+// text of section
+.story-show-section-text{
+  font-family: $open-sans-regular;
+  color: darken($story-show-section-title-font-color, 20%);
+  font-size: $story-show-text-desktop;
+  line-height: 160%;
+  margin-top: 75px;
+  margin-bottom: 75px;
+
+}
+
+// image in section
+.story-show-section-image{
+  border: 3px solid lighten($background-color, 25%);
+  border-radius: 0;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0 0 0 ;
+  box-shadow: 0 2px 3px darken($background-color, 10%);
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+// Social media properties
+.story-show-social-media-properties{
+  margin-bottom: 85px;
+}
+
+// Spacer between sections
+.spacer{
+  margin-top: 100px;
+}
+
+// Social media action icons
+.story-show-social-icons{
+  border: 2px solid lighten($right-menu-button-font-color, 25%);
+  background-color: inherit;
+  border-radius: 1px;
+  margin-bottom: 5px;
+  min-width: 34px;
+  font-family: $open-sans-regular;
+  font-style: normal;
+  font-size: $story-show-text-desktop;
+  line-height: 180%;
+  padding: 2px 4px;
+  color: lighten($right-menu-button-font-color, 25%);
+  @include transition(.5s);
+}
+
+// colors on hover of social media actions
+
+// facebook
+.story-show-facebook-hover{
+  &:hover {
+    $color: #3a5999;
+    @extend .story-show-social-icons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+//twitter
+.story-show-twitter-hover{
+  &:hover {
+    $color: #3aa9de;
+    @extend .story-show-social-icons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+//pinterest
+.story-show-pinterest-hover{
+  &:hover {
+    $color: #e41e11;
+    @extend .story-show-social-icons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+//google
+.story-show-google-hover{
+  &:hover {
+    $color: #d54a2d;
+    @extend .story-show-social-icons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
   }
 }
