@@ -73,25 +73,28 @@
 <!-- Main column and side menu -->
 
   <!-- Main column -->
-  <div class='col-md-10'>
+  <div class='col-md-10 story-show-background'>
 
     <!-- name of section - Story -->
     <div>
-      <h1 class='text-center text-uppercase' id="story_section">story</h1>
+      <h1 class='text-center text-uppercase story-show-section-title' id="story_section">story</h1>
       <!-- date -->
-      <p class='text-center text-lowercase'><small><%= story.created_at.strftime("%e.%m.%Y") %></small></p>
+      <p class='text-center text-lowercase story-show-section-date'><small><%= story.created_at.strftime("%e.%m.%Y") %></small></p>
 
       <!-- Story - Chapters -->
       <% story.chapters.each do |chapter| %>
           <!-- Story text -->
-          <div>
-            <p><%= chapter.text %></p>
+        <div class="col-md-offset-2">
+          <div class="col-md-9">
+            <p class="story-show-section-text"><%= chapter.text %></p>
           </div>
+        </div>
           <!-- Pictures for story -->
         <div class='row'>
+          <div class="col-md-offset-2">
           <% chapter.pictures.each do |picture| %>
-            <div class='col-md-4'>
-              <%= image_tag(picture.link,  class: 'img-responsive', alt: 'Title image') %>
+            <div class='col-md-9 col-sm-12 image-center'>
+              <%= image_tag(picture.link,  class: 'story-show-section-image', alt: 'Title image') %>
               <% if user_signed_in? %>
                 <br>
                 <div class="row">
@@ -110,6 +113,7 @@
               <% end %>
             </div>
           <% end %>
+          </div>
         </div>
         <% if user_signed_in? %>
           <br>
@@ -128,7 +132,7 @@
           <hr/>
           <br>
         <% end %>
-    <% end %>
+      <% end %>
 
       <% if user_signed_in? %>
         <!-- Form for adding chapter -->
@@ -162,7 +166,8 @@
           </div>
         </div>
     <% end %>
-
+    </div>
+    <div class="col-md-12 story-show-social-media-properties">
       <!-- Social media items -->
       <%= render 'socialmedia_icons' %>
       <!-- /Social media items -->
@@ -171,18 +176,19 @@
 
     <!-- name of section - Pictures -->
     <div>
-      <h1 class='text-center text-uppercase' id="pictures_section" >pictures</h1>
+      <h1 class='text-center text-uppercase story-show-section-title' id="pictures_section" >pictures</h1>
       <!-- date -->
-      <p class='text-center text-lowercase'><small><%= story.updated_at.strftime("%e.%m.%Y") %></small></p>
+      <p class='text-center text-lowercase story-show-section-date'><small><%= story.updated_at.strftime("%e.%m.%Y") %></small></p>
 
-      <div class='row'>
+      <div class='row spacer'>
         <% story.pictures.each do |picture| %>
             <div class='col-md-4'>
-              <%= link_in_image(picture.link, story_pictures_path(story), {class: 'img-responsive img-thumbnail', alt:""}) %>
+              <%= link_in_image(picture.link, story_pictures_path(story), {class: 'img-thumbnail story-show-section-image', alt:""}) %>
             </div>
         <% end %>
       </div>
-
+    </div>
+    <div class="col-md-12 story-show-social-media-properties">
       <!-- Social media items -->
       <%= render 'socialmedia_icons' %>
       <!-- /Social media items -->
@@ -191,12 +197,14 @@
 
     <!-- name of section - Map -->
     <div data-no-turbolink>
-      <h1 class='text-center text-uppercase' id="map_section">map</h1>
+      <h1 class='text-center text-uppercase story-show-section-title' id="map_section">map</h1>
       <!-- date -->
-      <p class='text-center text-lowercase'><small><%= story.updated_at.strftime("%e.%m.%Y") %></small></p>
-
-      <%= render 'showstory_maps' %>
-
+      <p class='text-center text-lowercase story-show-section-date'><small><%= story.updated_at.strftime("%e.%m.%Y") %></small></p>
+      <div class="spacer">
+        <%= render 'showstory_maps' %>
+      </div>
+    </div>
+    <div class="col-md-12 story-show-social-media-properties">
       <!-- Social media items -->
       <%= render 'socialmedia_icons' %>
       <!-- /Social media items -->
@@ -205,40 +213,45 @@
 
     <!-- name of section - Advice -->
     <div>
-      <h1 class='text-center text-uppercase' id="advice_section">advice</h1>
+      <h1 class='text-center text-uppercase story-show-section-title' id="advice_section">advice</h1>
       <!-- date -->
-      <p class='text-center text-lowercase'><small><%= story.updated_at.strftime("%e.%m.%Y") %></small></p>
+      <p class='text-center text-lowercase story-show-section-date'><small><%= story.updated_at.strftime("%e.%m.%Y") %></small></p>
 
       <!-- Story - Advice -->
       <% story.advices.each do |advice| %>
           <!-- Story text -->
-          <div>
-            <p><%= advice.text %></p>
+        <div class="col-md-offset-2">
+          <div class="col-md-9">
+            <p class="story-show-section-text"><%= advice.text %></p>
           </div>
+        </div>
 
           <!-- Pictures for story -->
           <div class='row'>
+            <div class="col-md-offset-2">
             <% advice.pictures.each do |picture| %>
-                <div class='col-md-4'>
-                  <%= image_tag(picture.link,  class: 'img-responsive', alt: 'Title image') %>
-                  <% if user_signed_in? %>
-                    <br>
-                    <div class="row">
-                      <div class="col-md-5 col-md-offset-1">
-                        <%= link_to(edit_picture_path(picture)) do %>
-                          <button class='btn btn-default btn-block' role='button'>Edit Picture</button>
-                        <% end %>
-                      </div>
-                      <div class="col-md-5 ">
-                        <%= link_to(picture, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
-                          <button class='btn btn-default btn-block' role='button'>Delete Picture</button>
-                        <% end %>
-                      </div>
+
+              <div class='col-md-9 col-sm-12 image-center'>
+                <%= image_tag(picture.link,  class: 'story-show-section-image', alt: 'Title image') %>
+                <% if user_signed_in? %>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                      <%= link_to(edit_picture_path(picture)) do %>
+                        <button class='btn btn-default btn-block' role='button'>Edit Picture</button>
+                      <% end %>
                     </div>
-                    <hr/>
-                  <% end %>
+                    <div class="col-md-5 ">
+                      <%= link_to(picture, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }) do %>
+                        <button class='btn btn-default btn-block' role='button'>Delete Picture</button>
+                      <% end %>
+                    </div>
+                  </div>
+                  <hr/>
+                <% end %>
                 </div>
             <% end %>
+          </div>
           </div>
           <% if user_signed_in? %>
             <br>
@@ -305,7 +318,6 @@
   <%= render 'shared/rightmenu' %>
   <!-- /Right Column - Menu -->
 
-</div>
 
 <% content_for :footer_maps do %>
     <!-- Loading data to Google maps from controller, through 'buildMap', to coffeescript file -->
