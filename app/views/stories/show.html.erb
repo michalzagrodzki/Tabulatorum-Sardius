@@ -11,33 +11,35 @@
 <% end %>
 
 <!-- Lead - Image, title and buttons -->
-<div class='jumbotron'>
 
-  <div class='container-fluid'>
-    <!-- milion stories logo -->
-    <p class='text-center text-lowercase'><small>milion stories</small></p>
+  <div class='container-fluid reset-margin'>
     <!-- title image -->
+    <div class="story-show-header-image">
     <%= image_tag(story.header_image, class: 'img-responsive', alt: 'Title image') %>
+    <!-- milion stories logo -->
+    <p class='story-show-header-milion-stories'><small>Milion Stories</small></p>
     <!-- lead title -->
-    <h1 class='text-center text-uppercase'><%= story.name %></h1>
+    <h1 class='text-center text-uppercase story-show-header-title'><%= story.name %></h1>
 
     <!-- navigation buttons for article -->
-    <div class='col-md-8 col-md-offset-2'>
+      <div class="col-md-offset-2">
+    <div class='col-md-8 story-show-header-button-row'>
       <div class='row'>
         <div class='col-md-3'>
-          <a class='btn btn-default btn-block text-lowercase' href='#story_section' role=''>story</a>
+          <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#story_section' role='button'>story</a>
         </div>
         <div class='col-md-3'>
-          <a class='btn btn-default btn-block text-lowercase' href='#pictures_section' role='button'>pictures</a>
+          <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#pictures_section' role='button'>pictures</a>
         </div>
         <div class='col-md-3'>
-          <a class='btn btn-default btn-block text-lowercase' href='#advice_section' role='button'>advice</a>
+          <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#advice_section' role='button'>advice</a>
         </div>
         <div class='col-md-3'>
-          <a class='btn btn-default btn-block text-lowercase' href='#map_section' role='button'>map</a>
+          <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#map_section' role='button'>map</a>
         </div>
       </div>
     </div>
+      </div>
 
     <% if user_signed_in? %>
       <!-- admin buttons for story -->
@@ -64,12 +66,12 @@
     <% end %>
 
   </div>
+  </div>
 
-</div>
-<!-- /jumbotron -->
+<!-- / Lead - Image, title and buttons -->
 
 <!-- Main column and side menu -->
-<div class='container-fluid'>
+
   <!-- Main column -->
   <div class='col-md-10'>
 
