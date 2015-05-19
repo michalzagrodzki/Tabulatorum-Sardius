@@ -161,6 +161,8 @@ $right-menu-title-font-color: #3d3d3d;
 $right-menu-button-font-color: #656565;
 $right-menu-button-active-font-color: #dbdbdb;
 
+// story page
+$story-show-section-title-font-color: #666666;
 
 $secondary-font-color: #a18e73;
 $footer-font-color: #40382e;
@@ -181,10 +183,19 @@ $button-border-color: #2f2c29;
 // Size of fonts
 
 $main-page-title-desktop: 56px;
-$main-page-title-mobile: 56px;
+$main-page-title-mobile: 60px;
 
 $main-page-date-desktop: $main-page-title-desktop*0.2;
 $main-page-date-mobile: $main-page-title-mobile*0.2;
+
+$story-show-title-desktop: 85px;
+$story-show-title-mobile: 80px;
+
+$story-show-section-title-desktop: 60px;
+$story-show-section-title-desktop: 65px;
+
+$story-show-text-desktop: 17px;
+$story-show-text-mobile: 20px;
 
 /******************************************
              HTML Section
@@ -428,20 +439,8 @@ hr {
 /* Extra Small devices (mobiles, 320px and up) */
 @media (min-width: 320px) and (max-width: 767px) {
 
-  // Change distance between head titles in mobile views.
-  .head-font {
-    margin-bottom: 40px;
-  }
 
-  .second-head-font {
-    margin-top: 20px;
-    margin-bottom: 60px;
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .main-logo-icon{
+  .example{
     margin-top: 60px;
     margin-bottom: 30px;
   }
