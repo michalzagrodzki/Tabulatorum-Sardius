@@ -1,3 +1,141 @@
-// Place all the styles related to the pictures controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/******************************************
+              Pictures Section
+******************************************/
+
+// background properties of pictures
+.story-pictures-background{
+  background-color: darken($background-color, 50%);
+  padding-bottom: 10px;
+}
+
+// properties of pictures panel
+.story-pictures-image-panel-properties{
+  background-color: lighten($background-color, 5%);
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  border: 3px solid darken($background-color, 15%);
+  border-radius: 0;
+  box-shadow: 0 0 15px 2px darken($background-color, 70%);
+}
+
+// properties of picture
+.story-pictures-image-properties{
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+// properties of description panel
+.story-pictures-description-properties{
+  @extend .story-pictures-image-properties;
+  background-color: lighten($background-color, 0%);
+  //padding: 15px 15px 15px 15px;
+  border-radius: 2px;
+}
+
+// title of panel
+.story-pictures-title{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: $open-sans-bold;
+  color: $story-show-section-title-font-color;
+  font-size: 20px;
+  line-height: 120%;
+  p{
+    margin-bottom: 20px;
+  }
+}
+
+// text of panel
+.story-pictures-text{
+  font-family: $open-sans-regular;
+  color: darken($story-show-section-title-font-color, 20%);
+  font-size: $story-show-text-desktop;
+  line-height: 160%;
+}
+
+// date on panel
+.story-pictures-date{
+  @extend .story-pictures-text;
+  color: lighten($story-show-section-title-font-color, 15%);
+}
+
+// action buttons
+.story-pictures-buttons{
+  border: 2px solid lighten($right-menu-button-font-color, 25%);
+  background-color: inherit;
+  border-radius: 1px;
+  margin-bottom: 0px;
+  font-family: $open-sans-regular;
+  font-style: normal;
+  font-size: $story-show-text-desktop;
+  line-height: 180%;
+  padding: 5px 4px;
+  color: lighten($right-menu-button-font-color, 25%);
+  @include transition(.5s);
+
+  &:hover {
+    @extend .story-pictures-buttons;
+    background-color: lighten($right-menu-button-font-color, 25%);
+    color: white;
+    padding: 5px 4px;
+    margin-bottom: 0px;
+  }
+}
+
+.story-pictures-social-media-buttons{
+  @extend .story-pictures-buttons;
+  padding: 3px 2px;
+}
+// colors on hover of social media actions
+
+// facebook
+.story-pictures-facebook-hover{
+  &:hover {
+    $color: #3a5999;
+    @extend .story-pictures-social-media-buttons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+//twitter
+.story-pictures-twitter-hover{
+  &:hover {
+    $color: #3aa9de;
+    @extend .story-pictures-social-media-buttons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+//pinterest
+.story-pictures-pinterest-hover{
+  &:hover {
+    $color: #e41e11;
+    @extend .story-pictures-social-media-buttons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+//google
+.story-pictures-google-hover{
+  &:hover {
+    $color: #d54a2d;
+    @extend .story-pictures-social-media-buttons;
+    border: 2px solid $color;
+    background-color: $color;
+    color: white;
+  }
+}
+
+//hr
+.separator{
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
