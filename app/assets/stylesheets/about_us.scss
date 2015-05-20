@@ -2,14 +2,57 @@
                About Us Section
 ******************************************/
 
+// background properties of about us
 .story-aboutus-background{
   background-color: $background-color;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
 }
 
+// properties of about us panel
 .story-aboutus-properties{
+  background-color: lighten($background-color, 5%);
   margin: 0 0 0 0;
   padding: 0 0 0 0;
   border: 3px solid lighten($background-color, 25%);
   border-radius: 0;
+}
+
+// title of panel
+.aboutus-title{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: $playfair-bold;
+  color: $story-show-section-title-font-color;
+  font-size: $story-show-section-title-desktop;
+  line-height: 80%;
+}
+
+// text of panel
+.aboutus-text{
+  font-family: $open-sans-regular;
+  color: darken($story-show-section-title-font-color, 20%);
+  font-size: $story-show-text-desktop;
+  line-height: 160%;
+  margin-bottom: 50px;
+}
+
+// action buttons
+.aboutus-buttons{
+  border: 2px solid lighten($right-menu-button-font-color, 25%);
+  background-color: inherit;
+  border-radius: 1px;
+  margin-bottom: 5px;
+  font-family: $open-sans-regular;
+  font-style: normal;
+  font-size: $story-show-text-desktop;
+  line-height: 180%;
+  padding: 2px 4px;
+  color: lighten($right-menu-button-font-color, 25%);
+  @include transition(.5s);
+
+  &:hover {
+    @extend .aboutus-buttons;
+    background-color: lighten($right-menu-button-font-color, 25%);
+    color: white;
+  }
 }
