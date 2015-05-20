@@ -1,7 +1,43 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<p>hello world</p>
+<div class='col-md-12 story-pictures-background'>
+  <br>
+  <div class="row">
+  <div class="col-md-1">
+    >
+  </div>
+    <div class="col-md-10 ">
+    <div class="panel panel-default">
+      <div class="panel-body story-pictures-image-panel-properties">
+        <%= image_tag(picture.link,  class: 'story-pictures-image-properties', alt: 'Title image') %>
+      </div>
+    </div>
+      <div class="panel panel-default story-pictures-description-properties">
+        <div class="panel-body ">
+      <div class="row">
+      <div class="col-md-8 story-pictures-title">
+        <p><%= picture.title %></p>
+        <hr/>
+      </div>
+        <div class="col-md-4 story-pictures-date">
+          <p>Picture taken at <%= picture.location %> on <%= picture.created_at.strftime("%A, %e %B %Y") %></p>
+        </div>
+        <div class="col-md-8 story-pictures-text">
+          <p><%= picture.description %></p>
+        </div>
+        <div class="col-md-4">
+          <%= render 'socialmedia_icons' %>
+          <%= link_to(story_path(story)) do %>
+            <button class="btn btn-default btn-block story-pictures-buttons">Back to story</button>
+          <% end %>
+        </div>
+      </div>
+        </div>
+      </div>
+
+  </div>
+    <div class="col-md-1">
+      <
+    </div>
+  </div>
+</div>
+
+
