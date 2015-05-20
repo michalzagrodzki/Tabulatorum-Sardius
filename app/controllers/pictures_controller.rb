@@ -8,7 +8,7 @@ class PicturesController < ApplicationController
   expose(:story)
 
   # restricing elements, which can be accessed
-  before_action :fetch_picture, only: [ :index ]
+  before_action :fetch_picture, only: [ :index, :show ]
 
 
   def index
