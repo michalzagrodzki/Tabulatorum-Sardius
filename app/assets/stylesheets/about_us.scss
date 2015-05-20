@@ -3,13 +3,13 @@
 ******************************************/
 
 // background properties of about us
-.story-aboutus-background{
+.about-us-background{
   background-color: $background-color;
   padding-bottom: 50px;
 }
 
 // properties of about us panel
-.story-aboutus-properties{
+.about-us-properties{
   background-color: lighten($background-color, 5%);
   margin: 0 0 0 0;
   padding: 0 0 0 0;
@@ -18,7 +18,7 @@
 }
 
 // title of panel
-.aboutus-title{
+.about-us-title{
   margin-top: 30px;
   margin-bottom: 30px;
   font-family: $playfair-bold;
@@ -28,7 +28,7 @@
 }
 
 // text of panel
-.aboutus-text{
+.about-us-text{
   font-family: $open-sans-regular;
   color: darken($story-show-section-title-font-color, 20%);
   font-size: $story-show-text-desktop;
@@ -37,7 +37,7 @@
 }
 
 // action buttons
-.aboutus-buttons{
+.about-us-buttons{
   border: 2px solid lighten($right-menu-button-font-color, 25%);
   background-color: inherit;
   border-radius: 1px;
@@ -51,7 +51,7 @@
   @include transition(.5s);
 
   &:hover {
-    @extend .aboutus-buttons;
+    @extend .about-us-buttons;
     background-color: lighten($right-menu-button-font-color, 25%);
     color: white;
   }
