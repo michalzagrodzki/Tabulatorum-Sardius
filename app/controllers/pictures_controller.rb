@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
 
   # set rights for guest and user
-  before_action :authenticate_user!, except: [ :index ]
+  before_action :authenticate_user!, except: [ :index, :show ]
 
   expose(:pictures)
   expose(:picture)
@@ -15,6 +15,9 @@ class PicturesController < ApplicationController
   end
 
   def new
+  end
+
+  def show
   end
 
   def create
