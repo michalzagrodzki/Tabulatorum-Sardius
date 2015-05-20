@@ -1,3 +1,85 @@
-// Place all the styles related to the contacts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/******************************************
+               About Us Section
+******************************************/
+
+// background properties of contact us
+.contacts-background{
+  background-color: $background-color;
+  padding-bottom: 50px;
+}
+
+// properties of contact us panel
+.contacts-properties{
+  background-color: lighten($background-color, 5%);
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  border: 3px solid lighten($background-color, 25%);
+  border-radius: 0;
+}
+
+// title of panel
+.contacts-title{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: $playfair-bold;
+  color: $story-show-section-title-font-color;
+  font-size: $story-show-section-title-desktop;
+  line-height: 80%;
+}
+
+// text of panel
+.contacts-text{
+  font-family: $open-sans-regular;
+  color: darken($story-show-section-title-font-color, 20%);
+  font-size: $story-show-text-desktop;
+  line-height: 160%;
+  margin-bottom: 50px;
+}
+
+// form label
+.contacts-label{
+  font-family: $open-sans-regular;
+  color: darken($story-show-section-title-font-color, 20%);
+  font-style: normal;
+  font-size: 15px;
+  line-height: 160%;
+  margin-bottom: 50px;
+}
+
+// form input field
+.contacts-form-control{
+  background-color: lighten($background-color, 7%);
+  border: 1px solid darken($background-color, 5%);
+  border-radius: 0;
+  color: darken($story-show-section-title-font-color, 20%);
+  font-size: $story-show-text-desktop;
+  font-family: $open-sans-regular;
+  height: 40px;
+
+
+  &:focus{
+    background-color: lighten($background-color, 25%);
+  }
+}
+
+// action buttons
+.contacts-buttons{
+  border: 2px solid lighten($right-menu-button-font-color, 25%);
+  background-color: inherit;
+  border-radius: 1px;
+  margin-bottom: 5px;
+  font-family: $open-sans-regular;
+  font-style: normal;
+  font-size: $story-show-text-desktop;
+  line-height: 180%;
+  padding: 10px 4px;
+  color: lighten($right-menu-button-font-color, 25%);
+  @include transition(.5s);
+
+  &:hover {
+    @extend .aboutus-buttons;
+    background-color: lighten($right-menu-button-font-color, 25%);
+    color: white;
+    padding: 10px 4px;
+  }
+}
