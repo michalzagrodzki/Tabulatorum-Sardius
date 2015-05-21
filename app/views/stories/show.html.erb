@@ -183,7 +183,7 @@
       <div class='row spacer'>
         <% story.pictures.each do |picture| %>
             <div class='col-md-4'>
-              <%= link_in_image(picture.link, story_pictures_path(story), {class: 'img-thumbnail story-show-section-image', alt:""}) %>
+              <%= link_in_image(picture.link, story_picture_path(story, picture), {class: 'img-thumbnail story-show-section-image', alt:""}) %>
             </div>
         <% end %>
       </div>
