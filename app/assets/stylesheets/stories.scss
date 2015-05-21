@@ -12,13 +12,18 @@
 }
 
 // Header of page
-.story-show-header-image{
+.story-show-header-image {
+  display: block;
+  overflow: hidden;
   position: relative;
-  background: no-repeat no-repeat center;
-  background-size: cover;
-  //min-height: 1000px;
-  width: auto;
-  height: 100%;
+}
+
+.story-show-header-image-properties{
+  top: 0;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
 }
 
 // milion stories logo on top
@@ -131,6 +136,16 @@
   margin-top: 100px;
 }
 
+.show-story-maps-properties{
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  border: 3px solid lighten($background-color, 25%);
+  border-radius: 0;
+  width: auto;
+  height: 855px;
+  box-shadow: 0 2px 3px darken($background-color, 10%);
+}
+
 .story-show-google-maps{
   display: block;
   width: 100%;
@@ -198,3 +213,45 @@
     color: white;
   }
 }
+
+/******************************************
+                Media Queries
+******************************************/
+
+/* Extra Small devices (mobiles, 320px and up) */
+@media (min-width: 320px) and (max-width: 767px) {
+
+  .story-show-header-title{
+    bottom: 180px;
+  }
+
+  .story-show-header-button {
+    margin-bottom: 20px;
+  }
+
+  .story-show-section-title{
+    padding-top: 105px;
+    margin-top: 0;
+  }
+
+  .show-story-maps-properties{
+    height: 505px;
+  }
+
+  .story-show-google-maps{
+    height: 500px;
+  }
+
+  .story-show-social-media-properties{
+    margin-bottom: 0;
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1920px) {}
