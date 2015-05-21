@@ -9,8 +9,8 @@
   <!-- /Title -->
 
   <!-- Map module -->
-  <div class='sidebar-module' data-no-turbolink>
-    <%= link_to(map_path) do %>
+  <div class='sidebar-module'>
+    <%= link_to(map_path, data: { no_turbolink: true } ) do %>
       <button class='btn btn-default btn-block right-menu-button' role='button'>MAP</button>
     <% end %>
   </div>
