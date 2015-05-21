@@ -13,7 +13,7 @@ class Picture < ActiveRecord::Base
   validates :title, presence: true, length: { minimum: 3 }
   validates :link, presence: true, length: { minimum: 3 }
   validates :story_id, presence: true
-  validates :latitude, :format => { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: true
-  validates :longitude, :format => { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: true
+  validates :latitude, numericality: true
+  validates :longitude, numericality: true
 
 end
