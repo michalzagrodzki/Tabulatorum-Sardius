@@ -19,7 +19,6 @@ gem 'rails_best_practices', '~> 1.15.7'
 
 # Gems related to javascript
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
