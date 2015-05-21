@@ -32,6 +32,7 @@
                   <%= picture_form.input :title, label: 'Title of picture', placeholder: 'View over city.', hint: 'Field above must be filled.' %>
                   <%= picture_form.input :link,  label: 'Link to picture on server', placeholder: 'www.example.com', hint: 'Field above must be filled.' %>
                   <%= picture_form.input :location, label: 'Name of place where picture was taken', placeholder: 'London, UK' %>
+                  <%= picture_form.input :description, label: 'Description of picture', placeholder: 'This is place where road ends.' %>
                   <hr/>
                   <%= picture_form.input :latitude, hint: 'Put only numbers and comas.' %>
                   <%= picture_form.input :longitude, hint: 'Put only numbers and comas.' %>
@@ -47,9 +48,11 @@
         </div>
       </div>
 
-      <div class="panel-footer">
-      <%= f.button :submit, 'Publish changes.', class: 'btn btn-lg btn-block' %>
-      </div>
+      <% unless story.pictures.size == 0 %>
+        <div class="panel-footer">
+        <%= f.button :submit, 'Publish changes.', class: 'btn btn-lg btn-block' %>
+        </div>
+      <% end %>
 
     <% end %>
     </div>

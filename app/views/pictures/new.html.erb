@@ -25,6 +25,7 @@
           <%= simple_form_for( picture, html: {class: 'form-horizontal'} ) do |f| %>
             <%= f.input :title, label: 'Title of picture', placeholder: 'View over city.', hint: 'Field above must be filled.' %>
             <%= f.input :link, label: 'Link to picture on server', placeholder: 'www.example.com', hint: 'Field above must be filled.' %>
+            <%= f.input :description, label: 'Description of picture', placeholder: 'This is place where road ends.' %>
             <%= f.association :story, label: 'Assigned Story', hint: 'Select story from list.' %>
             <%= f.input :location, label: 'Name of place where picture was taken', placeholder: 'London, UK' %>
             <hr/>
