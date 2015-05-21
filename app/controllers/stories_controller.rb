@@ -51,8 +51,9 @@ class StoriesController < ApplicationController
       marker.json({
                       # name of story for marker/infowindow
                       title: picture.title,
+                      pic: picture.link,
                       # value for showing in infowindow
-                      lat: picture.latitude
+                      picture: picture.link
                   })
     end
 
