@@ -14,8 +14,9 @@
 
   <div class='container-fluid reset-margin'>
     <!-- title image -->
+
     <div class="story-show-header-image">
-    <%= image_tag(story.header_image, class: 'img-responsive', alt: 'Title image') %>
+    <%= image_tag(story.header_image, class: 'story-show-header-image-properties', alt: 'Title image') %>
     <!-- milion stories logo -->
     <p class='story-show-header-milion-stories'><small>Milion Stories</small></p>
     <!-- lead title -->
@@ -25,16 +26,16 @@
       <div class="col-md-offset-2">
     <div class='col-md-8 story-show-header-button-row'>
       <div class='row'>
-        <div class='col-md-3'>
+        <div class='col-md-3 col-sm-6 col-xs-6'>
           <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#story_section' role='button'>story</a>
         </div>
-        <div class='col-md-3'>
+        <div class='col-md-3 col-sm-6 col-xs-6'>
           <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#pictures_section' role='button'>pictures</a>
         </div>
-        <div class='col-md-3'>
+        <div class='col-md-3 col-sm-6 col-xs-6'>
           <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#advice_section' role='button'>advice</a>
         </div>
-        <div class='col-md-3'>
+        <div class='col-md-3 col-sm-6 col-xs-6'>
           <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#map_section' role='button'>map</a>
         </div>
       </div>
@@ -200,9 +201,9 @@
       <h1 class='text-center text-uppercase story-show-section-title' id="map_section">map</h1>
       <!-- date -->
       <p class='text-center text-lowercase story-show-section-date'><small><%= story.updated_at.strftime("%e.%m.%Y") %></small></p>
-      <div class="spacer">
+      <div class="spacer"></div>
         <%= render 'showstory_maps' %>
-      </div>
+
     </div>
     <div class="col-md-12 story-show-social-media-properties">
       <!-- Social media items -->
