@@ -16,7 +16,7 @@
             <p class='text-center main-page-date'><%= story.updated_at.strftime("%e.%m.%Y") %></p>
 
           <% if user_signed_in? %>
-            <%= link_to(edit_story_path(story)) do %>
+            <%= link_to(edit_story_path(story), data: { no_turbolink: true } ) do %>
                 <button class='btn btn-default btn-block' role='button'>Edit Story</button>
             <% end %>
           <% end %>

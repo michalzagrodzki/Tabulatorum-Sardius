@@ -48,12 +48,12 @@
         <br>
         <div class='row'>
           <div class='col-md-4'>
-            <%= link_to(edit_story_path(story)) do %>
+            <%= link_to(edit_story_path(story), data: { no_turbolink: true } ) do %>
             <button class='btn btn-default btn-block' role='button'>Edit Story</button>
             <% end %>
           </div>
           <div class='col-md-4'>
-            <%= link_to(edit_pictures_path(story)) do %>
+            <%= link_to(edit_pictures_path(story), data: { no_turbolink: true } ) do %>
             <button class='btn btn-default btn-block' role='button'>Manage Pictures of Story</button>
             <% end %>
           </div>
@@ -100,7 +100,7 @@
                 <br>
                 <div class="row">
                   <div class="col-md-5 col-md-offset-1">
-                    <%= link_to(edit_picture_path(picture)) do %>
+                    <%= link_to(edit_picture_path(picture), data: { no_turbolink: true } ) do %>
                       <button class='btn btn-default btn-block' role='button'>Edit Picture</button>
                     <% end %>
                   </div>
@@ -120,7 +120,7 @@
           <br>
           <div class="row">
             <div class="col-md-4 col-md-offset-4">
-              <%= link_to(edit_story_chapter_path(story, chapter)) do %>
+              <%= link_to(edit_story_chapter_path(story, chapter), data: { no_turbolink: true } ) do %>
                 <button class='btn btn-default btn-block' role='button'>Edit Chapter</button>
               <% end %>
             </div>
@@ -238,7 +238,7 @@
                   <br>
                   <div class="row">
                     <div class="col-md-5 col-md-offset-1">
-                      <%= link_to(edit_picture_path(picture)) do %>
+                      <%= link_to(edit_picture_path(picture), data: { no_turbolink: true } ) do %>
                         <button class='btn btn-default btn-block' role='button'>Edit Picture</button>
                       <% end %>
                     </div>
@@ -258,7 +258,7 @@
             <br>
             <div class="row">
               <div class="col-md-4 col-md-offset-4">
-                <%= link_to(edit_story_advice_path(story, advice)) do %>
+                <%= link_to(edit_story_advice_path(story, advice), data: { no_turbolink: true } ) do %>
                   <button class='btn btn-default btn-block' role='button'>Edit Advice</button>
                 <% end %>
               </div>
