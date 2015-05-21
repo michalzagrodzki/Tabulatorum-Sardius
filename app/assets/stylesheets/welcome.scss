@@ -1,3 +1,24 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/******************************************
+   Main Page Section - helper CSS classes
+******************************************/
+
+// Classes for helper welcome_helper,rb/title_length
+// Set margin-top value according to number of lines of text
+
+// 1 line title
+.main-page-title-1-line{
+  @extend .main-page-title;
+  margin-top: -73px;
+}
+
+// 2 line title
+.main-page-title-2-line{
+  @extend .main-page-title;
+  margin-top: -120px;
+}
+
+// 3 line title
+.main-page-title-3-line{
+  @extend .main-page-title;
+  margin-top: -167px;
+}

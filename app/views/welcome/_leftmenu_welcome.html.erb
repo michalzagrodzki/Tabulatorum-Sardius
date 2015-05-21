@@ -4,19 +4,19 @@
     <!-- Story Thumbnail of <%= story.name %>-->
     <div class='col-md-4'>
       <!-- Link to story-->
-      <%= link_to(story, data: { no_turbolink: true } ) do %>
+      <%= link_to(story) do %>
         <div>
           <!-- Image of story -->
           <div class= "thumbnail main-page-image">
           <%= image_tag(story.main_page_image, alt: 'Thumbnail image') %>
 
             <!-- Title of story-->
-            <h3 class='text-center main-page-title'><%= story.name %></h3>
+            <h3 class='text-center <%= title_length(story.name) %>'><%= story.name.truncate(30) %></h3>
             <!-- Date of last update of story -->
             <p class='text-center main-page-date'><%= story.updated_at.strftime("%e.%m.%Y") %></p>
 
           <% if user_signed_in? %>
-            <%= link_to(edit_story_path(story), data: { no_turbolink: true } ) do %>
+            <%= link_to(edit_story_path(story)) do %>
                 <button class='btn btn-default btn-block' role='button'>Edit Story</button>
             <% end %>
           <% end %>
