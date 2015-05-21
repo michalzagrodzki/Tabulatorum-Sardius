@@ -4,7 +4,7 @@
     <!-- Story Thumbnail of <%= story.name %>-->
     <div class='col-md-4'>
       <!-- Link to story-->
-      <%= link_to(story) do %>
+      <%= link_to(story, data: { no_turbolink: true } ) do %>
         <div>
           <!-- Image of story -->
           <div class= "thumbnail main-page-image">
