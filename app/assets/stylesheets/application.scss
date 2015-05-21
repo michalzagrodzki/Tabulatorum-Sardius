@@ -239,9 +239,12 @@ hr {
 // Properties of title on Main Page
 .main-page-title{
   margin-top: -120px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-family: $playfair-black;
   font-size: $main-page-title-desktop;
   color: $main-page-title-font-color;
+  word-wrap: break-word;
   line-height: 85%;
   opacity: 0.8;
 }
