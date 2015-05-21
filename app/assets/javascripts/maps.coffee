@@ -1,6 +1,3 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
 
 # Extend native Builder.Marker Class to create Rich Marker
 class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from builtin builder
@@ -53,4 +50,3 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     markers = handler.addMarkers(markers)
     handler.bounds.extendWith(markers)
     handler.fitMapToBounds()
-
