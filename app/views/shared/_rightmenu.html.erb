@@ -76,16 +76,21 @@
   <!-- Copyright module -->
   <div class='sidebar-module'>
     <div class='col-md-12 bottom-element'>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
       <div>
         <p class='text-center'>Copyright</p>
         <p class='text-center'>Anna Huk</p>
         <p class='text-center'>and</p>
         <p class='text-center'>Michal Zagrodzki</p>
-        <% unless user_signed_in? %>
-          <%= link_to(new_user_session_path) do %>
-            <button class='btn btn-default btn-block' role='button'>Log In</button>
-          <% end %>
-        <% end %>
 
         <% if user_signed_in? %>
           <%= link_to(destroy_user_session_path, :method => :delete) do %>
