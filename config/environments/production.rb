@@ -100,4 +100,6 @@ Rails.application.configure do
       password:               ENV['GMAIL_PASSWORD'],
   }
 
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+  
 end
