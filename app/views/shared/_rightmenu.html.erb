@@ -83,9 +83,6 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
       <% end %>
 
       <div>
@@ -93,6 +90,13 @@
         <p class='text-center'>Anna Huk</p>
         <p class='text-center'>and</p>
         <p class='text-center'>Michal Zagrodzki</p>
+
+        <% unless user_signed_in? %>
+          <%= link_to(new_user_session_path) do %>
+            <button class='btn btn-default btn-block load-more-stories-button' role='button'>Log In</button>
+            <hr>
+          <% end %>
+        <% end %>
 
         <% if user_signed_in? %>
           <%= link_to(destroy_user_session_path, :method => :delete) do %>
