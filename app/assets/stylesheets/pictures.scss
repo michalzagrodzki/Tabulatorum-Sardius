@@ -84,6 +84,14 @@
   }
 }
 
+.story-pictures-glyphicon{
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 250px;
+  color: lighten($right-menu-button-font-color, 25%);
+  font-size: 40px;
+}
+
 .story-pictures-social-media-buttons{
   @extend .story-pictures-buttons;
   padding: 3px 2px;
