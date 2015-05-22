@@ -5,7 +5,7 @@
 // background properties of about us
 .about-us-background{
   background-color: $background-color;
-  padding-bottom: 50px;
+  padding-bottom: 200px;
 }
 
 // properties of about us panel
@@ -16,6 +16,11 @@
   border: 3px solid lighten($background-color, 25%);
   border-radius: 0;
   box-shadow: 0 2px 3px darken($background-color, 10%);
+}
+
+.about-us-image{
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 // title of panel
