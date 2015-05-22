@@ -12,13 +12,13 @@ module WelcomeHelper
     value = input_name.size
 
     case value
-      when 1..10
+      when 1..8
         return css_class_1
-      when 10..20
+      when 8..18
         return css_class_2
-      when 21..30
+      when 18..28
         return css_class_3
-      when 30..(1.0/0.0)
+      when 28..(1.0/0.0)
         return css_class_3
       else
         nil
