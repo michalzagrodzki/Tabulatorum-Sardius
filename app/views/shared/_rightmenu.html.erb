@@ -10,7 +10,7 @@
 
   <!-- Map module -->
   <div class='sidebar-module'>
-    <%= link_to(map_path, data: { no_turbolink: true } ) do %>
+    <%= link_to(map_path) do %>
       <button class='btn btn-default btn-block right-menu-button' role='button'>MAP</button>
     <% end %>
   </div>
@@ -20,12 +20,12 @@
   <!-- Contact module -->
   <div class='sidebar-module'>
     <ul class='list-unstyled'>
-      <%= link_to(about_us_index_path, data: { no_turbolink: true } ) do %>
+      <%= link_to(about_us_index_path) do %>
         <li>
           <button class='btn btn-default btn-block right-menu-button' role='button'>ABOUT</button>
         </li>
       <% end %>
-      <%= link_to(contact_url, data: { no_turbolink: true }) do %>
+      <%= link_to(contact_url) do %>
         <li>
           <button class='btn btn-default btn-block right-menu-button' role='button'>CONTACT</button>
         </li>
