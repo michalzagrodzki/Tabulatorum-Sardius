@@ -1,8 +1,10 @@
-== Tabulatorum Sardius
+= Tabulatorum Sardius
 
-This is application which will show text, pictures and maps contained in posts. Additional functionalites for search, filter and map of posts
+Application showing stories with text and pictures presented on google maps. 
+Extended possibilities for adding and managing your texts and pictures.
 
-Used language and dependecies:
-- Ruby 2.1.5
-- Rails 4.2.0
+=== Technologies used:
+* Ruby 2.1.5
+* Rails 4.1.10
+* jQuery
 
