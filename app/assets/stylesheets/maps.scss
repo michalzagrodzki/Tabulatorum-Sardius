@@ -24,3 +24,30 @@
   height: 850px;
   overflow: hidden;
 }
+
+
+/******************************************
+                Media Queries
+******************************************/
+
+/* Extra Small devices (mobiles, 320px and up) */
+@media (min-width: 320px) and (max-width: 767px) {
+
+  .story-maps-properties{
+    height: 480px;
+  }
+
+  .story-google-maps{
+    height: 475px;
+  }
+
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1920px) {}
