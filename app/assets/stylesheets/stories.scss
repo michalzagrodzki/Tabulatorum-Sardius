@@ -49,6 +49,9 @@
   font-size: $story-show-title-desktop;
   color: $main-page-title-font-color;
   opacity: 0.8;
+  margin-right: 10px;
+  margin-left: 10px;
+  word-wrap: break-word;
 }
 
 // general values for buttons in header
@@ -244,6 +247,10 @@
 
   .story-show-social-media-properties{
     margin-bottom: 0;
+  }
+
+  .story-show-social-icons{
+    margin-bottom: 15px;
   }
 }
 
