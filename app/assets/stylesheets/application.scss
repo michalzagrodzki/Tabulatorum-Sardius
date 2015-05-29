@@ -370,7 +370,7 @@ hr {
 
 // Text on bottom of right menu
 .bottom-element{
-  margin-top: 140px;
+  margin-top: 200px;
   p{
     font-family: $open-sans-italic;
     font-style: normal;
@@ -442,10 +442,20 @@ hr {
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991px) {}
+@media (min-width: 768px) and (max-width: 991px) {
+  .right-menu-title{
+    margin-top: -20px;
+    padding-top: 20px;
+  }
+
+  .bottom-element {
+    margin-top: 20px;
+  }
+}
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199px) {}
+@media (min-width: 992px) and (max-width: 1199px) {
+}
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) and (max-width: 1920px) {}
