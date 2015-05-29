@@ -144,6 +144,7 @@
   position: relative;
 }
 
+// field for title of picture
 .story-show-image-description{
   position: absolute;
   top: 80%;
@@ -153,10 +154,11 @@
   background-color: rgba(darken($background-color, 80%), 0.55);
 }
 
+// picture title text
 .story-show-image-text{
   color: lighten($story-show-section-title-font-color, 40%);
   font-family: $open-sans-regular;
-  font-size: $story-show-text-desktop;
+  font-size: $story-show-picture-title-desktop;
 }
 
 // Social media properties
@@ -289,6 +291,15 @@
     font-size: $story-show-text-mobile;
     margin-left: 5px;
     margin-right: 5px;
+  }
+
+  .story-show-image-description{
+    top: 60%;
+    width: 40%;
+  }
+
+  .story-show-image-text{
+    font-size: $story-show-picture-title-mobile;
   }
 
 }
