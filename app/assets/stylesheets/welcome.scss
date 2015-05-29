@@ -1,4 +1,67 @@
 /******************************************
+            Main Page Section
+******************************************/
+
+// Background of Main Page
+.main-page-background{
+  background-color: $background-color;
+  padding-top: 20px;
+  padding-bottom: 330px;
+  height: auto;
+}
+
+// Properties of Story Image Tab in Main Page
+.main-page-image{
+  padding: 0;
+  border: 3px solid white;
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 0;
+}
+
+// Properties of title on Main Page
+.main-page-title{
+  margin-top: -120px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: $playfair-black;
+  font-size: $main-page-title-desktop;
+  color: $main-page-title-font-color;
+  word-wrap: break-word;
+  line-height: 85%;
+  opacity: 0.8;
+}
+
+// Properties of date on Main Page
+.main-page-date{
+  margin-top: -10px;
+  margin-bottom: 11px;
+  font-family: $open-sans-regular;
+  font-size: $main-page-date-desktop;
+  color: $main-page-title-font-color;
+  opacity: 0.8;
+}
+
+.load-more-stories-button{
+  border: 2px solid lighten($right-menu-button-font-color, 25%);
+  background-color: inherit;
+  border-radius: 1px;
+  font-family: $open-sans-regular;
+  font-style: normal;
+  font-size: $story-show-text-desktop;
+  line-height: 180%;
+  padding: 5px 4px;
+  color: lighten($right-menu-button-font-color, 25%);
+  @include transition(.5s);
+
+  &:hover {
+    @extend .load-more-stories-button;
+    background-color: lighten($right-menu-button-font-color, 25%);
+    color: white;
+    padding: 5px 4px;
+  }
+}
+
+/******************************************
    Main Page Section - helper CSS classes
 ******************************************/
 
