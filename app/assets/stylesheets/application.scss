@@ -106,7 +106,11 @@
 // Socialico
 @font-face {
   font-family: 'Socialico';
-  src:  asset_url('Socialico.ttf') format('truetype');
+  src:  asset_url('Socialico.eot');
+  src:  asset_url('Socialico.eot?#iefix') format('embedded-opentype'),
+  asset_url('Socialico.svg#Socialico') format('svg'),
+  asset_url('Socialico.woff') format('woff'),
+  asset_url('Socialico.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -114,7 +118,11 @@
 // Socialico Plus
 @font-face {
   font-family: 'Socialico-Plus';
-  src:  asset_url('Socialico-Plus.ttf') format('truetype');
+  src:  asset_url('Socialico-Plus.eot');
+  src:  asset_url('Socialico-Plus.eot?#iefix') format('embedded-opentype'),
+  asset_url('Socialico-Plus.svg#Socialico-Plus') format('svg'),
+  asset_url('Socialico-Plus.woff') format('woff'),
+  asset_url('Socialico-Plus.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -272,14 +280,22 @@ hr {
   background-color: inherit;
   border-radius: 1px;
   margin-bottom: 5px;
+  margin-right: 5px;
   min-width: 34px;
   font-family: $socialico;
   font-style: normal;
   font-size: 30px;
   line-height: 100%;
   padding: 0 4px;
+  padding-bottom: 6px;
   color: lighten($right-menu-button-font-color, 25%);
   @include transition(.5s);
+}
+
+.right-menu-social-icons-socialico-plus{
+  @extend .right-menu-social-icons;
+  font-family: $socialico-plus;
+  font-style: normal;
 }
 
 // colors on hover of social medias
@@ -310,10 +326,11 @@ hr {
 .instagram-hover{
   &:hover {
     $color: #3e729a;
-    @extend .right-menu-social-icons;
+    @extend .right-menu-social-icons-socialico-plus;
     border: 2px solid $color;
     background-color: $color;
     color: white;
+
   }
 }
 
@@ -332,7 +349,7 @@ hr {
 .pinterest-hover{
   &:hover {
     $color: #e41e11;
-    @extend .right-menu-social-icons;
+    @extend .right-menu-social-icons-socialico-plus;
     border: 2px solid $color;
     background-color: $color;
     color: white;
