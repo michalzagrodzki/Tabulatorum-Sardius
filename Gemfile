@@ -37,17 +37,22 @@ gem 'haml-rails', '~> 0.9.0'
 # Gems related to google maps
 gem 'gmaps4rails', '~> 2.1.2'
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-end
-
 group :development do
   gem 'spring'
   gem 'bullet', '~> 4.14.5'
+end
+
+group :development, :test do
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+  gem 'pry'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 group :production do
