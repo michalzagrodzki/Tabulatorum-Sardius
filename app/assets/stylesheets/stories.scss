@@ -11,6 +11,12 @@
   padding-left: 0;
 }
 
+// additional padding
+.extra-padding{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 // Header of page
 .story-show-header-image {
   display: block;
@@ -127,6 +133,14 @@
   width: 100%;
   height: auto;
   overflow: hidden;
+}
+
+// full width image in chapter and advice
+.story-show-section-image-large{
+
+  @extend .story-show-section-image;
+  border: none;
+  box-shadow: 0 1px 3px darken($background-color, 40%);
 }
 
 // Social media properties
