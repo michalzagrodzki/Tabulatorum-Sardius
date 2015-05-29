@@ -141,6 +141,22 @@
   @extend .story-show-section-image;
   border: none;
   box-shadow: 0 1px 3px darken($background-color, 40%);
+  position: relative;
+}
+
+.story-show-image-description{
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 30%;
+  padding: 15px;
+  background-color: rgba(darken($background-color, 80%), 0.55);
+}
+
+.story-show-image-text{
+  color: lighten($story-show-section-title-font-color, 40%);
+  font-family: $open-sans-regular;
+  font-size: $story-show-text-desktop;
 }
 
 // Social media properties
