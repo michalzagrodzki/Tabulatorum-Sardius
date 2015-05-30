@@ -1,5 +1,18 @@
 require 'rails_helper'
 
-RSpec.describe StoriesController, type: :controller do
+describe StoriesController do
+
+  describe "GET #index" do
+    it "populates an array of stories" do
+      story = Factory(:story)
+      get :index
+      assigns(:stories).should eq([story])
+    end
+
+    it "renders the :index view" do
+      get :index
+      response.should render_template :index
+    end
+  end
 
 end
