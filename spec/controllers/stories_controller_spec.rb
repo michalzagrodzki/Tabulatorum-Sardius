@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'factory_girl_rails'
 
 describe StoriesController do
 
