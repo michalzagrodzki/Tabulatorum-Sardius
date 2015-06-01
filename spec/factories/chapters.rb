@@ -1,8 +1,8 @@
-FactoryGirl.define do
-  factory :chapter do
-    text "MyString"
+require 'faker'
 
-    story
+FactoryGirl.define do
+  factory :chapter do |f|
+    f.text { Faker::Lorem.paragraph }
   end
 
 end
