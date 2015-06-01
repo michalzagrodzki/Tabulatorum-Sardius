@@ -22,8 +22,8 @@ class Story < ActiveRecord::Base
 
   # Check presence of title and minimum length of text
   validates :name, presence: true, length: { minimum: 3 }
-  validates :latitude, numericality: true
-  validates :longitude, numericality: true
+  validates :latitude, numericality: { greater_than_or_equal_to:  -90, less_than_or_equal_to:  90 }
+  validates :longitude, numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
 
   # Returns story, which contains at least one word from query
   # Word 'search' is linked to Controller and View
