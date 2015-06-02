@@ -33,6 +33,7 @@ gem 'figaro', '~> 1.1.1'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'haml-rails', '~> 0.9.0'
+gem 'skrollr-rails'
 
 # Gems related to google maps
 gem 'gmaps4rails', '~> 2.1.2'

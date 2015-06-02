@@ -15,4 +15,6 @@
 //= require underscore
 //= require gmaps/google
 //= require bootstrap-sprockets
+//= require skrollr
+//= require skrollr.menu
 //= require_tree .

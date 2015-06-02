@@ -11,23 +11,26 @@
 <% end %>
 
 <!-- Lead - Image, title and buttons -->
-
-  <div class='container-fluid reset-margin'>
+<div id="skrollr-body">
+  <div class='container-fluid reset-margin' id="story-header-image">
     <!-- title image -->
 
     <div class="story-show-header-image">
-    <%= image_tag(story.header_image, class: 'story-show-header-image-properties', alt: 'Title image') %>
-    <!-- milion stories logo -->
+      <div data-top="opacity: 1;" data--800-top="opacity: 0;" data-anchor-target="#story-header-image">
+    <%= image_tag(story.header_image, class: 'story-show-header-image-properties', alt: 'Title image' ) %>
+      </div>
+        <!-- milion stories logo -->
     <p class='story-show-header-milion-stories'><small>Milion Stories</small></p>
     <!-- lead title -->
-    <h1 class='text-center text-uppercase story-show-header-title'><%= story.name %></h1>
+    <h1 class='text-center text-uppercase story-show-header-title'
+        data-top="opacity: 0.8;" data--800-top="opacity: 0;" data-anchor-target="#story-header-image"><%= story.name %></h1>
 
     <!-- navigation buttons for article -->
       <div class="col-md-offset-2">
     <div class='col-md-8 story-show-header-button-row'>
-      <div class='row'>
+      <div class='row' >
         <div class='col-md-3 col-sm-3 col-xs-6'>
-          <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#story_section' role='button'>story</a>
+          <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#story_section' data-menu-top="400" role='button'>story</a>
         </div>
         <div class='col-md-3 col-sm-3 col-xs-6'>
           <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#images_section' role='button'>pictures</a>
@@ -179,7 +182,7 @@
 
     <!-- name of section - Pictures -->
     <div>
-      <h1 class='text-center text-uppercase story-show-section-title' id='images_section' >pictures</h1>
+      <h1 class='text-center text-uppercase story-show-section-title' id="images_section" >pictures</h1>
       <!-- date -->
       <p class='text-center text-lowercase story-show-section-date'><small><%= story.updated_at.strftime("%e.%m.%Y") %></small></p>
 
@@ -315,12 +318,42 @@
     <!-- /name of section - Advice -->
 
   </div>
+
   <!-- /Main column -->
 
   <!-- Right Column - Menu -->
   <%= render 'shared/rightmenu' %>
   <!-- /Right Column - Menu -->
+</div>
+<script type="text/javascript">
+  if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+    var s = skrollr.init({
+      forceHeight: false
+    });
 
+    skrollr.menu.init(s, {
+
+      animate: true,
+      easing: 'sqrt',
+      scale: 2,
+      duration: function(currentTop, targetTop) {
+        return 400;
+      },
+
+
+      complexLinks: false,
+
+      //This event is triggered right before we jump/animate to a new hash.
+      change: function(newHash, newTopPosition) {
+        //Do stuff
+      },
+
+      //Add hash link (e.g. `#foo`) to URL or not.
+      updateUrl: true //defaults to `true`.
+    });
+
+  }
+</script>
 
 <% content_for :footer_maps do %>
     <!-- Loading data to Google maps from controller, through 'buildMap', to coffeescript file -->
