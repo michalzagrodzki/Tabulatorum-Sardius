@@ -7,71 +7,72 @@
   <% end %>
   <br/>
   <!-- /Title -->
-
-  <!-- Map module -->
-  <div class='sidebar-module'>
-    <%= link_to(map_path) do %>
-      <button class='btn btn-default btn-block right-menu-button' role='button'>MAP</button>
-    <% end %>
-  </div>
-
-  <!-- /Map module -->
-
-  <!-- Contact module -->
-  <div class='sidebar-module'>
-    <ul class='list-unstyled'>
-      <%= link_to(about_us_index_path) do %>
-        <li>
-          <button class='btn btn-default btn-block right-menu-button' role='button'>ABOUT</button>
-        </li>
+  <nav>
+    <!-- Map module -->
+    <div class='sidebar-module'>
+      <%= link_to(map_path) do %>
+        <button class='btn btn-default btn-block right-menu-button' role='button'>MAP</button>
       <% end %>
-      <%= link_to(contact_url) do %>
-        <li>
-          <button class='btn btn-default btn-block right-menu-button' role='button'>CONTACT</button>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-  <br/>
-  <hr>
-  <!-- /Contact module -->
+    </div>
 
-  <!-- Social Media Links -->
-  <div class='sidebar-module'>
-    <div class='row'>
+    <!-- /Map module -->
 
-      <!-- 1st row -->
-      <div class='col-md-2 col-xs-3'>
+    <!-- Contact module -->
+    <div class='sidebar-module'>
+      <ul class='list-unstyled'>
+        <%= link_to(about_us_index_path) do %>
+          <li>
+            <button class='btn btn-default btn-block right-menu-button' role='button'>ABOUT</button>
+          </li>
+        <% end %>
+        <%= link_to(contact_url) do %>
+          <li>
+            <button class='btn btn-default btn-block right-menu-button' role='button'>CONTACT</button>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <br/>
+    <hr>
+    <!-- /Contact module -->
+
+    <!-- Social Media Links -->
+    <div class='sidebar-module'>
+      <div class='row'>
+
+        <!-- 1st row -->
+        <div class='col-md-2 col-xs-3'>
+        </div>
+        <div class='col-md-2 col-sm-2 col-xs-2'>
+          <a class='btn btn-default right-menu-social-icons facebook-hover' href='#' role='button'>F</a>
+        </div>
+        <div class='col-md-2 col-sm-2 col-xs-2'>
+          <a class='btn btn-default right-menu-social-icons twitter-hover' href='#' role='button'>L</a>
+        </div>
+        <div class='col-md-2 col-sm-2 col-xs-2'>
+          <a class='btn btn-default right-menu-social-icons-socialico-plus instagram-hover' href='#' role='button'>I</a>
+        </div>
+
       </div>
-      <div class='col-md-2 col-sm-2 col-xs-2'>
-        <a class='btn btn-default right-menu-social-icons facebook-hover' href='#' role='button'>F</a>
-      </div>
-      <div class='col-md-2 col-sm-2 col-xs-2'>
-        <a class='btn btn-default right-menu-social-icons twitter-hover' href='#' role='button'>L</a>
-      </div>
-      <div class='col-md-2 col-sm-2 col-xs-2'>
-        <a class='btn btn-default right-menu-social-icons-socialico-plus instagram-hover' href='#' role='button'>I</a>
+      <div class='row'>
+        <!-- 2nd row -->
+        <div class='col-md-2 col-xs-3'>
+        </div>
+        <div class='col-md-2 col-sm-2 col-xs-2'>
+          <a class='btn btn-default right-menu-social-icons tumblr-hover' href='#' role='button'>O</a>
+        </div>
+        <div class='col-md-2 col-sm-2 col-xs-2'>
+          <a class='btn btn-default right-menu-social-icons-socialico-plus pinterest-hover' href='#' role='button'>P</a>
+        </div>
+        <div class='col-md-2 col-sm-2 col-xs-2'>
+          <a class='btn btn-default right-menu-social-icons vimeo-hover' href='#' role='button'>V</a>
+        </div>
       </div>
 
     </div>
-    <div class='row'>
-      <!-- 2nd row -->
-      <div class='col-md-2 col-xs-3'>
-      </div>
-      <div class='col-md-2 col-sm-2 col-xs-2'>
-        <a class='btn btn-default right-menu-social-icons tumblr-hover' href='#' role='button'>O</a>
-      </div>
-      <div class='col-md-2 col-sm-2 col-xs-2'>
-        <a class='btn btn-default right-menu-social-icons-socialico-plus pinterest-hover' href='#' role='button'>P</a>
-      </div>
-      <div class='col-md-2 col-sm-2 col-xs-2'>
-        <a class='btn btn-default right-menu-social-icons vimeo-hover' href='#' role='button'>V</a>
-      </div>
-    </div>
-
-  </div>
-  <hr>
-  <!-- /Social Media Links -->
+    <hr>
+    <!-- /Social Media Links -->
+  </nav>
 
   <!-- Copyright module -->
   <div class='sidebar-module'>

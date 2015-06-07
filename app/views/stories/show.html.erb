@@ -11,75 +11,79 @@
 <% end %>
 
 <!-- Lead - Image, title and buttons -->
+
 <div id="skrollr-body">
-  <div class='container-fluid reset-margin' id="story-header-image">
-    <!-- title image -->
+  <header>
+    <div class='container-fluid reset-margin' id="story-header-image">
+      <!-- title image -->
 
-    <div class="story-show-header-image">
-      <div data-top="opacity: 1;" data--800-top="opacity: 0.2;" data-anchor-target="#story-header-image">
-    <%= image_tag(story.header_image, class: 'story-show-header-image-properties', alt: 'Title image' ) %>
-      </div>
-        <!-- milion stories logo -->
-    <p class='story-show-header-milion-stories'><small>Milion Stories</small></p>
-    <!-- lead title -->
-    <h1 class='text-center text-uppercase story-show-header-title'
-        data-top="opacity: 0.8;" data--800-top="opacity: 0;" data-anchor-target="#story-header-image"><%= story.name %></h1>
+      <div class="story-show-header-image">
+        <div data-top="opacity: 1;" data--800-top="opacity: 0.2;" data-anchor-target="#story-header-image">
+      <%= image_tag(story.header_image, class: 'story-show-header-image-properties', alt: 'Title image' ) %>
+        </div>
+          <!-- milion stories logo -->
+      <p class='story-show-header-milion-stories'><small>Milion Stories</small></p>
+      <!-- lead title -->
+      <h1 class='text-center text-uppercase story-show-header-title'
+          data-top="opacity: 0.8;" data--800-top="opacity: 0;" data-anchor-target="#story-header-image"><%= story.name %></h1>
 
-    <!-- navigation buttons for article -->
-      <div class="col-md-offset-2">
-    <div class='col-md-8 story-show-header-button-row'>
-      <div class='row' >
-        <div class='col-md-3 col-sm-3 col-xs-6'>
-          <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#story_section' data-menu-top="400" role='button'>story</a>
-        </div>
-        <div class='col-md-3 col-sm-3 col-xs-6'>
-          <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#images_section' role='button'>pictures</a>
-        </div>
-        <div class='col-md-3 col-sm-3 col-xs-6'>
-          <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#advice_section' role='button'>advice</a>
-        </div>
-        <div class='col-md-3 col-sm-3 col-xs-6'>
-          <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#map_section' role='button'>map</a>
+      <!-- navigation buttons for article -->
+        <div class="col-md-offset-2">
+      <div class='col-md-8 story-show-header-button-row'>
+        <div class='row' >
+          <div class='col-md-3 col-sm-3 col-xs-6'>
+            <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#story_section' data-menu-top="400" role='button'>story</a>
+          </div>
+          <div class='col-md-3 col-sm-3 col-xs-6'>
+            <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#images_section' role='button'>pictures</a>
+          </div>
+          <div class='col-md-3 col-sm-3 col-xs-6'>
+            <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#advice_section' role='button'>advice</a>
+          </div>
+          <div class='col-md-3 col-sm-3 col-xs-6'>
+            <a class='btn btn-default btn-block text-lowercase story-show-header-button' href='#map_section' role='button'>map</a>
+          </div>
         </div>
       </div>
+        </div>
+
+      <% if user_signed_in? %>
+        <!-- admin buttons for story -->
+        <div class='col-md-8 col-md-offset-2'>
+          <br>
+          <div class='row'>
+            <div class='col-md-4'>
+              <%= link_to(edit_story_path(story)) do %>
+              <button class='btn btn-default btn-block' role='button'>Edit Story</button>
+              <% end %>
+            </div>
+            <div class='col-md-4'>
+              <%= link_to(edit_pictures_path(story)) do %>
+              <button class='btn btn-default btn-block' role='button'>Manage Pictures of Story</button>
+              <% end %>
+            </div>
+            <div class='col-md-2 col-md-offset-2'>
+              <%= link_to(story, method: :delete, data: { confirm: 'Are you sure you want to delete it? All elements related to story will be deleted as well.' }) do %>
+              <button class='btn btn-default btn-block' role='button'>Delete Story</button>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
     </div>
-      </div>
-
-    <% if user_signed_in? %>
-      <!-- admin buttons for story -->
-      <div class='col-md-8 col-md-offset-2'>
-        <br>
-        <div class='row'>
-          <div class='col-md-4'>
-            <%= link_to(edit_story_path(story)) do %>
-            <button class='btn btn-default btn-block' role='button'>Edit Story</button>
-            <% end %>
-          </div>
-          <div class='col-md-4'>
-            <%= link_to(edit_pictures_path(story)) do %>
-            <button class='btn btn-default btn-block' role='button'>Manage Pictures of Story</button>
-            <% end %>
-          </div>
-          <div class='col-md-2 col-md-offset-2'>
-            <%= link_to(story, method: :delete, data: { confirm: 'Are you sure you want to delete it? All elements related to story will be deleted as well.' }) do %>
-            <button class='btn btn-default btn-block' role='button'>Delete Story</button>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-
-  </div>
-  </div>
-
+    </div>
+  </header>
 <!-- / Lead - Image, title and buttons -->
 
 <!-- Main column and side menu -->
 
   <!-- Main column -->
+  <article>
   <div class='col-md-10 story-show-background reset-margin'>
 
     <!-- name of section - Story -->
+    <section>
     <div>
       <h1 class='text-center text-uppercase story-show-section-title' id="story_section">story</h1>
       <!-- date -->
@@ -96,11 +100,15 @@
           <!-- Pictures for story -->
 
           <% chapter.pictures.each do |picture| %>
+          <figure>
             <div class='col-lg-12 col-md-12 col-sm-12 image-center reset-margin'>
+
               <%= image_tag(picture.link,  class: 'story-show-section-image-large', alt: "#{picture.title}") %>
+              <figcaption>
               <div class="story-show-image-description">
                 <p class="story-show-image-text"><%= picture.title %></p>
               </div>
+              </figcaption>
               <% if user_signed_in? %>
                 <br>
                 <div class="row">
@@ -117,7 +125,9 @@
                 </div>
                 <hr/>
               <% end %>
+
             </div>
+          </figure>
           <% end %>
 
         <% if user_signed_in? %>
@@ -178,9 +188,11 @@
       <%= render 'socialmedia_icons' %>
       <!-- /Social media items -->
     </div>
+    </section>
     <!-- /name of section - Story -->
 
     <!-- name of section - Pictures -->
+    <section>
     <div>
       <h1 class='text-center text-uppercase story-show-section-title' id="images_section" >pictures</h1>
       <!-- date -->
@@ -199,9 +211,11 @@
       <%= render 'socialmedia_icons' %>
       <!-- /Social media items -->
     </div>
+    </section>
     <!-- /name of section - Pictures -->
 
     <!-- name of section - Map -->
+    <section>
     <div class="extra-padding">
       <h1 class='text-center text-uppercase story-show-section-title' id="map_section">map</h1>
       <!-- date -->
@@ -215,9 +229,11 @@
       <%= render 'socialmedia_icons' %>
       <!-- /Social media items -->
     </div>
+    </section>
     <!-- /name of section - Map -->
 
     <!-- name of section - Advice -->
+    <section>
     <div>
       <h1 class='text-center text-uppercase story-show-section-title' id="advice_section">advice</h1>
       <!-- date -->
@@ -234,11 +250,14 @@
 
           <!-- Pictures for story -->
           <% advice.pictures.each do |picture| %>
+          <figure>
             <div class='col-lg-12 col-md-12 col-sm-12 image-center reset-margin'>
               <%= image_tag(picture.link,  class: 'story-show-section-image-large', alt: "#{picture.title}") %>
+              <figcaption>
               <div class="story-show-image-description">
                 <p class="story-show-image-text"><%= picture.title %></p>
               </div>
+              </figcaption>
               <% if user_signed_in? %>
                 <br>
                 <div class="row">
@@ -256,6 +275,7 @@
                 <hr/>
               <% end %>
             </div>
+            </figure>
           <% end %>
 
           <% if user_signed_in? %>
@@ -313,12 +333,13 @@
       <!-- Social media items -->
       <%= render 'socialmedia_icons' %>
       <!-- /Social media items -->
-    </div>
 
+    </div>
+    </section>
     <!-- /name of section - Advice -->
 
   </div>
-
+  </article>
   <!-- /Main column -->
 
   <!-- Right Column - Menu -->
