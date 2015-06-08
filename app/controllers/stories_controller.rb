@@ -46,12 +46,12 @@ class StoriesController < ApplicationController
       marker.lng picture.longitude
       # Specify information shown in marker
       marker.infowindow picture.link
+      marker.infowindow picture.title
 
       # Specify information shown in expanded infowindow
       marker.json({
                       # name of story for marker/infowindow
                       title: picture.title,
-                      pic: picture.link,
                       # value for showing in infowindow
                       picture: picture.link
                   })
