@@ -23,8 +23,8 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
 
     boxText = document.createElement("div")
     # setting up CSS class - 'marker_container'
-    boxText.setAttribute('class', 'marker_container')
-    boxText.innerHTML = @args.lat
+    boxText.setAttribute("class", "marker_container")
+    boxText.innerHTML = "<p>#{@args.name}</p>"
     @infowindow = new InfoBox(@infobox(boxText))
 
   # add @bind_infowindow() for < 2.1

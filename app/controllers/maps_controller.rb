@@ -7,14 +7,17 @@ class MapsController < ApplicationController
   before_action :fetch_elements, only: [ :index ]
 
   expose(:stories)
-  expose(:hash)
+  expose(:mapshash)
   def index
     stories = Story.all
     # variables passed to Google Maps
-    @hash = Gmaps4rails.build_markers(stories) do |story, marker|
+    @mapshash = Gmaps4rails.build_markers(stories) do |story, marker|
       marker.lat story.latitude
       marker.lng story.longitude
+      # Specify information shown in marker
       marker.infowindow story.name
+
+      # Specify information shown in expanded infowindow
       marker.json({
                       # name of story for marker/infowindow
                       title: story.name,
