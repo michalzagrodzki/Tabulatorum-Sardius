@@ -39,9 +39,9 @@ class StoriesController < ApplicationController
     3.times { advice.pictures.build }
 
     # Function for GoogleMaps - showing pictures related to single story
-    @single_story = Story.find(params[:id])
+    single_story = Story.find(params[:id])
     # variables passed to Google Maps
-    @hash = Gmaps4rails.build_markers(@single_story.pictures) do |picture, marker|
+    @hash = Gmaps4rails.build_markers(single_story.pictures) do |picture, marker|
       marker.lat picture.latitude
       marker.lng picture.longitude
       # Specify information shown in marker
