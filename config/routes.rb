@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   resources :stories do
     resources :pictures
     resources :tags
-    resources :chapters
-    resources :advices
+    resources :chapters, only: [ :index, :edit, :new, :create, :destroy ]
+    resources :advices, only: [ :index, :edit, :new, :create, :destroy ]
   end
 
   resources :chapters do
@@ -18,6 +18,12 @@ Rails.application.routes.draw do
   resources :advices do
     resources :pictures
   end
+
+  resources :welcome, only: [ :index ]
+
+  resources :about_us, only: [ :index ]
+
+  resources :maps, only: [ :index ]
 
   resources :pictures
 
