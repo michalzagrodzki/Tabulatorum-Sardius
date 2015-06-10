@@ -98,6 +98,8 @@
   color: $story-show-section-title-font-color;
   font-size: $story-show-section-title-desktop;
   line-height: 80%;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.30);
 }
 
 // date in section header
