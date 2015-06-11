@@ -256,11 +256,65 @@
 ******************************************/
 
 /* Extra Small devices (mobiles, 320px and up) */
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 767px) and (orientation: portrait ) {
 
   .story-show-header-title{
     bottom: 180px;
     font-size: $story-show-title-mobile;
+  }
+
+  .story-show-header-button {
+    margin-bottom: 20px;
+  }
+
+  .story-show-section-title{
+    padding-top: 105px;
+    margin-top: 0;
+    font-size: $story-show-section-title-mobile;
+  }
+
+  .show-story-maps-properties{
+    height: 505px;
+  }
+
+  .story-show-google-maps{
+    height: 500px;
+  }
+
+  .story-show-social-media-properties{
+    margin-bottom: 0;
+  }
+
+  .story-show-social-icons{
+    margin-bottom: 15px;
+  }
+
+  .story-show-section-text{
+    font-size: $story-show-text-mobile;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .story-show-image-description{
+    top: 60%;
+    width: 40%;
+  }
+
+  .story-show-image-text{
+    font-size: $story-show-picture-title-mobile;
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 767px) and (orientation: landscape ) {
+
+  .story-show-header-title{
+    bottom: 120px;
+    font-size: $story-show-title-mobile;
+  }
+
+  .story-show-header-button-row{
+    bottom: 10px;
   }
 
   .story-show-header-button {
