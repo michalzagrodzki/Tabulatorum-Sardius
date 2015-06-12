@@ -304,6 +304,12 @@
     font-size: $story-show-picture-title-mobile;
   }
 
+  .story-show-header-image-properties{
+    position: relative;
+    left: -300px;
+    min-height: 670px;
+  }
+
 }
 
 @media (min-width: 320px) and (max-width: 767px) and (orientation: landscape ) {
@@ -356,6 +362,10 @@
 
   .story-show-image-text{
     font-size: $story-show-picture-title-mobile;
+  }
+
+  .story-show-header-image-properties{
+    min-width: 0;
   }
 
 }
