@@ -270,6 +270,7 @@
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.30);
   img {
     max-width: 450px;
+    max-height: inherit;
   }
   p{
     font-family: $open-sans-regular;
