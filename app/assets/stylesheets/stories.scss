@@ -251,6 +251,22 @@
   }
 }
 
+// properties of Info Box on map
+.story_show_marker{
+  background-color: lighten($background-color, 5%);
+  font-family: $open-sans-regular;
+  font-style: normal;
+  font-size: $story-show-text-map;
+  line-height: 180%;
+  padding: 2px 4px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.30);
+}
+
+// properties of Info Box on map
+.story_show_marker_info_window{
+  background-color: #2c4762;
+}
+
 /******************************************
                 Media Queries
 ******************************************/
