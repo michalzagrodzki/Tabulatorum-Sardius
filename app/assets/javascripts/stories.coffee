@@ -11,7 +11,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
   rich_marker_options: ->
     marker = document.createElement("div")
     # setting up CSS class - 'marker_container'
-    marker.setAttribute("class", 'story_show_marker')
+    marker.setAttribute("class", 'story-show-marker')
     marker.innerHTML = @args.title
     { content: marker }
 
@@ -23,8 +23,8 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
 
     boxText = document.createElement("div")
     # setting up CSS class - 'marker_container'
-    boxText.setAttribute("class", 'story_show_marker_info_window')
-    boxText.innerHTML = "<img src=#{@args.picture}> #{@args.title}"
+    boxText.setAttribute("class", 'story-show-marker-info-window-light')
+    boxText.innerHTML = "<div><img src=#{@args.picture}></div> <div><p>#{@args.title}</p></div>"
     @infowindow = new InfoBox(@infobox(boxText))
 
   # add @bind_infowindow() for < 2.1
