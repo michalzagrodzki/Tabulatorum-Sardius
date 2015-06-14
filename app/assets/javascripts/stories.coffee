@@ -6,6 +6,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
   create_marker: ->
     options = _.extend @marker_options(), @rich_marker_options()
     @serviceObject = new RichMarker options #assign marker to @serviceObject
+    @serviceObject.setShadow("") #remove shadow from marker
 
   # options for creating Marker
   rich_marker_options: ->
