@@ -263,25 +263,6 @@
 }
 
 // properties of Info Box on map
-.story-show-marker-info-window-dark{
-  background-color: darken($background-color, 40%);
-  padding: 5px;
-  max-width: 460px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.30);
-  img {
-    max-width: 450px;
-    max-height: inherit;
-  }
-  p{
-    font-family: $open-sans-regular;
-    font-style: normal;
-    font-size: $story-show-text-desktop;
-    color: lighten($story-show-section-title-font-color, 60%);
-    padding-left: 10px;
-    padding-top: 10px;
-  }
-}
-
 .story-show-marker-info-window-light{
   background-color: lighten($background-color, 5%);
   padding: 5px;
