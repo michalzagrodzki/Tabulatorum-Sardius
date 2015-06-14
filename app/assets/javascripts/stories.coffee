@@ -48,7 +48,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
   handler = Gmaps.build 'Google', { builders: { Marker: RichMarkerBuilder} }
 
   # Method for creating map in View
-  handler.buildMap { provider: { styles: mapStyle }, internal: {id: 'map'} }, ->
+  handler.buildMap { provider: { styles: mapStyle }, internal: {id: 'story_show_map'} }, ->
     markers = handler.addMarkers(markers)
     handler.bounds.extendWith(markers)
     handler.fitMapToBounds()

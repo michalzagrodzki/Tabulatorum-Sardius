@@ -36,7 +36,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
       width: "150px"
 
 # Function that takes argument (markers) and creates map in view.
-@buildMap = (markers)->
+@buildMainMap = (markers)->
 
   # variable for style of map
   # style of map is Pale Dawn by Adam Krogh from http://atmist.com
@@ -46,7 +46,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
   handler = Gmaps.build 'Google', { builders: { Marker: RichMarkerBuilder} }
 
   # Method for creating map in View
-  handler.buildMap { provider: { styles: mapStyle }, internal: {id: 'map'} }, ->
+  handler.buildMap { provider: { styles: mapStyle }, internal: {id: 'main_map'} }, ->
     markers = handler.addMarkers(markers)
     handler.bounds.extendWith(markers)
     handler.fitMapToBounds()
