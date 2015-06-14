@@ -7,13 +7,14 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
   create_marker: ->
     options = _.extend @marker_options(), @rich_marker_options()
     @serviceObject = new RichMarker options #assign marker to @serviceObject
+    @serviceObject.setShadow("") #remove shadow from marker
 
   # options for creating Marker
   rich_marker_options: ->
     marker = document.createElement("div")
     # setting up CSS class - 'marker_container'
-    marker.setAttribute('class', 'marker_container')
-    marker.innerHTML = @args.title
+    marker.setAttribute('class', 'main-map-marker')
+    marker.innerHTML = "<p>#{@args.title}</p>"
     { content: marker }
 
   # create Info Window
@@ -23,17 +24,17 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
 
     boxText = document.createElement("div")
     # setting up CSS class - 'marker_container'
-    boxText.setAttribute("class", "marker_container")
-    boxText.innerHTML = "<p>#{@args.name}</p>"
+    boxText.setAttribute("class", "main-map-info-window")
+    boxText.innerHTML = "<p>#{@args.title}</p>"
     @infowindow = new InfoBox(@infobox(boxText))
 
   # add @bind_infowindow() for < 2.1
 
   infobox: (boxText)->
     content: boxText
-    pixelOffset: new google.maps.Size(-75, -25)
+    pixelOffset: new google.maps.Size(-75, -75)
     boxStyle:
-      width: "150px"
+      width: "200px"
 
 # Function that takes argument (markers) and creates map in view.
 @buildMainMap = (markers)->
