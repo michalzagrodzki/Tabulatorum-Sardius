@@ -32,10 +32,12 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
 
   infobox: (boxText)->
     content: boxText
-    pixelOffset: new google.maps.Size(-150, -40)
+    pixelOffset: new google.maps.Size(-250, -350)
+    closeBoxMargin: "11px 49px -20px"
     boxStyle:
       width: "500px"
       height: "150px"
+
 
 # Function that takes argument (markers) and creates map in view.
 @buildMap = (markers)->
