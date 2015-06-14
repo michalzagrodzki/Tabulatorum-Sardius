@@ -266,11 +266,15 @@
 .story-show-marker-info-window-light{
   background-color: lighten($background-color, 5%);
   padding: 5px;
-  max-width: 460px;
+  max-width: 462px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.30);
+  border-radius: 0;
+  border: 1px solid darken($background-color, 5%);
+  // properties of image in infowindow
   img {
     max-width: 450px;
   }
+  // properties of text in infowindow
   p{
     font-family: $open-sans-regular;
     font-style: normal;
