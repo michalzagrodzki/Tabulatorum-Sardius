@@ -33,9 +33,9 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
   infobox: (boxText)->
     content: boxText
     pixelOffset: new google.maps.Size(-250, -350)
-    closeBoxMargin: "11px 49px -20px"
+    closeBoxMargin: "11px 99px -20px"
     boxStyle:
-      width: "500px"
+      width: "650px"
       height: "150px"
 
 
