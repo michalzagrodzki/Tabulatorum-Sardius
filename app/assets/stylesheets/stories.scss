@@ -254,12 +254,12 @@
 // properties of Info Box on map
 .story-show-marker{
   background-color: lighten($background-color, 5%);
-  font-family: $open-sans-regular;
-  font-style: normal;
-  font-size: $story-show-text-map;
-  line-height: 180%;
-  padding: 2px 4px;
+  padding: 2px 2px 3px 2px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.30);
+  img {
+    max-width: 120px;
+    max-height: inherit;
+  }
 }
 
 // properties of Info Box on map

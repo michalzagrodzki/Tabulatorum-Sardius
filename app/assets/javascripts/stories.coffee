@@ -13,7 +13,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     marker = document.createElement("div")
     # setting up CSS class - 'marker_container'
     marker.setAttribute("class", 'story-show-marker')
-    marker.innerHTML = @args.title
+    marker.innerHTML = "<div><img src=#{@args.picture}></div>"
     { content: marker }
 
 
