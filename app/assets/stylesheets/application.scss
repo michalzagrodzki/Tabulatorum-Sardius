@@ -439,6 +439,9 @@ hr {
 /* Extra Small devices (mobiles, 320px and up) */
 @media (min-width: 320px) and (max-width: 767px) {
 
+  .right-menu{
+    padding-top: 40px;
+  }
 
   .right-menu-title{
     margin-top: -20px;
@@ -453,6 +456,11 @@ hr {
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
+
+  .right-menu{
+    padding-top: 40px;
+  }
+
   .right-menu-title{
     margin-top: -20px;
     padding-top: 20px;

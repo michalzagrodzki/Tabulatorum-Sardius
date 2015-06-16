@@ -1,4 +1,5 @@
 <div class='col-md-2 col-xs-12 right-menu right-hand-menu'>
+  <nav>
   <!-- Title -->
   <%= link_to(welcome_index_path) do  %>
     <div class='sidebar-module'>
@@ -7,34 +8,38 @@
   <% end %>
   <br/>
   <!-- /Title -->
-  <nav>
     <!-- Map module -->
     <div class='sidebar-module'>
+      <div class="col-md-12">
       <%= link_to(map_path) do %>
         <button class='btn btn-default btn-block right-menu-button' role='button'>MAP</button>
       <% end %>
-    </div>
-
+      </div>
     <!-- /Map module -->
 
-    <!-- Contact module -->
-    <div class='sidebar-module'>
-      <ul class='list-unstyled'>
+    <!-- About us module -->
+      <div class="col-md-12">
         <%= link_to(about_us_index_path) do %>
-          <li>
             <button class='btn btn-default btn-block right-menu-button' role='button'>ABOUT</button>
-          </li>
         <% end %>
+      </div>
+    <!-- /About us module -->
+
+    <!-- Contact module -->
+      <div class="col-md-12">
         <%= link_to(contact_url) do %>
-          <li>
             <button class='btn btn-default btn-block right-menu-button' role='button'>CONTACT</button>
-          </li>
         <% end %>
-      </ul>
+      </div>
+    <!-- /Contact module -->
+
+    </div>
+    <div class="col-md-12">
+      <hr>
     </div>
     <br/>
-    <hr>
-    <!-- /Contact module -->
+
+
 
     <!-- Social Media Links -->
     <div class='sidebar-module'>
@@ -70,7 +75,9 @@
       </div>
 
     </div>
-    <hr>
+    <div class="col-md-12">
+      <hr>
+    </div>
     <!-- /Social Media Links -->
   </nav>
 
