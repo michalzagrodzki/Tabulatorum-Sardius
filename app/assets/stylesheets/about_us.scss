@@ -71,9 +71,26 @@
 /* Extra Small devices (mobiles, 320px and up) */
 @media (min-width: 320px) and (max-width: 767px) {
 
+  .about-us-background{
+    padding-bottom: 40px;
+  }
+
+  .about-us-buttons{
+    margin-bottom: 20px;
+  }
+
+
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
+
+  .about-us-text{
+    margin-bottom: 100px;
+  }
+
+  .about-us-buttons{
+    margin-bottom: 120px;
+  }
 
 }
 /* Medium devices (desktops, 992px and up) */
