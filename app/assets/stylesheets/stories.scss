@@ -428,10 +428,29 @@
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991px) {}
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .show-story-maps-properties{
+    height: 505px;
+  }
+
+  .story-show-google-maps{
+    height: 500px;
+  }
+}
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199px) {}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .show-story-maps-properties{
+    height: 700px;
+  }
+
+  .story-show-google-maps{
+    height: 695px;
+  }
+
+}
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) and (max-width: 1920px) {}
