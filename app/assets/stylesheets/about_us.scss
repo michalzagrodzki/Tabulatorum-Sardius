@@ -25,8 +25,8 @@
 
 // title of panel
 .about-us-title{
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 60px;
+  margin-bottom: 60px;
   font-family: $playfair-bold;
   color: $story-show-section-title-font-color;
   font-size: $story-show-section-title-desktop;
@@ -47,7 +47,7 @@
   border: 2px solid lighten($right-menu-button-font-color, 25%);
   background-color: inherit;
   border-radius: 1px;
-  margin-bottom: 5px;
+  margin-bottom: 80px;
   font-family: $open-sans-regular;
   font-style: normal;
   font-size: $story-show-text-desktop;
@@ -61,4 +61,51 @@
     background-color: lighten($right-menu-button-font-color, 25%);
     color: white;
   }
+}
+
+
+/******************************************
+                Media Queries
+******************************************/
+
+/* Extra Small devices (mobiles, 320px and up) */
+@media (min-width: 320px) and (max-width: 767px) {
+
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+
+  .about-us-title{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .about-us-text{
+    margin-bottom: 40px;
+  }
+
+  .about-us-buttons{
+    margin-bottom: 40px;
+  }
+
+  .about-us-background{
+    padding-bottom: 170px;
+  }
+
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1400px) and (max-width: 1920px) {
+
+  .about-us-buttons{
+    margin-bottom: 40px;
+  }
+
 }
