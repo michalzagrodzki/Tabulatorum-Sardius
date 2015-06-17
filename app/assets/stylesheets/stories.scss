@@ -432,6 +432,11 @@
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
 
+  .story-show-section-title{
+    padding-top: 105px;
+    margin-top: 0;
+  }
+
   .show-story-maps-properties{
     height: 505px;
   }
