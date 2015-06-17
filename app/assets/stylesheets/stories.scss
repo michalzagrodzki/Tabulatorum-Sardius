@@ -430,7 +430,7 @@
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) and (orientation: portrait ) {
 
   .story-show-section-title{
     padding-top: 105px;
@@ -438,11 +438,27 @@
   }
 
   .show-story-maps-properties{
-    height: 505px;
+    height: 900px;
   }
 
   .story-show-google-maps{
-    height: 500px;
+    height: 895px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) and (orientation: landscape ) {
+
+  .story-show-section-title{
+    padding-top: 105px;
+    margin-top: 0;
+  }
+
+  .show-story-maps-properties{
+    height: 700px;
+  }
+
+  .story-show-google-maps{
+    height: 695px;
   }
 }
 
