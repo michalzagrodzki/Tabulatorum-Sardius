@@ -3,33 +3,22 @@
   <br>
   <div class="panel panel-default">
     <div class="panel-body contacts-properties">
-    <br>
-    <br>
-    <br>
-    <div class="col-md-offset-1">
-      <div class="col-md-10 ">
+    <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
       <h2 class="text-center contacts-title">Send us a message</h2>
       <p class="text-center contacts-text">Have you got any ideas, questions or just want to say hello? Write us a message using form below. We're excited to receive a word from you!</p>
-
+      <div class="col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-1">
       <%= simple_form_for( @contact, html: {class: 'form-horizontal contacts-label' } ) do |f|	  %>
-        <%= f.input :name, input_html: { class: 'contacts-form-control' }, label: 'Your name', :required => true %>
-        <%= f.input :email, input_html: { class: 'contacts-form-control' }, label: 'Your email address', :required => true %>
-        <%= f.input :message, input_html: { class: 'contacts-form-control' }, as: :text,:required => true  %>
-
+        <%= f.input :name, input_html: { class: 'contacts-form-control col-lg-12 col-md-12 col-sm-12 col-xs-11' }, label: 'Your name', required: true %>
+        <%= f.input :email, input_html: { class: 'contacts-form-control col-lg-12 col-md-12 col-sm-12 col-xs-11' }, label: 'Your email address', required: true %>
+        <%= f.input :message, input_html: { class: 'contacts-form-control col-lg-12 col-md-12 col-sm-12 col-xs-11' }, as: :text, required: true  %>
+      </div>
         <div class="hidden">
           <%= f.input :nickname, hint: 'Do not fill!' %>
         </div>
 
         <div>
-          <br>
-          <br>
           <%= f.button :submit, 'Send message', class: 'btn btn-default btn-block contacts-buttons' %>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
         </div>
 
       <% end %>

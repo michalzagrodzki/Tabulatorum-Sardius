@@ -5,7 +5,7 @@
 // background properties of contact us
 .contacts-background{
   background-color: $background-color;
-  padding-bottom: 50px;
+  padding-bottom: 200px;
 }
 
 // properties of contact us panel
@@ -20,7 +20,7 @@
 
 // title of panel
 .contacts-title{
-  margin-top: 30px;
+  margin-top: 90px;
   margin-bottom: 30px;
   font-family: $playfair-bold;
   color: $story-show-section-title-font-color;
@@ -68,7 +68,8 @@
   border: 2px solid lighten($right-menu-button-font-color, 25%);
   background-color: inherit;
   border-radius: 1px;
-  margin-bottom: 5px;
+  margin-top: 80px;
+  margin-bottom: 140px;
   font-family: $open-sans-regular;
   font-style: normal;
   font-size: $story-show-text-desktop;
@@ -84,3 +85,61 @@
     padding: 10px 4px;
   }
 }
+
+
+/******************************************
+                Media Queries
+******************************************/
+
+/* Extra Small devices (mobiles, 320px and up) */
+@media (min-width: 320px) and (max-width: 767px) {
+
+  .contacts-background{
+    padding-bottom: 20px;
+  }
+
+  .contacts-title{
+    font-size: $story-show-section-title-mobile;
+    margin-top: 30px;
+  }
+
+  .contacts-buttons{
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .contacts-title{
+    font-size: $story-show-section-title-mobile;
+    margin-top: 30px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .contacts-title{
+    font-size: $story-show-section-title-desktop;
+    margin-top: 50px;
+  }
+
+  .contacts-buttons{
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+
+  .contacts-buttons{
+    margin-top: 60px;
+    margin-bottom: 100px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1400px) and (max-width: 1920px) {}
