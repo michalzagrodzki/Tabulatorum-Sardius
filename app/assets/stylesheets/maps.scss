@@ -4,7 +4,7 @@
 
 .story-maps-background{
   background-color: $background-color;
-  padding-bottom: 60px;
+  padding-bottom: 190px;
 }
 
 .story-maps-properties{
@@ -113,6 +113,10 @@
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199px) {
 
+  .story-maps-background{
+    padding-bottom: 250px;
+  }
+
   .story-maps-properties{
     height: 730px;
   }
@@ -123,4 +127,17 @@
 }
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) and (max-width: 1920px) {}
+@media (min-width: 1200px) and (max-width: 1439px) {
+
+  .story-maps-background{
+    padding-bottom: 180px;
+  }
+
+  .story-maps-properties{
+    height: 760px;
+  }
+
+  .story-google-maps{
+    height: 755px;
+  }
+}
