@@ -16,13 +16,14 @@ class MapsController < ApplicationController
       marker.lng story.longitude
       # Specify information shown in marker
       marker.infowindow story.name
+      marker.infowindow story.main_page_image
 
       # Specify information shown in expanded infowindow
       marker.json({
                       # name of story for marker/infowindow
                       title: story.name,
-                      # value for showing in infowindow
-                      lat: story.latitude
+                      # id picture of story
+                      image: story.main_page_image
                   })
     end
   end
