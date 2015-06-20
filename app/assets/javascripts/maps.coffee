@@ -14,7 +14,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     marker = document.createElement("div")
     # setting up CSS class - 'marker_container'
     marker.setAttribute('class', 'main-map-marker')
-    marker.innerHTML = "<p>#{@args.title}</p>"
+    marker.innerHTML = "<div><img src=#{@args.image}><p>#{@args.title}</p></div>"
     { content: marker }
 
   # create Info Window
@@ -25,16 +25,14 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     boxText = document.createElement("div")
     # setting up CSS class - 'marker_container'
     boxText.setAttribute("class", "main-map-info-window")
-    boxText.innerHTML = "<p>#{@args.title}</p>"
+    boxText.innerHTML = "<div><img src=#{@args.image}><p>#{@args.title}</p</div>"
     @infowindow = new InfoBox(@infobox(boxText))
 
   # add @bind_infowindow() for < 2.1
 
   infobox: (boxText)->
     content: boxText
-    pixelOffset: new google.maps.Size(-75, -75)
-    boxStyle:
-      width: "200px"
+    pixelOffset: new google.maps.Size(-140, -500)
 
 # Function that takes argument (markers) and creates map in view.
 @buildMainMap = (markers)->
