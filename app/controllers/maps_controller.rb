@@ -17,13 +17,19 @@ class MapsController < ApplicationController
       # Specify information shown in marker
       marker.infowindow story.name
       marker.infowindow story.main_page_image
+      marker.infowindow story_path(story)
+      marker.infowindow story.updated_at
 
       # Specify information shown in expanded infowindow
       marker.json({
                       # name of story for marker/infowindow
                       title: story.name,
                       # id picture of story
-                      image: story.main_page_image
+                      image: story.main_page_image,
+                      #link to story
+                      link: story_path(story),
+                      #date of story
+                      updated: story.updated_at
                   })
     end
   end
