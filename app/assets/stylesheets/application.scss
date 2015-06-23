@@ -279,22 +279,34 @@ hr {
 
 }
 
-// Social media icons in right menu
-.right-menu-social-icons{
+// Social media buttons in right menu
+.right-menu-social-buttons{
+  position: relative;
   border: 2px solid lighten($right-menu-button-font-color, 25%);
   background-color: inherit;
   border-radius: 1px;
   margin-bottom: 5px;
   margin-right: 5px;
-  min-width: 34px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding: 0;
+  @include transition(.3s);
+}
+
+// Social media icons in right menu
+.right-menu-social-icons{
+  text-align: center;
+  border: none;
+  background-color: inherit;
   font-family: $socialico;
   font-style: normal;
   font-size: 30px;
   line-height: 100%;
-  padding: 0 4px;
+  padding: 0 0px;
   padding-bottom: 6px;
   color: lighten($right-menu-button-font-color, 25%);
-  @include transition(.5s);
+  @include transition(.3s);
 }
 
 .right-menu-social-icons-socialico-plus{
@@ -304,15 +316,24 @@ hr {
 }
 
 // colors on hover of social medias
+
+// uniform element used in all buttons
+@mixin uniform-properties($input){
+  background-color: $input;
+  border-color: $input;
+  p{
+    background-color: $input;
+    color: white;
+  }
+}
+
 // facebook
 
 .facebook-hover{
   &:hover {
     $color: #3a5999;
-    @extend .right-menu-social-icons;
-    border: 2px solid $color;
-    background-color: $color;
-    color: white;
+    @extend .right-menu-social-buttons;
+    @include uniform-properties($color);
   }
 }
 
@@ -320,10 +341,8 @@ hr {
 .twitter-hover{
   &:hover {
     $color: #3aa9de;
-    @extend .right-menu-social-icons;
-    border: 2px solid $color;
-    background-color: $color;
-    color: white;
+    @extend .right-menu-social-buttons;
+    @include uniform-properties($color);
   }
 }
 
@@ -331,11 +350,8 @@ hr {
 .instagram-hover{
   &:hover {
     $color: #3e729a;
-    @extend .right-menu-social-icons-socialico-plus;
-    border: 2px solid $color;
-    background-color: $color;
-    color: white;
-
+    @extend .right-menu-social-buttons;
+    @include uniform-properties($color);
   }
 }
 
@@ -343,10 +359,8 @@ hr {
 .tumblr-hover{
   &:hover {
     $color: #2c4762;
-    @extend .right-menu-social-icons;
-    border: 2px solid $color;
-    background-color: $color;
-    color: white;
+    @extend .right-menu-social-buttons;
+    @include uniform-properties($color);
   }
 }
 
@@ -354,10 +368,8 @@ hr {
 .pinterest-hover{
   &:hover {
     $color: #e41e11;
-    @extend .right-menu-social-icons-socialico-plus;
-    border: 2px solid $color;
-    background-color: $color;
-    color: white;
+    @extend .right-menu-social-buttons;
+    @include uniform-properties($color);
   }
 }
 
@@ -365,13 +377,10 @@ hr {
 .vimeo-hover{
   &:hover {
     $color: #52b8ea;
-    @extend .right-menu-social-icons;
-    border: 2px solid $color;
-    background-color: $color;
-    color: white;
+    @extend .right-menu-social-buttons;
+    @include uniform-properties($color);
   }
 }
-
 
 // Text on bottom of right menu
 .bottom-element{
